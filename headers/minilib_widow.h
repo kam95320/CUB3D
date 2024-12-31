@@ -6,25 +6,27 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2024/12/31 13:47:57 by kahoumou         ###   ########.fr       */
+/*   Updated: 2024/12/31 15:58:57 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_H
 # define DATA_H
 
-# include "data_map.h"
 # include "image.h"
 # include "minimap.h"
 # include "player.h"
 # include "raycasting.h"
+
 typedef struct s_minilib_window
 {
 	void			*mlx_connex;
 	void			*window;
 	int				size_weight;
 	int				size_width;
-	t_data_map		data_map;
+	// char **mini_map;  maybe;
+	int				**pix_mem_texture;
+	int				**text;
 	t_player		player_info;
 	t_raycasting	raycating_info;
 	t_info_texture	texture_info;
