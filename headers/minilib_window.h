@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minilib_widow.h                                    :+:      :+:    :+:   */
+/*   minilib_window.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2024/12/31 15:58:57 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:44:59 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include "minimap.h"
 # include "player.h"
 # include "raycasting.h"
-
+# define WD_SIZE_WIDTH 640
+# define WD_WIN_HEIGHT 480
 typedef struct s_minilib_window
 {
 	void			*mlx_connex;

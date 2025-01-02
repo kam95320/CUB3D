@@ -6,13 +6,14 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:45:08 by kahoumou          #+#    #+#             */
-/*   Updated: 2024/12/31 15:59:01 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/02 17:17:00 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMAGE_H
 # define IMAGE_H
 
+#define TEXTURE_SIZE 64
 typedef struct s_manip_img
 {
 	void	*ptr_img;
@@ -33,6 +34,7 @@ typedef struct s_info_texture
 	int		*hxd_ceiling;
 	int		*floor;
 	int		*ceiling;
+	int		texture_size;
 	double	step_by_step;
 	double	position;
 	int		x;

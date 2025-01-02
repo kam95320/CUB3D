@@ -22,7 +22,15 @@ HEAD			=	-I ./includes/ \
 					-I $(MLX_PATH)
 
 # Sources
-SRCS_NAMES		=	utils/essai.c
+SRCS_NAMES		=	utils/check_arg_init_mlx.c\
+					utils/initialization/data_initializ.c\
+					utils/initialization/mlx_initializ.c\
+					utils/initialization/player_data_initialization.c\
+					utils/initialization/texture_data_initialization.c\
+					utils/print_error.c\
+					utils/main.c
+
+
 SRCS			=	$(SRCS_NAMES)
 OBJS			=	$(SRCS:.c=.o)
 
