@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   check_is_xpm_file.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 14:18:04 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/02 14:37:30 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/01/03 15:56:11 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/01/03 16:35:23 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/utils.h"
+#include "../../headers/utils.h"
 
-void	print_error(char *str)
+bool	check_is_xpm_file(char *file)
 {
-	while (*str)
-		write(2, str++, 1);
+	size_t	file_size;
+
+	file_size = ft_strlen(file);
+	if (file[file_size - 4] == '.' && file[file_size - 3] == 'm'
+		&& file[file_size - 2] == 'p' && file[file_size - 1] == 'x')
+	{
+		return (true);
+	}
+	return (false);
 }

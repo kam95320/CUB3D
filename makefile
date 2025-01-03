@@ -22,12 +22,16 @@ HEAD			=	-I ./includes/ \
 					-I $(MLX_PATH)
 
 # Sources
-SRCS_NAMES		=	utils/check_arg_init_mlx.c\
+SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/initialization/data_initializ.c\
 					utils/initialization/mlx_initializ.c\
 					utils/initialization/player_data_initialization.c\
 					utils/initialization/texture_data_initialization.c\
-					utils/print_error.c\
+					utils/error_msg/print_error.c\
+					utils/check_and_init_arg/check_is_valid.c\
+					utils/check_and_init_arg/check_open.c\
+					utils/check_and_init_arg/check_is_cub_file.c\
+					utils/check_and_init_arg/check_is_xpm_file.c\
 					utils/main.c
 
 

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_is_cub_file.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/03 16:22:55 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/01/03 15:31:27 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/01/03 16:36:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/utils.h"
+#include "../../headers/utils.h"
 
-int	main(int argc, char *argv[])
+bool	check_is_cub_file(char *file)
 {
-	t_minilib_window	mlx_data;
-	t_player			data_player;
-	t_info_texture		data_texture;
+	size_t	file_s;
 
-	check_arg_init_mlx(argc, argv, &mlx_data);
-	player_data_initialization(&data_player);
-	texture_data_initialization(&data_texture);
+	file_s = ft_strlen(file);
+	if (file[file_s - 4] == '.' && file[file_s - 3] == 'b' && file[file_s
+			- 2] == 'u' && file[file_s - 1] == 'c')
+	{
+		return (true);
+	}
+	return (false);
 }

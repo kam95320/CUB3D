@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 16:57:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/02 17:26:52 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/03 16:24:13 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	texture_data_initialization(t_info_texture *data_texture)
 	data_texture->position = 0.0;
 	data_texture->x = 0;
 	data_texture->y = 0;
-    data_texture->texture_size = TEXTURE_SIZE;
+	data_texture->texture_size = TEXTURE_SIZE;
 }

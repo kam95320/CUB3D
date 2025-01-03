@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 16:04:43 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/02 17:26:52 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/03 16:23:46 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	mlx_initializ(t_minilib_window *mlx_data)
 	mlx_data->window = mlx_new_window(mlx_data->mlx_connex, WD_SIZE_WIDTH,
 			WD_WIN_HEIGHT, "CUB3D");
 	if (!mlx_data->window)
-    {
-        print_error("probleme with mlx window\n");
-        exit(1);
-    }
+	{
+		print_error("probleme with mlx window\n");
+		exit(1);
+	}
 }
