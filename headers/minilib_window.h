@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/02 15:44:59 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/04 15:25:54 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "minimap.h"
 # include "player.h"
 # include "raycasting.h"
+#include "map.h"
 # define WD_SIZE_WIDTH 640
 # define WD_WIN_HEIGHT 480
 typedef struct s_minilib_window
@@ -25,9 +26,10 @@ typedef struct s_minilib_window
 	void			*window;
 	int				size_weight;
 	int				size_width;
-	// char **mini_map;  maybe;
+	// char **mini_map;  maybe
 	int				**pix_mem_texture;
 	int				**text;
+	t_map			map_data;
 	t_player		player_info;
 	t_raycasting	raycating_info;
 	t_info_texture	texture_info;

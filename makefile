@@ -32,6 +32,9 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/check_and_init_arg/check_open.c\
 					utils/check_and_init_arg/check_is_cub_file.c\
 					utils/check_and_init_arg/check_is_xpm_file.c\
+					utils/map_fclt/map_is_valid.c\
+					utils/map_fclt/take_mem_map.c\
+					utils/map_fclt/completed_2d.c\
 					utils/main.c
 
 
