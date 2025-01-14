@@ -6,16 +6,17 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:42:13 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/13 16:05:34 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:07:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/utils.h"
 #include "../../headers/two_d.h"
+#include "../../headers/utils.h"
 
-bool	take_mem_map(t_minilib_window *mlx_data, two_d_t *two_d ,char *mp)
+bool	take_mem_map(t_minilib_window *mlx_data, two_d_t *two_d, char *mp)
 {
-	int data_sentences;
+	int	data_sentences;
+
 	data_sentences = 0;
 	mlx_data->map_data.line_len = nb_line(mp);
 	data_sentences = mlx_data->map_data.line_len;
@@ -33,4 +34,6 @@ bool	take_mem_map(t_minilib_window *mlx_data, two_d_t *two_d ,char *mp)
 		return (false);
 	}
 	completed_2d(two_d, mlx_data);
+		close(mlx_data -> map_data.fd);
+	return(true);
 }

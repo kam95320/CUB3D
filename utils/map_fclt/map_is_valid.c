@@ -6,23 +6,25 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/04 16:24:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:07:49 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../../headers/utils.h"
+#include "../../headers/utils.h"
 
-// void	map_is_valid(char **mp, t_minilib_window data_mlx)
-// {
-// 	int i;
-// 	int j;
 
-// 	i = 0;
-// 	while (mp[i])
-// 	{
-// 		j = 0;
-// 		while (mp[i][j])
-// 		{
-// 		}
-// 	}
-// }
+void	map_is_valid(char **mp, t_minilib_window data_mlx)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (mp[i])
+	{
+		j = 0;
+		while (mp[i][j])
+		{
+            skip_space(mp, i, j);
+		}
+	}
+}

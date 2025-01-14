@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/13 16:08:35 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:14:08 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ bool	check_is_xpm_file(char *file);
 void	map_is_valid(char **map, t_minilib_window data_mlx);
 bool	take_mem_map(t_minilib_window *mlx_data, two_d_t *two_d, char *mp);
 void	completed_2d(two_d_t *two_d, t_minilib_window *data);
+void	map_is_valid(char **mp, t_minilib_window data_mlx);
 int		nb_line(char *map);
 #endif // UTILS_H
