@@ -38,6 +38,7 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/map_fclt/nb_line.c\
 					utils/map_fclt/map_is_valid.c\
 					utils/map_fclt/skip_space.c\
+					utils/map_fclt/is_good_print.c\
 					utils/main.c
 
 
