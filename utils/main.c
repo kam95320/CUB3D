@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/14 13:13:32 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:22:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 	{
 		close(mlx_data.map_data.fd);
 	}
-	 map_is_valid(argv[1], mlx_data);
+	 map_is_valid(argv[1], &mlx_data);
 	player_data_initialization(&data_player);
 	texture_data_initialization(&data_texture);
 }

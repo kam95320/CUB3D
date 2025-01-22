@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/15 18:48:11 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:49:54 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	map_is_valid(char **mp, t_minilib_window *data_mlx);
 int		nb_line(char *map);
 int		skip_space(char **mp, int i, int j);
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j);
+void	skip_txt_space(char *stc, int j);
 
 #endif // UTILS_H
