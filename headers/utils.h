@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/22 18:49:54 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/23 11:03:56 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ bool	take_mem_map(t_minilib_window *mlx_data, two_d_t *two_d, char *mp);
 void	completed_2d(two_d_t *two_d, t_minilib_window *data);
 void	map_is_valid(char **mp, t_minilib_window *data_mlx);
 int		nb_line(char *map);
-int		skip_space(char **mp, int i, int j);
+int		skip_space(char **mp, int i, int len);
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j);
-void	skip_txt_space(char *stc, int j);
+int 	manage_txt_space(char *stc, int len, int cond);
 
 #endif // UTILS_H

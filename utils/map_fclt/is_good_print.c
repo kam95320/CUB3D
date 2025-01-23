@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/22 19:09:48 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/23 11:21:44 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ static char	*pth_txt(char *mp, int j)
 	int		len;
 	int		i;
 	char	*str;
+
+	j = skip_txt_space(mp, j, 1);
+	len = skip_txt_space(mp, j, 2);
+	0i = 0;
+	str[i] = skip_txt_space(mp, j, 3);
+	str[i] = '\0';
+	str_malloc(len);
+	
+	
 }
 
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)

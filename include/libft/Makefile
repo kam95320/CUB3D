@@ -216,6 +216,7 @@ SRCS = ft_isalpha.c \
        ft_lstlast.c \
        ft_lstsize.c \
        ft_strcmp.c\
+       str_malloc.c\
        $(GNL)get_next_line.c \
        $(GNL)get_next_line_utils.c \
        ft_printf/ft_hexadecimal.c \
