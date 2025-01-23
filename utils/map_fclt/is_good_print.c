@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/23 11:21:44 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:33:33 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,31 @@ static char	*pth_txt(char *mp, int j)
 	int		i;
 	char	*str;
 
-	j = skip_txt_space(mp, j, 1);
-	len = skip_txt_space(mp, j, 2);
-	0i = 0;
-	str[i] = skip_txt_space(mp, j, 3);
+	j = manage_txt_space(mp, j, 1);
+	len = manage_txt_space(mp, j, 2);
+	str = str_malloc(len);
+	i = 0;
+	str[i] = manage_txt_space(mp, j, 3);
 	str[i] = '\0';
-	str_malloc(len);
-	
-	
+	j = j + manage_txt_space(mp, j, 4);
+	if (str[j] != '\0' && str[j] != '\n')
+	{
+		free(str);
+		str = NULL;
+	}
+	return (str);
+}
+
+static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
+{
+	if (t_c == 1 && !txt->direct_north)
+		txt->direct_north = pth_txt(mp, j + 2);
+	if (t_c == 2 && !txt->direct_south)
+		txt->direct_south = pth_txt(mp, j + 2);
+	if (t_c == 3 && !txt->direct_east)
+		txt->direct_west = pth_txt(mp, j + 2);
+	if (t_c == 2 && !txt->direct_east)
+		txt->direct_east = pth_txt(mp, j + 2);
 }
 
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
@@ -54,13 +71,8 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 		val = true;
 	if (val == true && t_c != 0)
 	{
-		if (t_c == 1 && !txt->direct_north)
-			txt->direct_north = pth_txt(mp[i], j + 2);
-		if (t_c == 2 && !txt->direct_south)
-			txt->direct_south = pth_txt(mp[i], j + 2);
-		if (t_c == 3 && !txt->direct_east)
-			txt->direct_west = pth_txt(mp[i], j + 2);
-		if (t_c == 2 && !txt->direct_east)
-			txt->direct_east = pth_txt(mp[i], j + 2);
+		vl_direct(txt, mp[i], j, t_c);
 	}
+	val = for_color(txt, mp, i, txt->ceiling);
+	return (val);
 }

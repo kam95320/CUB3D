@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:42:13 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/14 13:07:28 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:32:05 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ bool	take_mem_map(t_minilib_window *mlx_data, two_d_t *two_d, char *mp)
 		return (false);
 	}
 	completed_2d(two_d, mlx_data);
-		close(mlx_data -> map_data.fd);
-	return(true);
+	close(mlx_data->map_data.fd);
+	return (true);
 }

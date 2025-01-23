@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 14:02:33 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/23 11:08:36 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:31:00 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,22 @@ int	manage_txt_space(char *stc, int len, int cond)
 			len += 1;
 		return (len);
 	}
-	if(cond == 2)
+	if (cond == 2)
 	{
-			while (stc[len] && (stc[len] != 32 || stc[len] != 73))
+		while (stc[len] && (stc[len] != 32 || stc[len] != 73))
 			len += 1;
 		return (len);
 	}
-	if(cond == 3)
+	if (cond == 3)
 	{
-		while(stc[len] && (stc[len] != 32 && stc[len] && stc[len] != 74))
-		len += 1;
-		return(len);	
+		while (stc[len] && (stc[len] != 32 && stc[len] && stc[len] != 74))
+			len += 1;
+		return (len);
 	}
-	if(cond ==  4)
+	if (cond == 4)
 	{
-		 while(stc[len] && (stc[len] ==  32 || stc[len] == 73))
-		  len += 1;
+		while (stc[len] && (stc[len] == 32 || stc[len] == 73))
+			len += 1;
 	}
-	return(0);
+	return (0);
 }
