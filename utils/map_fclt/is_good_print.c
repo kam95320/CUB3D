@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/23 17:33:33 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:36:05 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 	{
 		vl_direct(txt, mp[i], j, t_c);
 	}
-	val = for_color(txt, mp, i, txt->ceiling);
+	val = color(txt, mp, i, txt->ceiling);
 	return (val);
 }
