@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_is_valid.c                                     :+:      :+:    :+:   */
+/*   hx_txt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/27 14:40:52 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/01/27 15:49:16 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/01/27 15:54:59 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
-{
-	int	i;
-	int	j;
 
-	i = 0;
-	while (mp[i])
-	{
-		j = 0;
-		while (mp[i][j])
-		{
-			skip_space(mp, i, j);
-			if (!is_good_print(&data_mlx->texture_info, mp, i, j))
-				return (false);
-			j++;
-		}
-		i++;
-	}
-	return (true);
+int hx_txt(t_info_texture  *txt, char lt)
+{
+    unsigned
+    
 }
+

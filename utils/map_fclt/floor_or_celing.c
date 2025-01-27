@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_is_valid.c                                     :+:      :+:    :+:   */
+/*   floor_or_celing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/27 14:40:52 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/01/27 14:04:53 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/01/27 14:23:35 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../headers/two_d.h"
 #include "../../headers/utils.h"
 
-bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
+int	floor_or_ceilling(char *lt, t_info_texture *txt)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (mp[i])
-	{
-		j = 0;
-		while (mp[i][j])
-		{
-			skip_space(mp, i, j);
-			if (!is_good_print(&data_mlx->texture_info, mp, i, j))
-				return (false);
-			j++;
-		}
-		i++;
-	}
-	return (true);
+	if (*lt == 'C' && txt->ceiling == 0)
+		return (1);
+	if (*lt == 'F' && txt->floor == 0)
+		return (2);
 }
