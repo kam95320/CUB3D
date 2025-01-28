@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/27 15:53:23 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:48:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static int	rgb_is_number(char **s1, char *s2)
 {
 	int	i;
 
-	// char	*result;
 	i = 0;
 	while (s2[i++])
 	{
@@ -25,7 +24,7 @@ static int	rgb_is_number(char **s1, char *s2)
 		{
 			free_tab((void **)s1);
 			free(s2);
-			reuturn(0);
+			return (0);
 		}
 	}
 	free_tab((void **)s1);
@@ -49,7 +48,6 @@ static bool	count_str(char **str, char *mp)
 	}
 	return (true);
 }
-
 static int	*rgb(char *mp)
 {
 	int	**tab;
@@ -59,7 +57,6 @@ static int	*rgb(char *mp)
 	tab = str_malloc(3);
 	return (rgb_is_number(tab, mp));
 }
-
 bool	color(t_info_texture *txt, char *mp, int j, int F_C)
 {
 	if (ft_isprint(mp[j + 1]))
@@ -77,12 +74,12 @@ bool	color(t_info_texture *txt, char *mp, int j, int F_C)
 				print_error("error rgb\n");
 				return (false);
 			}
-			if (floor_or_ceiling(mp[j]) == 1)
+			if (floor_or_ceiling(mp[j], txt) == 1)
 				txt->ceiling = rgb(mp);
-			if (floor_or_ceiling(mp[j]) == 2)
+			if (floor_or_ceiling(mp[j], txt) == 2)
 				txt->floor = rgb(mp);
-			txt->hxd_floor = hx_txt(txt, 'F');
-			txt->hxd_ceiling = hx_txt(txt, 'C');
+			hx_txt(txt, 'F');
+			hx_txt(txt, 'C');
 		}
 	}
 	return (true);

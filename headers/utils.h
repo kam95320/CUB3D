@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/27 14:24:01 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:00:06 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		skip_space(char **mp, int i, int len);
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j);
 int		manage_txt_space(char *stc, int len, int cond);
 bool	color(t_info_texture *txt, char *mp, int j, int F_C);
-int		floor_or_ceilling(char *lt, t_info_texture *txt);
-
+int		floor_or_ceiling(char *lt, t_info_texture *txt);
+bool	vrb_txt_valid(t_info_texture *txt);
+int		hx_txt(t_info_texture *txt, char lt);
 #endif // UTILS_H

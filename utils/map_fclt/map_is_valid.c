@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/27 14:40:52 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:03:29 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 		}
 		i++;
 	}
+	if (vrb_txt_valid(&data_mlx->texture_info) == false)
+		return (false);
 	return (true);
 }
