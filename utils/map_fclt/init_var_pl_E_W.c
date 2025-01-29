@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_is_valid.c                                     :+:      :+:    :+:   */
+/*   init_var_pl_E_W.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/29 17:12:22 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/01/29 18:33:12 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/01/29 18:42:17 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../headers/two_d.h"
 #include "../../headers/utils.h"
 
-bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
+void	init_var_pl_E_W(t_player *player)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (mp[i])
+	if (player->direction == 'W')
 	{
-		j = 0;
-		while (mp[i][j])
-		{
-			skip_space(mp, i, j);
-			if (!is_good_print(&data_mlx->texture_info, mp, i, j))
-			{
-				free_txt(&data_mlx->texture_info);
-				return (false);
-			}
-			j++;
-		}
-		i++;
+		player->fl_pl_pos_x = 0;
+		player->fl_pl_pos_y = 1;
+		player->cam_pos_x = 0;
+		player->cam_pos_y = 0.66;
 	}
-	if (vrb_txt_valid(&data_mlx->texture_info) == false)
+	else if (player->direction == 'E')
 	{
-		free_txt(&data_mlx->texture_info);
-		return (false);
+		player->fl_pl_pos_x = 0;
+		player->fl_pl_pos_y = 1;
+		player->cam_pos_x = 0.66;
+		player->cam_pos_y = 0;
 	}
-	return (true);
+	else
+		return ;
 }

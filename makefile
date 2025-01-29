@@ -43,6 +43,10 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/map_fclt/hx_txt.c\
 					utils/map_fclt/ vrb _txt_valid.c\
 					utils/map_fclt/floor_or_ceiling.c\
+					utils/map_fclt/all_free.c\
+					utils/map_fclt/init_var_pl_E_W.c\
+					utils/map_fclt/init_var_pl_N_S.c\
+
 					utils/main.c
 
 
