@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/28 13:48:28 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:02:15 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int	rgb_is_number(char **s1, char *s2)
 	free_tab((void **)s1);
 	return (s2);
 }
+
 static bool	count_str(char **str, char *mp)
 {
 	int	i;
@@ -48,6 +49,7 @@ static bool	count_str(char **str, char *mp)
 	}
 	return (true);
 }
+
 static int	*rgb(char *mp)
 {
 	int	**tab;
@@ -57,6 +59,7 @@ static int	*rgb(char *mp)
 	tab = str_malloc(3);
 	return (rgb_is_number(tab, mp));
 }
+
 bool	color(t_info_texture *txt, char *mp, int j, int F_C)
 {
 	if (ft_isprint(mp[j + 1]))

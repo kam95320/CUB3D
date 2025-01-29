@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:49:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/28 13:35:30 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:03:44 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	hx_txt(t_info_texture *txt, char lt)
 {
-	unsigned	rs;
-	int			red;
-	int			green;
-	int			blue;
-	int			*var;
+	unsigned int	rs;
+	int				red;
+	int				green;
+	int				blue;
+	int				*var;
 
 	if (lt == 'C')
 		var = txt->ceiling;

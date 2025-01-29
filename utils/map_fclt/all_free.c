@@ -6,13 +6,13 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:49:22 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/29 16:52:51 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:05:18 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
-#
- void	free_img(t_manip_img *img)
+
+void	free_img(t_manip_img *img)
 {
 	if (img)
 	{
@@ -22,6 +22,7 @@
 		img->pixel_img = NULL;
 	}
 }
+
 void	free_mlx(t_minilib_window *data)
 {
 	if (data)
@@ -65,6 +66,7 @@ void	free_txt(t_info_texture *texture_info)
 		texture_info->ceiling = NULL;
 	}
 }
+
 void	free_mp(t_map *map_data)
 {
 	if (map_data)
@@ -75,6 +77,7 @@ void	free_mp(t_map *map_data)
 		map_data->file = NULL;
 	}
 }
+
 void	free_struct(t_minilib_window *data, char *str)
 {
 	if (str == "map_data")
