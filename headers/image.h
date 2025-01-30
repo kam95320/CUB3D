@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:45:08 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/02 17:17:00 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:02:18 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_info_texture
 	char	*direct_south;
 	char	*direct_west;
 	char	*direct_east;
-	int		*hxd_floor;
-	int		*hxd_ceiling;
+	unsigned long hxd_floor;
+	unsigned long hxd_ceiling;
 	int		*floor;
 	int		*ceiling;
 	int		texture_size;

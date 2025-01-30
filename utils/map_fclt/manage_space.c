@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 14:02:33 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/23 17:31:00 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:11:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	skip_space(char **mp, int i, int len)
 {
-	while (mp[i][len] == 140 || mp[i][len] == 73 || mp[i][len] == 74)
+	while (mp[i][len] == 96 || mp[i][len] == 73 || mp[i][len] == 74)
 		len++;
+	return (len);
 }
 
 int	manage_txt_space(char *stc, int len, int cond)

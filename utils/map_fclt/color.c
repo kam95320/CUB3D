@@ -6,21 +6,21 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/29 19:02:15 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:11:46 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-static int	rgb_is_number(char **s1, char *s2)
+static int	*rgb_is_number(char **s1, int *s2)
 {
 	int	i;
 
 	i = 0;
-	while (s2[i++])
+	while (s1[i++])
 	{
-		s2[i] = ft_atoi(s2[i]);
-		if (s2[i] == -1 || ft_isdigit != 2048)
+		s2[i] = ft_atoi(s1[i]);
+		if (s2[i] == -1 || ft_isdigit(s2[i]) != 2048)
 		{
 			free_tab((void **)s1);
 			free(s2);
@@ -31,36 +31,37 @@ static int	rgb_is_number(char **s1, char *s2)
 	return (s2);
 }
 
-static bool	count_str(char **str, char *mp)
+static char	**count_str(char **tab, char *mp)
 {
 	int	i;
 
-	str = ft_split(mp, ',');
+	tab = ft_split(mp, ',');
 	i = 0;
-	while (str[i])
+	while (tab[i])
 		i++;
-	if (i == 3)
-		return (true);
-	else
+	if (i != 3)
 	{
 		print_error("rgb file not 3\n");
-		free_tab((void **)str);
-		return (false);
+		free_tab((void **)tab);
+		return (0);
 	}
-	return (true);
+	return (tab);
 }
 
 static int	*rgb(char *mp)
 {
-	int	**tab;
+	char	**tab;
+	int		*str;
 
-	if (!count_str(tab, mp))
-		return (false);
-	tab = str_malloc(3);
-	return (rgb_is_number(tab, mp));
+	tab = NULL;
+	tab = count_str(tab, mp);
+	if (!tab)
+		return (0);
+	str = malloc(sizeof(int) * 3);
+	return (rgb_is_number(tab, str));
 }
 
-bool	color(t_info_texture *txt, char *mp, int j, int F_C)
+bool	color(t_info_texture *txt, char *mp, int j, int *F_C)
 {
 	if (ft_isprint(mp[j + 1]))
 	{

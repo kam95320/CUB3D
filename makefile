@@ -36,16 +36,15 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/map_fclt/take_mem_map.c\
 					utils/map_fclt/completed_2d.c\
 					utils/map_fclt/nb_line.c\
-					utils/map_fclt/map_is_valid.c\
 					utils/map_fclt/manage_space.c\
 					utils/map_fclt/is_good_print.c\
 					utils/map_fclt/color.c\
 					utils/map_fclt/hx_txt.c\
-					utils/map_fclt/ vrb _txt_valid.c\
+					utils/map_fclt/vrb_txt_valid.c\
 					utils/map_fclt/floor_or_ceiling.c\
 					utils/map_fclt/all_free.c\
-					utils/map_fclt/init_var_pl_E_W.c\
-					utils/map_fclt/init_var_pl_N_S.c\
+					utils/map_fclt/init_var_pl_e_w.c\
+					utils/map_fclt/init_var_pl_n_s.c\
 					utils/main.c
 
 

@@ -6,13 +6,13 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:49:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/29 19:03:44 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:12:08 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-int	hx_txt(t_info_texture *txt, char lt)
+void	hx_txt(t_info_texture *txt, char lt)
 {
 	unsigned int	rs;
 	int				red;
@@ -27,7 +27,7 @@ int	hx_txt(t_info_texture *txt, char lt)
 	red = var[0];
 	green = var[1];
 	blue = var[2];
-	rs = ((red & 0xff) << 16 + (green & 0xff) << 8) + (blue & 0xff);
+	rs = ((red & 0xff) << 16) + ((green & 0xff) << 8) + (blue & 0xff);
 	if (lt == 'C')
 		txt->hxd_ceiling = rs;
 	if (lt == 'F')

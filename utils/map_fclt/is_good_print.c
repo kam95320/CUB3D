@@ -6,21 +6,21 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/24 11:36:05 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/30 14:32:19 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-static int	txt_cond(t_info_texture *txt, char **mp, int i, int j)
+static int	txt_cond(char **mp, int i, int j)
 {
-	if (mp[j] == 'N' && mp[j + 1] == 'O')
+	if (mp[i][j] == 'N' && mp[i][j + 1] == 'O')
 		return (1);
-	if (mp[j] == 'S' && mp[j + 1] == 'O')
+	if (mp[i][j] == 'S' && mp[i][j + 1] == 'O')
 		return (2);
-	if (mp[j] == 'W' && mp[j + 1] == 'E')
+	if (mp[i][j] == 'W' && mp[i][j + 1] == 'E')
 		return (3);
-	if (mp[j] == 'E' && mp[j + 1] == 'A')
+	if (mp[i][j] == 'E' && mp[i][j + 1] == 'A')
 		return (4);
 	return (0);
 }
@@ -63,7 +63,7 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 	int	val;
 	int	t_c;
 
-	t_c = txt_cond(txt, mp, i, j);
+	t_c = txt_cond(mp, i, j);
 	val = false;
 	if (mp[i][j] >= 33 && mp[i][j] < 127)
 		val = true;
@@ -73,6 +73,6 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 	{
 		vl_direct(txt, mp[i], j, t_c);
 	}
-	val = color(txt, mp, i, txt->ceiling);
+	val = color(txt, mp[i], i, txt->ceiling);
 	return (val);
 }

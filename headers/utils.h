@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/29 18:43:50 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:08:11 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ int		nb_line(char *map);
 int		skip_space(char **mp, int i, int len);
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j);
 int		manage_txt_space(char *stc, int len, int cond);
-bool	color(t_info_texture *txt, char *mp, int j, int F_C);
-int		floor_or_ceiling(char *lt, t_info_texture *txt);
+bool	color(t_info_texture *txt, char *mp, int j, int *F_C);
+int		floor_or_ceiling(char lt, t_info_texture *txt);
 bool	vrb_txt_valid(t_info_texture *txt);
-int		hx_txt(t_info_texture *txt, char lt);
-void	init_var_pl_E_W(t_player *player);
-void	init_N_S(t_player *player);
+void	hx_txt(t_info_texture *txt, char lt);
+void	init_var_pl_e_w(t_player *player);
+void	init_var_pl_n_s(t_player *player);
 
 #endif // UTILS_H
