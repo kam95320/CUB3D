@@ -6,11 +6,13 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Répertoires
-LIBFT_DIR = ./include/libft
-MLX_DIR = ./include/minilibx-linux
-UTILS_DIR = ./utils
-TEST_DIR = ./testeur_file
+ROOT_DIR = ..
+LIBFT_DIR = $(ROOT_DIR)/include/libft
+MLX_DIR = $(ROOT_DIR)/include/minilibx-linux
+UTILS_DIR = $(ROOT_DIR)/utils
+TEST_DIR = $(ROOT_DIR)/testeur_file
 CHECK_DIR = $(UTILS_DIR)/check_and_init_arg
+ERROR_DIR = $(UTILS_DIR)/error_msg
 
 # Fichiers sources
 SRCS = $(TEST_DIR)/test_checker.c \
@@ -18,12 +20,12 @@ SRCS = $(TEST_DIR)/test_checker.c \
        $(CHECK_DIR)/check_is_cub_file.c \
        $(CHECK_DIR)/check_is_xpm_file.c \
        $(CHECK_DIR)/check_open.c \
-       $(UTILS_DIR)/error_msg/print_error.c
+       $(ERROR_DIR)/print_error.c
 
 OBJS = $(SRCS:.c=.o)
 
 # Inclusion des headers
-INCLUDES = -I ./include -I $(UTILS_DIR) -I $(LIBFT_DIR) -I $(MLX_DIR)
+INCLUDES = -I $(ROOT_DIR)/include -I $(UTILS_DIR) -I $(LIBFT_DIR) -I $(MLX_DIR)
 
 # Bibliothèques
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -36,7 +38,16 @@ $(NAME): $(OBJS) $(LIBFT) $(MLX)
 	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -o $(NAME)
 
 # Compilation des fichiers .c en .o
-%.o: %.c
+$(UTILS_DIR)/%.o: $(UTILS_DIR)/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(CHECK_DIR)/%.o: $(CHECK_DIR)/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(ERROR_DIR)/%.o: $(ERROR_DIR)/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(TEST_DIR)/%.o: $(TEST_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 # Compilation de Libft et MiniLibX si nécessaire
