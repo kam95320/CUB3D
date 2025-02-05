@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 14:32:19 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/05 18:36:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,18 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 	t_c = txt_cond(mp, i, j);
 	val = false;
 	if (mp[i][j] >= 33 && mp[i][j] < 127)
+	{
+		printf("pass 1 is_good_print\n");
 		val = true;
+	}
 	if (mp[i][j] >= 48 && mp[i][j] < 58)
+	{
+		printf("pass 2 is_good_print\n");
 		val = true;
+	}
 	if (val == true && t_c != 0)
 	{
+		printf("pass vl_direct is_good_print\n");
 		vl_direct(txt, mp[i], j, t_c);
 	}
 	val = color(txt, mp[i], i, txt->ceiling);

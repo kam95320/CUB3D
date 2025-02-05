@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 15:31:27 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/03 16:36:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/05 11:07:18 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ bool	check_is_cub_file(char *file)
 	size_t	file_s;
 
 	file_s = ft_strlen(file);
-	if (file[file_s - 4] == '.' && file[file_s - 3] == 'b' && file[file_s
-			- 2] == 'u' && file[file_s - 1] == 'c')
+	if (file_s < 4)
+		return (false);
+	if (file[file_s - 5] == '/')
+		return (false);
+	if (file[file_s - 4] == '.' && file[file_s - 3] == 'c' && file[file_s
+		- 2] == 'u' && file[file_s - 1] == 'b')
 	{
 		return (true);
 	}

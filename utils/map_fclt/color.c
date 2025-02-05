@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 18:11:46 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/05 18:52:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,14 @@ bool	color(t_info_texture *txt, char *mp, int j, int *F_C)
 {
 	if (ft_isprint(mp[j + 1]))
 	{
+		j  =  j + 1;
+		printf("DEBUG = ");
+		while(mp[j++])
+		{
+		printf("%c", mp[j]);
+		}
+		printf("\n");
+		printf("pass 1 in color false val\n");
 		print_error("error color file\n");
 		return (false);
 	}
@@ -75,6 +83,7 @@ bool	color(t_info_texture *txt, char *mp, int j, int *F_C)
 			F_C = rgb(mp + j + 1);
 			if (F_C == false)
 			{
+				printf("pass in color true val\n");
 				print_error("error rgb\n");
 				return (false);
 			}
@@ -86,5 +95,6 @@ bool	color(t_info_texture *txt, char *mp, int j, int *F_C)
 			hx_txt(txt, 'C');
 		}
 	}
+	printf("pass in  color true val ");
 	return (true);
 }

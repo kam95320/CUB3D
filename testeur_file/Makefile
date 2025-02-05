@@ -12,6 +12,7 @@ MLX_DIR = $(ROOT_DIR)/include/minilibx-linux
 UTILS_DIR = $(ROOT_DIR)/utils
 TEST_DIR = $(ROOT_DIR)/testeur_file
 CHECK_DIR = $(UTILS_DIR)/check_and_init_arg
+MAP_DIR =  	$(UTILS_DIR)/map_fclt
 ERROR_DIR = $(UTILS_DIR)/error_msg
 
 # Fichiers sources
@@ -20,7 +21,22 @@ SRCS = $(TEST_DIR)/test_checker.c \
        $(CHECK_DIR)/check_is_cub_file.c \
        $(CHECK_DIR)/check_is_xpm_file.c \
        $(CHECK_DIR)/check_open.c \
-       $(ERROR_DIR)/print_error.c
+ 	   $(MAP_DIR)/take_mem_map.c \
+	   $(MAP_DIR)/completed_2d.c\
+	   $(MAP_DIR)/nb_line.c\
+	   $(MAP_DIR)/map_is_valid.c\
+	   $(ERROR_DIR)/print_error.c\
+	   load_map_from_file.c\
+	   $(MAP_DIR)/manage_space.c\
+	   $(MAP_DIR)/is_good_print.c\
+	   $(MAP_DIR)/all_free.c\
+	   $(MAP_DIR)/vrb_txt_valid.c\
+	   $(MAP_DIR)/color.c\
+	   $(MAP_DIR)/floor_or_ceiling.c\
+		$(MAP_DIR)/hx_txt.c
+
+	   
+
 
 OBJS = $(SRCS:.c=.o)
 

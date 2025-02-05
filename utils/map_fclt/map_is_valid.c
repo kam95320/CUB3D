@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 14:24:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/05 18:33:13 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 			skip_space(mp, i, j);
 			if (!is_good_print(&data_mlx->texture_info, mp, i, j))
 			{
+				printf("false 1\n");
 				free_txt(&data_mlx->texture_info);
 				return (false);
 			}
