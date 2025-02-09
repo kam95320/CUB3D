@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:49:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 18:12:08 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:19:00 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,21 @@
 void	hx_txt(t_info_texture *txt, char lt)
 {
 	unsigned int	rs;
-	int				red;
-	int				green;
-	int				blue;
+	int				red = 0, green = 0, blue;
 	int				*var;
 
-	if (lt == 'C')
+	red = 0, green = 0, blue = 0;
+	var = NULL;
+	if (lt == 'C' && txt->ceiling)
 		var = txt->ceiling;
-	if (lt == 'F')
+	if (lt == 'F' && txt->floor)
 		var = txt->floor;
+	if (!var)
+	{
+		printf("❌ Erreur: Tentative de conversion de couleur non initialisée pour '%c'\n",
+			lt);
+		return ;
+	}
 	red = var[0];
 	green = var[1];
 	blue = var[2];
@@ -32,4 +38,5 @@ void	hx_txt(t_info_texture *txt, char lt)
 		txt->hxd_ceiling = rs;
 	if (lt == 'F')
 		txt->hxd_floor = rs;
+	printf("✅ Conversion RGB -> HEX pour '%c' : #%06X\n", lt, rs);
 }

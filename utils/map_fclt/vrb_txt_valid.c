@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:06:10 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 17:10:46 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/07 10:49:53 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,18 @@
 bool	vrb_txt_valid(t_info_texture *txt)
 {
 	if (!txt->ceiling || !txt->floor)
+	{
+		printf("txt->ceiling =  %ls\n", txt->ceiling);
+		printf("txt->ceiling =  %ls\n", txt->floor);
 		return (false);
+	}
 	if (!txt->direct_east || !txt->direct_north || !txt->direct_south)
+	{
+		printf("txt->direct_east =  %s\n", txt->direct_east);
+		printf(" txt->direct_north =  %s\n", txt->direct_north);
+		printf(" txt->direct_south =  %s\n", txt->direct_south);
 		return (false);
+	}
 	if (!txt->direct_west)
 		return (false);
 	return (true);

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/05 18:52:28 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:31:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,49 +52,48 @@ static int	*rgb(char *mp)
 {
 	char	**tab;
 	int		*str;
+	int		*result;
 
-	tab = NULL;
-	tab = count_str(tab, mp);
+	tab = count_str(NULL, mp);
 	if (!tab)
-		return (0);
+		return (NULL);
 	str = malloc(sizeof(int) * 3);
-	return (rgb_is_number(tab, str));
+	if (!str)
+	{
+		free_tab((void **)tab);
+		return (NULL);
+	}
+	result = rgb_is_number(tab, str);
+	free_tab((void **)tab);
+	if (!result)
+	{
+		free(str);
+		return (NULL);
+	}
+	return (result);
 }
 
-bool	color(t_info_texture *txt, char *mp, int j, int *F_C)
+bool	color(t_info_texture *txt, char *mp, int j)
 {
-	if (ft_isprint(mp[j + 1]))
+	int	*rgb_values;
+
+	if (mp[j] == 'C' || mp[j] == 'F')
 	{
-		j  =  j + 1;
-		printf("DEBUG = ");
-		while(mp[j++])
+		rgb_values = rgb(mp + j + 1);
+		if (rgb_values == NULL)
 		{
-		printf("%c", mp[j]);
+			print_error("error rgb\n");
+			return (false);
 		}
-		printf("\n");
-		printf("pass 1 in color false val\n");
-		print_error("error color file\n");
-		return (false);
+		if (floor_or_ceiling(mp[j], txt) == 1)
+			txt->ceiling = rgb_values;
+		if (floor_or_ceiling(mp[j], txt) == 2)
+			txt->floor = rgb_values;
+		hx_txt(txt, 'F');
+		hx_txt(txt, 'C');
 	}
-	if (!txt->ceiling)
-	{
-		if (mp[j] == 'C' || mp[j] == 'F')
-		{
-			F_C = rgb(mp + j + 1);
-			if (F_C == false)
-			{
-				printf("pass in color true val\n");
-				print_error("error rgb\n");
-				return (false);
-			}
-			if (floor_or_ceiling(mp[j], txt) == 1)
-				txt->ceiling = rgb(mp);
-			if (floor_or_ceiling(mp[j], txt) == 2)
-				txt->floor = rgb(mp);
-			hx_txt(txt, 'F');
-			hx_txt(txt, 'C');
-		}
-	}
-	printf("pass in  color true val ");
+	printf("Floor: %d, %d, %d\n", txt->floor[0], txt->floor[1], txt->floor[2]);
+	printf("Ceiling: %d, %d, %d\n", txt->ceiling[0], txt->ceiling[1],
+		txt->ceiling[2]);
 	return (true);
 }

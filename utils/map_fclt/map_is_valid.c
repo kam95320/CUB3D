@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/05 18:33:13 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/09 19:30:16 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 	int	j;
 
 	i = 0;
+	printf("mp in map_is_good_print\n");
+	printf("mp[i] =  %s\n", mp[i]);
 	while (mp[i])
 	{
+		
+		printf("pass in  map_valid 1 while tours =  %d\n", i);
 		j = 0;
 		while (mp[i][j])
 		{
+			printf("pass in  map_valid 2 while\n");
 			skip_space(mp, i, j);
-			if (!is_good_print(&data_mlx->texture_info, mp, i, j))
-			{
-				printf("false 1\n");
-				free_txt(&data_mlx->texture_info);
-				return (false);
-			}
+			is_good_print(&data_mlx->texture_info, mp, i, j);
+		
 			j++;
 		}
 		i++;

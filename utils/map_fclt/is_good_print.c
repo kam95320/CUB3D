@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/05 18:36:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/09 19:17:29 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 static int	txt_cond(char **mp, int i, int j)
 {
+	while (mp[i][j] == ' ' || mp[i][j] == '\t')
+		j++;
+	if (!mp[i][j] || !mp[i][j + 1])
+		return (0);
 	if (mp[i][j] == 'N' && mp[i][j + 1] == 'O')
 		return (1);
 	if (mp[i][j] == 'S' && mp[i][j + 1] == 'O')
@@ -28,34 +32,39 @@ static int	txt_cond(char **mp, int i, int j)
 static char	*pth_txt(char *mp, int j)
 {
 	int		len;
-	int		i;
 	char	*str;
 
 	j = manage_txt_space(mp, j, 1);
-	len = manage_txt_space(mp, j, 2);
-	str = str_malloc(len);
-	i = 0;
-	str[i] = manage_txt_space(mp, j, 3);
-	str[i] = '\0';
-	j = j + manage_txt_space(mp, j, 4);
-	if (str[j] != '\0' && str[j] != '\n')
-	{
-		free(str);
-		str = NULL;
-	}
+	len = manage_txt_space(mp, j, 2) - j;
+	if (len <= 0)
+		return (NULL);
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, mp + j, len + 1);
+	str[len] = '\0';
+	 printf("DEBUG pth_txt: Extracted path: `%s`\n", str);
 	return (str);
 }
 
 static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
 {
+	printf("DEBUG vl_direct: t_c=%d, extracting from: %s\n", t_c, mp + j + 2);
 	if (t_c == 1 && !txt->direct_north)
 		txt->direct_north = pth_txt(mp, j + 2);
 	if (t_c == 2 && !txt->direct_south)
 		txt->direct_south = pth_txt(mp, j + 2);
-	if (t_c == 3 && !txt->direct_east)
+	if (t_c == 3 && !txt->direct_west)
 		txt->direct_west = pth_txt(mp, j + 2);
-	if (t_c == 2 && !txt->direct_east)
+	if (t_c == 4 && !txt->direct_east)
 		txt->direct_east = pth_txt(mp, j + 2);
+	printf("DEBUG After vl_direct: NO=%s, SO=%s, WE=%s, EA=%s\n",
+		txt->direct_north, txt->direct_south, txt->direct_west,
+		txt->direct_east);
+	printf("North: %s\n", txt->direct_north);
+	printf("South: %s\n", txt->direct_south);
+	printf("West:  %s\n", txt->direct_west);
+	printf("East:  %s\n", txt->direct_east);
 }
 
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
@@ -63,23 +72,17 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 	int	val;
 	int	t_c;
 
+	printf("pass in is_good_print\n");
 	t_c = txt_cond(mp, i, j);
 	val = false;
-	if (mp[i][j] >= 33 && mp[i][j] < 127)
+	if (mp[i][j] == '0' || mp[i][j] == '1' || mp[i][j] == 'N' || mp[i][j] == 'S'
+		|| mp[i][j] == 'W' || mp[i][j] == 'E')
 	{
-		printf("pass 1 is_good_print\n");
 		val = true;
 	}
-	if (mp[i][j] >= 48 && mp[i][j] < 58)
-	{
-		printf("pass 2 is_good_print\n");
-		val = true;
-	}
-	if (val == true && t_c != 0)
-	{
-		printf("pass vl_direct is_good_print\n");
+	if (val && t_c != 0)
 		vl_direct(txt, mp[i], j, t_c);
-	}
-	val = color(txt, mp[i], i, txt->ceiling);
+	if (mp[i][0] == 'F' || mp[i][0] == 'C')
+		val = color(txt, mp[i], i);
 	return (val);
 }
