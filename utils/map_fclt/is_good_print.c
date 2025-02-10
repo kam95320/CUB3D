@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/09 19:17:29 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:49:00 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,33 @@ static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
 	printf("West:  %s\n", txt->direct_west);
 	printf("East:  %s\n", txt->direct_east);
 }
-
+char tk_ltr_F_C(char *ltr)
+{
+	int i;
+	i = 0;
+	printf("ltr in tk_ltr_F_C = %s\n\n", ltr);
+	while(ltr[i])
+	{
+		if(ltr[i] ==  'F')
+		{
+			printf("F = %c\n", ltr[i]);
+			return('F');
+		}
+		if(ltr[i] ==  'C')
+		{
+			printf("C = %c\n", ltr[i]);
+			return('C');
+		}
+		i ++;
+	}
+	
+	return(ltr[i]);
+}
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 {
 	int	val;
 	int	t_c;
-
+	char ltr = tk_ltr_F_C(&mp[j][0]);
 	printf("pass in is_good_print\n");
 	t_c = txt_cond(mp, i, j);
 	val = false;
@@ -82,7 +103,9 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 	}
 	if (val && t_c != 0)
 		vl_direct(txt, mp[i], j, t_c);
-	if (mp[i][0] == 'F' || mp[i][0] == 'C')
-		val = color(txt, mp[i], i);
+	printf("F = %s | C = %s\n\n\n", &mp[j][0], &mp[j][0]);
+	if (ltr == 'F' || ltr == 'C')
+			val = color(txt, mp[j + 1], ltr);
+	printf("DEBUG color: i=%d, j=%d, char=%s\n", i, j, mp[j]);
 	return (val);
 }
