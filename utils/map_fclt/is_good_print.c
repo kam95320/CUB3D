@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/10 15:49:00 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:33:39 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static char	*pth_txt(char *mp, int j)
 
 static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
 {
-	printf("DEBUG vl_direct: t_c=%d, extracting from: %s\n", t_c, mp + j + 2);
+	printf("DEBUG vl_direct: t_c=%d, extracting from: %s\n", t_c, mp + j
+		+ 2);
 	if (t_c == 1 && !txt->direct_north)
 		txt->direct_north = pth_txt(mp, j + 2);
 	if (t_c == 2 && !txt->direct_south)
@@ -59,40 +60,42 @@ static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
 	if (t_c == 4 && !txt->direct_east)
 		txt->direct_east = pth_txt(mp, j + 2);
 	printf("DEBUG After vl_direct: NO=%s, SO=%s, WE=%s, EA=%s\n",
-		txt->direct_north, txt->direct_south, txt->direct_west,
-		txt->direct_east);
+	txt->direct_north, txt->direct_south, txt->direct_west,
+	txt->direct_east);
 	printf("North: %s\n", txt->direct_north);
 	printf("South: %s\n", txt->direct_south);
 	printf("West:  %s\n", txt->direct_west);
 	printf("East:  %s\n", txt->direct_east);
 }
-char tk_ltr_F_C(char *ltr)
+char	tk_ltr_F_C(char *ltr)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	printf("ltr in tk_ltr_F_C = %s\n\n", ltr);
-	while(ltr[i])
+	// printf("ltr in tk_ltr_F_C = %s\n\n", ltr);
+	while (ltr[i])
 	{
-		if(ltr[i] ==  'F')
+		if (ltr[i] == 'F')
 		{
 			printf("F = %c\n", ltr[i]);
-			return('F');
+			return ('F');
 		}
-		if(ltr[i] ==  'C')
+		if (ltr[i] == 'C')
 		{
 			printf("C = %c\n", ltr[i]);
-			return('C');
+			return ('C');
 		}
-		i ++;
+		i++;
 	}
-	
-	return(ltr[i]);
+	return (ltr[i]);
 }
 bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 {
-	int	val;
-	int	t_c;
-	char ltr = tk_ltr_F_C(&mp[j][0]);
+	int		val;
+	int		t_c;
+	char	ltr;
+
+	ltr = tk_ltr_F_C(&mp[j][0]);
 	printf("pass in is_good_print\n");
 	t_c = txt_cond(mp, i, j);
 	val = false;
@@ -105,7 +108,11 @@ bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
 		vl_direct(txt, mp[i], j, t_c);
 	printf("F = %s | C = %s\n\n\n", &mp[j][0], &mp[j][0]);
 	if (ltr == 'F' || ltr == 'C')
-			val = color(txt, mp[j + 1], ltr);
+	{
+		printf("DEBUG: Checking color assignment for [%s] (i=%d, j=%d)\n",
+			mp[i], i, j);
+		val = color(txt, mp[j], ltr);
+	}
 	printf("DEBUG color: i=%d, j=%d, char=%s\n", i, j, mp[j]);
 	return (val);
 }

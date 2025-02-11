@@ -3,7 +3,7 @@ NAME = test_checker
 
 # Compilateur et options
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 # Répertoires
 ROOT_DIR = ..
