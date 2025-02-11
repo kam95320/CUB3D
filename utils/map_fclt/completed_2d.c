@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:21:54 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/14 12:58:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:30:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	completed_2d(two_d_t *two_d, t_minilib_window *data)
 			return (free_tab((void **)data->map_data.file));
 		}
 		while (two_d->line[two_d->i])
-			data->map_data.file[two_d->row][two_d->col++] = two_d->line[two_d->i++];
+				data->map_data.file[two_d->row][two_d->col++] = two_d->line[two_d->i++];
 		data->map_data.file[two_d->row++][two_d->col] = '\0';
 		two_d->col = 0;
 		two_d->i = 0;

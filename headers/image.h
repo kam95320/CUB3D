@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:45:08 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 17:02:18 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:28:59 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ typedef struct s_info_texture
 	double	position;
 	int		x;
 	int		y;
+	int red;
+	int green;
+	int blue;
 }			t_info_texture;
 
 #endif

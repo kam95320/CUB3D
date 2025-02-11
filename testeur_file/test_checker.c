@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:54:13 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/05 18:31:31 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:03:19 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ int	main(int argc, char *argv[])
 	t_minilib_window	mlx_data;
 	two_d_t				two_d;
 
-	// (void)argc;
-	//  (void)argv;
+	
 	if (argc != 2)
 	{
 		printf("Usage: %s <map_file>\n", argv[0]);
@@ -56,8 +55,6 @@ int	main(int argc, char *argv[])
 		printf("Memory map setup failed!\n");
 	printf("=== Début des tests check_is_valid ===\n");
 	run_test(argv[1], true);
-	// run_test("../good_cub/folder.cub", true);
-	// run_test("../good_cub/.cub", false);
 	printf("\n=== Fin des tests check_is_valid ===\n\n");
 	printf("=== Début des tests take_mem_map ===\n");
 	printf("Lines counted: %d\n", mlx_data.map_data.line_len);
