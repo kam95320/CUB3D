@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_open.c                                       :+:      :+:    :+:   */
+/*   initialize_mlx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 14:48:46 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/12 10:46:29 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/02/12 18:36:18 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/02/12 18:48:13 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
 
-bool	check_open(char *file)
+
+static void initialzation_mlx(t_minilib_window *data)
 {
-	int	fd;
-
-	fd = open(file, O_RDONLY);
-	printf("\n\n\ntest fd%d\n\n\n", fd);
-	if (fd == -1)
-	{
-		printf("DEBUG: Échec de l'ouverture de %s\n", file);
-		return (false);
-	}
-	close(fd);
-	return (true);
-}
+    data->mlx_connex = mlx_init;
+    if(!data->mlx_connex)
+        print_error("mlx initializtion error\n");
+    data->window  =  mlx_new_window;
+    if(!data->window)
+            print_error("mlx new_window error\n");
+    
+    
+        
+} 

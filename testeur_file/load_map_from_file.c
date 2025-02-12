@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 17:35:40 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/07 10:02:28 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:42:43 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	**load_map_from_file(const char *filename)
 {
-	FILE *file = fopen(filename, "r");
+	FILE *file = fopen(filename, "r");//sdsdf
 	if (!file)
 	{
 		print_error("Unable to open map file.");
@@ -26,7 +26,7 @@ char	**load_map_from_file(const char *filename)
 	if (!map)
 	{
 		print_error("Memory allocation failed.");
-		fclose(file);
+		fclose(file);//sdsdf
 		return (NULL);
 	}
 
@@ -37,13 +37,13 @@ char	**load_map_from_file(const char *filename)
 
 	while ((read = getline(&line, &len, file)) != -1)
 	{
-		line[strcspn(line, "\n")] = '\0';
-		map[i] = strdup(line);
+		line[strcspn(line, "\n")] = '\0'; //sdsdf
+		map[i] = strdup(line); //sdsdf
 		i++;
 	}
 
 	map[i] = NULL; 
-	fclose(file);
+	fclose(file); //sdsdf
 	free(line);
 	return (map);
 }

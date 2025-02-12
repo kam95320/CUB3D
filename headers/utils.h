@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/10 15:32:17 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:45:06 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+
 void	print_error(char *str);
 void	check_arg_init_mlx(int argc, char *argv[], t_minilib_window *mlx_data);
 void	data_initializ(t_minilib_window *mlx_data);

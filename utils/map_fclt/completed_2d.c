@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:21:54 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/11 18:30:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/12 17:35:54 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,74 @@ int	init_var(two_d_t *two_d, t_minilib_window *data)
 	return (0);
 }
 
-void	completed_2d(two_d_t *two_d, t_minilib_window *data)
+// void	completed_2d(two_d_t *two_d, t_minilib_window *data)
+// {
+// 	printf("pass completed_2d begin\n");
+// 	if (-1 == init_var(two_d, data))
+// 		return ;
+		
+// 	printf("two_d->line = %s\n", two_d->line);
+// 	while (two_d->line != NULL)
+// 	{
+// 		printf("pass completed_2d malloc\n");	
+// 		data->map_data.file[two_d->row] = ft_calloc(ft_strlen(two_d->line) + 1,
+// 				sizeof(char));
+// 		if (!data->map_data.file[two_d->row])
+// 		{
+// 			print_error("probleme with malloc competed_2d\n");
+// 			return (free_tab((void **)data->map_data.file));
+// 		}
+// 		while (two_d->line[two_d->i])
+// 				data->map_data.file[two_d->row][two_d->col++] = two_d->line[two_d->i++];
+// 		data->map_data.file[two_d->row++][two_d->col] = '\0';
+// 		two_d->col = 0;
+// 		two_d->i = 0;
+// 		two_d->line = get_next_line(data->map_data.fd);
+// 		free(two_d->line);
+// 		printf("two_d->line = %s after\n", two_d->line);
+
+// 	}
+// 	data->map_data.file[two_d->row] = NULL;
+// }
+
+#include<string.h>
+void completed_2d(two_d_t *two_d, t_minilib_window *data)
 {
-	if (!init_var(two_d, data))
-		return ;
-	while (two_d->line != NULL)
-	{
-		data->map_data.file[two_d->row] = ft_calloc(ft_strlen(two_d->line) + 1,
-				sizeof(char));
-		if (!data->map_data.file[two_d->row])
-		{
-			print_error("probleme with malloc competed_2d\n");
-			return (free_tab((void **)data->map_data.file));
-		}
-		while (two_d->line[two_d->i])
-				data->map_data.file[two_d->row][two_d->col++] = two_d->line[two_d->i++];
-		data->map_data.file[two_d->row++][two_d->col] = '\0';
-		two_d->col = 0;
-		two_d->i = 0;
-		two_d->line = get_next_line(data->map_data.fd);
-		free(two_d->line);
-	}
-	data->map_data.file[two_d->row] = NULL;
+    printf("pass completed_2d begin\n");
+
+    if (-1 == init_var(two_d, data))
+        return;
+
+    printf("two_d->line = %s\n", two_d->line);
+    
+    while (1)
+    {
+        char *tmp_line = get_next_line(data->map_data.fd);
+        if (!tmp_line) 
+            break;
+
+        two_d->line = tmp_line;
+        printf("two_d->line = %s\n", two_d->line);
+
+        if (two_d->row >= data->map_data.line_len)
+        {
+            print_error("Erreur : Dépassement de mémoire dans completed_2d\n");
+            break;
+        }
+
+        data->map_data.file[two_d->row] = ft_calloc(ft_strlen(two_d->line) + 1, sizeof(char));
+        if (!data->map_data.file[two_d->row])
+        {
+            print_error("Problème avec malloc dans completed_2d\n");
+            free_tab((void **)data->map_data.file);
+            break;
+        }
+
+        ft_strlcpy(data->map_data.file[two_d->row], two_d->line, data->map_data.line_len);
+        free(two_d->line); 
+
+        two_d->row++;
+    }
+    
+    data->map_data.file[two_d->row] = NULL; 
 }

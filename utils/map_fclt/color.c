@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/11 17:59:32 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/12 17:39:25 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,23 @@ bool	color(t_info_texture *txt, char *mp, char ltr)
 {
 	if (ltr == 'C' || ltr == 'F')
 	{
-		if (ltr == 'C')
+		if (ltr == 'C' && !txt->ceiling)
+		{
+			printf("ltr =  %c\n", ltr);
 			txt->ceiling = rgb(mp + 2);
-		if (ltr == 'F')
+			printf("DEBUG: txt->ceiling assigned: %p -> [%d, %d, %d]\n",
+				(void *)txt->ceiling, txt->ceiling ? txt->ceiling[0] : -1,
+				txt->ceiling ? txt->ceiling[1] : -1,
+				txt->ceiling ? txt->ceiling[2] : -1);
+		}
+		if (ltr == 'F' && !txt->floor)
+		{
+			printf("ltr =  %c\n", ltr);
 			txt->floor = rgb(mp + 2);
+			printf("DEBUG: txt->floor assigned: %p -> [%d, %d, %d]\n",
+				(void *)txt->floor, txt->floor[0], txt->floor[1],
+				txt->floor[2]);
+		}
 		if (!txt->ceiling && !txt->floor)
 		{
 			print_error("ERROR: Ceiling or floor RGB values are not set.\n");
