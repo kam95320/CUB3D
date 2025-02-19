@@ -48,6 +48,7 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/mlx_initializaton/initialize_mlx.c\
 					utils/mlx_initializaton/init_img_textures.c\
 					utils/mlx_initializaton/texture_convert.c\
+					utils/mlx_initializaton/init_img_textures.c\
 					utils/main.c
 
 
