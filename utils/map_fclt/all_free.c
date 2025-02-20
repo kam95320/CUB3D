@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:49:22 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/30 18:12:39 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:18:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,12 @@ void	free_mp(t_map *map_data)
 	}
 }
 
-// void	free_struct(t_minilib_window *data, char *str)
-// {
-// 	if (str == "map_data")
-// 		free_map(&data->map_data);
-// 	if (str == "player_data")
-// 		free_player(&data->player_info);
-// 	if (str == "texture_info")
-// 		free_texture_info(&data->texture_info);
-// 	if (str == "minimap")
-// 		free_minimap(&data->minimap_info);
-// }
+void  all_free(t_minilib_window *data)
+{
+	if(data->text)
+			free_tab((void **)data -> text);
+	if(data->pix_mem_texture)
+			free_tab((void **)data->pix_mem_texture);
+	free_txt(&data->texture_info);
+	free_mp(&data->map_data);
+}

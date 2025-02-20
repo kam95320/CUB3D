@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/12 17:39:25 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:46:12 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ bool	color(t_info_texture *txt, char *mp, char ltr)
 	{
 		if (ltr == 'C' && !txt->ceiling)
 		{
-			printf("ltr =  %c\n", ltr);
 			txt->ceiling = rgb(mp + 2);
 			printf("DEBUG: txt->ceiling assigned: %p -> [%d, %d, %d]\n",
 				(void *)txt->ceiling, txt->ceiling ? txt->ceiling[0] : -1,

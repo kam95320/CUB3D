@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:51:11 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/19 17:17:25 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:09:08 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*texture_convert(t_minilib_window *data, char *txt_ph)
 	int			*buff_pix;
 	int			y;
 	int			x;
-
+	initialzation_txt(data, &m_img,  txt_ph);
 	buff_pix = ft_calloc(1, sizeof(int) * (data->texture_info.texture_size
 				* data->texture_info.texture_size));
 	y = 0;

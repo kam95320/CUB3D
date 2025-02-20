@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/18 15:18:58 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:44:36 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,4 @@ int	main(int argc, char *argv[])
 	init_var_pl_e_w(&mlx_data.player_info);
 	initialzation_mlx(&mlx_data);
 	init_img_txt_textures(&mlx_data);
-	
-	
 }

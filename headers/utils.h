@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/19 17:23:15 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:09:16 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,9 @@ void	initialzation_mlx(t_minilib_window *data);
 int		*texture_convert(t_minilib_window *data, char *txt_ph);
 void	init_direct(t_minilib_window *mlx_data);
 void	init_img_txt_textures(t_minilib_window *mlx_data);
+void	initialzation_txt(t_minilib_window *data, t_manip_img *m_img,
+			char *txt_ph);
+void	mlx_exit(t_minilib_window *data);
+void  all_free(t_minilib_window *data);
 
 #endif // UTILS_H
