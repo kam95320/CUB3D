@@ -5,7 +5,7 @@ NAME			=	cub3D
 CC				=	gcc
 CFLAGS			=	-g3 -Wall -Werror -Wextra
 LDFLAGS			=	-L $(LIBFT_PATH) -lft
-MLXFLAGS		=	-lX11 -lXext -L $(MLX_PATH) -lmlx -lm
+MLXFLAGS		=	-lX11 -lXext -L $(MLX_PATH) -lmlx -lm -lbsd
 
 # Libft
 LIBFT_PATH		=	./include/libft/

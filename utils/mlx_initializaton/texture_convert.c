@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:51:11 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/20 14:09:08 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:13:47 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	*texture_convert(t_minilib_window *data, char *txt_ph)
 {
+	printf("deb texture_convert\n");
 	t_manip_img	m_img;
 	int			*buff_pix;
 	int			y;
@@ -34,5 +35,6 @@ int	*texture_convert(t_minilib_window *data, char *txt_ph)
 		y += 1;
 	}
 	mlx_destroy_image(data->mlx_connex, m_img.ptr_img);
+	printf("end texture_convert\n");
 	return (buff_pix);
 }

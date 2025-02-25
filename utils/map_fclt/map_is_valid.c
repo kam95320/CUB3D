@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/12 17:39:57 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:15:39 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 	int	j;
 
 	i = 0;
-	printf("map_is_valid | mp[i] = %s\n", *mp);
 	while (mp[i])
 	{
 		j = 0;
+		printf("map_is_valid | mp[i] = %s\n", *mp);
 		while (mp[i][j])
 		{
 			skip_space(mp, i, j);
