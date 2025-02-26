@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/20 17:09:16 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:15:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "image.h"
 # include "minilib_window.h"
 # include "player.h"
+// # include "raycasting.h"
 # include "two_d.h"
 # include <stdbool.h>
 # include <stdio.h>
@@ -54,6 +55,11 @@ void	init_img_txt_textures(t_minilib_window *mlx_data);
 void	initialzation_txt(t_minilib_window *data, t_manip_img *m_img,
 			char *txt_ph);
 void	mlx_exit(t_minilib_window *data);
-void  all_free(t_minilib_window *data);
+void	all_free(t_minilib_window *data);
+
+// void	raycast(t_minilib_window *data);
+// void	setpixel(t_minilib_window *data, int x, int y, int color, t_map *map);
+// void	aff_map(t_minilib_window *cub);
+// void	setblock(t_minilib_window *cub, int x, int y, int color);
 
 #endif // UTILS_H

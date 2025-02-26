@@ -50,6 +50,10 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/mlx_initializaton/texture_convert.c\
 					utils/mlx_initializaton/initialzation_txt.c\
 					utils/mlx_initializaton/mlx_exit.c\
+					utils/raycast/racasting.c\
+					utils/raycast/affmap.c\
+					utils/raycast/setblock.c\
+					utils/raycast/setpixel.c\
 					utils/main.c
 
 

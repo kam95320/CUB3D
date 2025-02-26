@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.h                                              :+:      :+:    :+:   */
+/*   racasting.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 15:17:59 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/26 16:07:24 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/02/25 17:00:54 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/02/26 16:33:34 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_H
-# define MAP_H
-typedef struct s_map
+#include "../../headers/utils.h"
+
+void	raycast(t_minilib_window *data)
 {
-	char	*path;
-	char	**file;
-	int		fd;
-	int		line_len;
-	int		height;
-	int		width;
-	int		map_ending;
-	int		zoom;
+	int	y;
+	int	x;
 
-}			t_map;
-
-typedef struct s_valid
-{
-	int		i;
-	int		j;
-
-}			t_valid;
-
-#endif // MAP_H
+	y = -1;
+	// reset_cub(cub);
+	while (++y < data->size_weight)
+	{
+		x = -1;
+		while (++x < data->size_width)
+			setpixel(data, x, y, 0x8895B3, &data->map_data);
+	}
+	aff_map(data);
+	aff_cam(data);
+}

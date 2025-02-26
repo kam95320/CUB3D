@@ -6,13 +6,19 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/25 15:25:44 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:58:21 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/two_d.h"
 #include "../headers/free.h"
 #include "../headers/utils.h"
+
+static void mlx_ftclt(t_minilib_window *mlx_data)
+{
+	mlx_loop(mlx_data->mlx_connex);
+	// mlx_loop_hook(mlx_data.mlx_connex, , &mlx_data);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -34,7 +40,9 @@ int	main(int argc, char *argv[])
 	init_var_pl_e_w(&mlx_data.player_info);
 	initialzation_mlx(&mlx_data);
 	init_img_txt_textures(&mlx_data);
+	raycast(&mlx_data);
 	mlx_loop(mlx_data.mlx_connex);
+	mlx_ftclt(&mlx_data);
 	// mlx_loop_hook(mlx_data.mlx_connex, , &mlx_data);
 	printf("pass end of main\n");
 	return (0);

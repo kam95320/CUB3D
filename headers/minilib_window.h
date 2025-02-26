@@ -6,20 +6,21 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/01/04 15:25:54 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:09:51 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#ifndef MINILIB_WINDOW_H
+# define MINILIB_WINDOW_H
 
 # include "image.h"
+# include "map.h"
 # include "minimap.h"
 # include "player.h"
 # include "raycasting.h"
-#include "map.h"
 # define WD_SIZE_WIDTH 640
 # define WD_WIN_HEIGHT 480
+
 typedef struct s_minilib_window
 {
 	void			*mlx_connex;
@@ -31,8 +32,9 @@ typedef struct s_minilib_window
 	int				**text;
 	t_map			map_data;
 	t_player		player_info;
-	t_raycasting	raycating_info;
+	t_raycasting	ray;
 	t_info_texture	texture_info;
+	t_manip_img		img;
 	t_minimap		minimap_info;
 
 }					t_minilib_window;
