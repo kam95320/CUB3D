@@ -3,7 +3,7 @@ NAME			=	cub3D
 
 # Compiler
 CC				=	gcc
-CFLAGS			=	-g3 -Wall -Werror -Wextra
+CFLAGS			=	-g3 -Wall -Werror -Wextra -g
 LDFLAGS			=	-L $(LIBFT_PATH) -lft
 MLXFLAGS		=	-lX11 -lXext -L $(MLX_PATH) -lmlx -lm -lbsd
 
@@ -52,8 +52,10 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/mlx_initializaton/mlx_exit.c\
 					utils/raycast/racasting.c\
 					utils/raycast/affmap.c\
+					utils/raycast/aff_cam.c\
 					utils/raycast/setblock.c\
 					utils/raycast/setpixel.c\
+					all_print_variable/all_print.c\
 					utils/main.c
 
 

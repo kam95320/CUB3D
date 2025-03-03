@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 14:48:46 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/12 10:46:29 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:34:48 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ bool	check_open(char *file)
 	int	fd;
 
 	fd = open(file, O_RDONLY);
-	printf("\n\n\ntest fd%d\n\n\n", fd);
 	if (fd == -1)
 	{
-		printf("DEBUG: Échec de l'ouverture de %s\n", file);
+		print_error("DEBUG: Échec de l'ouverture de %s\n");
 		return (false);
 	}
 	close(fd);

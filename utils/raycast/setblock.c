@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:48:06 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/26 16:34:05 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:31:42 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	setblock(t_minilib_window *cub, int x, int y, int color)
 		xblock = cub->map_data.width / 2 + (x * zoom);
 		save_x = xblock;
 		while (--xblock > save_x - (2 * x * zoom))
-			setpixel(cub->map_data, xblock, yblock, color, &cub->map_data);
+			setpixel(cub, xblock, yblock, color, &cub->map_data);
 	}
 }

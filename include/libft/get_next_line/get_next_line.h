@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:25:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2024/05/31 21:24:13 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:48:35 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
+#  define BUFFER_SIZE 50
 # endif
 
 # include <fcntl.h>

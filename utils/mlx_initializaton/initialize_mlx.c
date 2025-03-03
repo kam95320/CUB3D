@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:36:18 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/21 15:37:38 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:35:57 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	initialzation_mlx(t_minilib_window *data)
 {
-	printf("deb in initialzation_mlx\n");
 	data->mlx_connex = mlx_init();
 	if (!data->mlx_connex)
 		print_error("mlx initializtion error\n");
@@ -25,5 +24,4 @@ void	initialzation_mlx(t_minilib_window *data)
 		print_error("mlx new_window error\n");
 		return ;
 	}
-	printf("end in initialzation_mlx\n");
 }

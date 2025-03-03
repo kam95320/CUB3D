@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:06:10 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/12 10:07:53 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:43:03 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 bool	vrb_txt_valid(t_info_texture *txt)
 {
-	printf("DEBUG: Freeing txt->ceiling = %p | txt->floor = %p\n", 
-    (void *)txt->ceiling, (void *)txt->floor);
-
 	if (!txt->ceiling && !txt->floor)
 	{
 		print_error("txt->ceiling or txt->floor empty\n");

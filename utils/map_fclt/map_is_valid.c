@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/21 17:15:39 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 13:47:40 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 	while (mp[i])
 	{
 		j = 0;
-		printf("map_is_valid | mp[i] = %s\n", *mp);
+		
 		while (mp[i][j])
 		{
 			skip_space(mp, i, j);
@@ -33,7 +33,7 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 		}
 		i++;
 	}
-	printf("ceiling =  %ls\n", data_mlx->texture_info.ceiling);
+	
 	if (vrb_txt_valid(&data_mlx->texture_info) == false)
 	{
 		free_txt(&data_mlx->texture_info);
@@ -41,3 +41,4 @@ bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
 	}
 	return (true);
 }
+

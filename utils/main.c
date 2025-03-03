@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/25 16:58:21 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:51:01 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 #include "../headers/free.h"
 #include "../headers/utils.h"
 
-static void mlx_ftclt(t_minilib_window *mlx_data)
+void mlx_ftclt(t_minilib_window mlx_data)
 {
-	mlx_loop(mlx_data->mlx_connex);
+	mlx_loop(mlx_data.mlx_connex);
 	// mlx_loop_hook(mlx_data.mlx_connex, , &mlx_data);
 }
-
+void all_print_info(t_minilib_window mlx_data, two_d_t two_d)
+{
+	print_minilib_window_info(&mlx_data);
+	print_texture_info(&mlx_data.texture_info);
+	print_map_info(&mlx_data.map_data);
+	print_manip_img_info(&mlx_data.img);
+	print_two_d_info(&two_d);
+}
 int	main(int argc, char *argv[])
 {
 	static t_minilib_window	mlx_data = {0};
@@ -40,10 +47,9 @@ int	main(int argc, char *argv[])
 	init_var_pl_e_w(&mlx_data.player_info);
 	initialzation_mlx(&mlx_data);
 	init_img_txt_textures(&mlx_data);
-	raycast(&mlx_data);
-	mlx_loop(mlx_data.mlx_connex);
-	mlx_ftclt(&mlx_data);
-	// mlx_loop_hook(mlx_data.mlx_connex, , &mlx_data);
-	printf("pass end of main\n");
+	all_print_info(mlx_data, two_d);
+	
+	// raycast(&mlx_data);
+	mlx_ftclt(mlx_data);
 	return (0);
 }

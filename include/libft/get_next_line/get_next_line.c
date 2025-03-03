@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:24:59 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/21 16:47:59 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:29:35 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,5 @@ char	*get_next_line(int fd)
 	if (!get)
 		return (NULL);
 	next = ft_one_line(get);
-	printf("get_next_line  line get  =  %s\n",  get);
 	return (get);
 }

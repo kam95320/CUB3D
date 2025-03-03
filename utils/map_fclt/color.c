@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/20 16:46:12 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:30:56 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,18 +87,10 @@ bool	color(t_info_texture *txt, char *mp, char ltr)
 		if (ltr == 'C' && !txt->ceiling)
 		{
 			txt->ceiling = rgb(mp + 2);
-			printf("DEBUG: txt->ceiling assigned: %p -> [%d, %d, %d]\n",
-				(void *)txt->ceiling, txt->ceiling ? txt->ceiling[0] : -1,
-				txt->ceiling ? txt->ceiling[1] : -1,
-				txt->ceiling ? txt->ceiling[2] : -1);
 		}
 		if (ltr == 'F' && !txt->floor)
 		{
-			printf("ltr =  %c\n", ltr);
 			txt->floor = rgb(mp + 2);
-			printf("DEBUG: txt->floor assigned: %p -> [%d, %d, %d]\n",
-				(void *)txt->floor, txt->floor[0], txt->floor[1],
-				txt->floor[2]);
 		}
 		if (!txt->ceiling && !txt->floor)
 		{

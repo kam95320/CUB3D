@@ -6,11 +6,13 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/21 17:13:30 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 13:54:48 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
+#include <assert.h>
+#include <string.h>
 
 static int	txt_cond(char **mp, int i, int j)
 {
@@ -34,6 +36,7 @@ static char	*pth_txt(char *mp, int j)
 	int		len;
 	char	*str;
 
+	str = NULL;
 	j = manage_txt_space(mp, j, 1);
 	len = manage_txt_space(mp, j, 2) - j;
 	if (len <= 0)
@@ -48,7 +51,6 @@ static char	*pth_txt(char *mp, int j)
 
 static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
 {
-	printf("t_c = %d\n", t_c);
 	if (t_c == 1 && !txt->direct_north)
 		txt->direct_north = pth_txt(mp, j + 2);
 	if (t_c == 2 && !txt->direct_south)
@@ -57,12 +59,6 @@ static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
 		txt->direct_west = pth_txt(mp, j + 2);
 	if (t_c == 4 && !txt->direct_east)
 		txt->direct_east = pth_txt(mp, j + 2);
-	printf("\n");
-	printf("vl direct direct_north = %s\n", txt->direct_north);
-	printf("\n");
-	printf("vl direct direct_south = %s\n", txt->direct_south);
-	printf("vl direct direct_west = %s\n", txt->direct_west);
-	printf("vl direct direct_east = %s\n\n", txt->direct_east);
 }
 
 char	tk_ltr_f_c(char *ltr)

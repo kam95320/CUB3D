@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/26 17:15:28 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:17:22 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 # include "image.h"
 # include "minilib_window.h"
 # include "player.h"
-// # include "raycasting.h"
+# include "raycasting.h"
 # include "two_d.h"
+#include "all_print.h"
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
+typedef  struct s_minilib_window t_minilib_window;
 void	print_error(char *str);
 void	check_arg_init_mlx(int argc, char *argv[], t_minilib_window *mlx_data);
 void	data_initializ(t_minilib_window *mlx_data);
