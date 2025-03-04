@@ -6,13 +6,13 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:51:11 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/03 14:38:47 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:03:46 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-int	*texture_convert(t_minilib_window *data, char *txt_ph)
+int  *texture_convert(t_minilib_window *data, char *txt_ph)
 {
 	t_manip_img	m_img;
 	int			*buff_pix;
@@ -33,6 +33,8 @@ int	*texture_convert(t_minilib_window *data, char *txt_ph)
 		}
 		y += 1;
 	}
-	mlx_destroy_image(data->mlx_connex, m_img.ptr_img);
+	//mlx_destroy_image(data->mlx_connex, m_img.ptr_img);
+	data->img.ptr_img = m_img.ptr_img;
+	data->img.pixel_img  =  m_img.pixel_img;
 	return (buff_pix);
 }

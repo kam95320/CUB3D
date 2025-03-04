@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:12:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/03 15:57:12 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:07:30 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ void	initialzation_txt(t_minilib_window *data, t_manip_img *m_img,
 
 	m_img->ptr_img = mlx_xpm_file_to_image(data->mlx_connex, txt_ph,
 			&data->texture_info.texture_size, &data->texture_info.texture_size);
-	printf("\n\n");
-	printf("ptr->img in  function initialization = %p\n", (void *)m_img->ptr_img);
 	if (m_img->ptr_img == NULL)
 	{
 		print_error("problem with ptr_img\n");
