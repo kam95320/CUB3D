@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:49:22 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/20 17:18:07 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:27:15 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	free_mlx(t_minilib_window *data)
 		data->mlx_connex = NULL;
 		free(data->window);
 		data->window = NULL;
-		if (data->pix_mem_texture)
+		if (data->img.pix_mem_texture)
 		{
-			free_tab((void **)data->pix_mem_texture);
-			data->pix_mem_texture = NULL;
+			free_tab((void **)data->img.pix_mem_texture);
+			data->img.pix_mem_texture = NULL;
 		}
 		if (data->text)
 		{
@@ -74,8 +74,8 @@ void  all_free(t_minilib_window *data)
 {
 	if(data->text)
 			free_tab((void **)data -> text);
-	if(data->pix_mem_texture)
-			free_tab((void **)data->pix_mem_texture);
+	if(data->img.pix_mem_texture)
+			free_tab((void **)data->img.pix_mem_texture);
 	free_txt(&data->texture_info);
 	free_mp(&data->map_data);
 }

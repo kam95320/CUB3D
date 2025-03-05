@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:42:44 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/04 14:01:39 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:53:14 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@
 
 typedef struct s_info_texture	t_info_texture;
 typedef struct s_minilib_window	t_minilib_window;
-typedef  struct s_map			t_map;
-typedef struct s_manip_img 		t_manip_img;
+typedef struct s_map			t_map;
+typedef struct s_manip_img		t_manip_img;
 typedef struct s_player			t_player;
-typedef struct	two_d_s			two_d_t;
-
-
+typedef struct two_d_s			two_d_t;
 
 void							print_texture_info(t_info_texture *texture);
 void							print_data_strcut(t_minilib_window *data,
@@ -37,4 +35,6 @@ void							print_map_info(t_map *map);
 void							print_two_d_info(two_d_t *two_d);
 void							print_player_info(t_player *player);
 void							print_manip_img_info(t_manip_img *img);
+void							size_is_valide(t_manip_img *img,
+									t_minilib_window *data);
 #endif // ALL_PRINT_H

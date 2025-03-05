@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/26 17:09:51 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:23:48 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_minilib_window
 	int				size_weight;
 	int				size_width;
 	// char **mini_map;  maybe
-	int				**pix_mem_texture;
 	int				**text;
 	t_map			map_data;
 	t_player		player_info;

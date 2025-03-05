@@ -57,6 +57,7 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/raycast/setpixel.c\
 					all_print_variable/all_print.c\
 					utils/map_fclt/get_map_size.c\
+					utils/initialization/initialization_texture.c\
 					utils/main.c
 
 

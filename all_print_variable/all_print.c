@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/04 13:59:35 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:53:06 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	print_minilib_window_info(t_minilib_window *window)
 	printf("Window Pointer: %p\n", window->window);
 	printf("Size Weight: %d\n", window->size_weight);
 	printf("Size Width:  %d\n\n", window->size_width);
-	printf("Pixel Memory Texture Pointer: %p\n", window->pix_mem_texture);
 	printf("Text Pointer: %p\n\n", window->text);
 	printf("\n----------------------------\n");
 }
@@ -86,22 +85,40 @@ void	print_two_d_info(two_d_t *two_d)
 	printf("Column: %zu\n", two_d->col);
 }
 
-void print_manip_img_info(t_manip_img *img)
+void	print_manip_img_info(t_manip_img *img)
 {
-    if (!img)
-        return;
-
-    printf("\nImage Manipulation Information:\n");
-    printf("-------------------------------\n");
-
-    printf("Image Pointer: %p\n", img->ptr_img);
-    printf("Pixel Image Pointer: %p\n", img->pixel_img);
-    printf("Pixel Image Value: %d\n", img->pix_img);
-    printf("Size of Line: %d\n", img->size_of_line);
-    printf("Oct Indian: %d\n", img->oct_indian);
+	if (!img)
+		return ;
+	printf("\nImage Manipulation Information:\n");
+	printf("-------------------------------\n");
+	printf("Image Pointer: %p\n", img->ptr_img);
+	printf("Pixel Image Pointer: %p\n", img->pixel_img);
+	printf("Pixel Image Value: %d\n", img->pix_img);
+	printf("Pixel Memory Texture Pointer: %p\n", img->pix_mem_texture);
+	printf("Size of Line: %d\n", img->size_of_line);
+	printf("Oct Indian: %d\n", img->oct_indian);
 }
-
-
+void	size_is_valide(t_manip_img *img, t_minilib_window *data)
+{
+	printf("Taille des textures -> Hauteur: %d, Largeur: %d\n",
+		data->size_weight, data->size_width);
+	printf("Test : écriture et lecture de la mémoire allouée...\n");
+	for (int i = 0; i < data->size_weight; i++)
+	{
+		for (int j = 0; j < data->size_width; j++)
+		{
+			img->pix_mem_texture[i][j] = (i * j) % 255;
+			// Écriture d'une valeur
+			if (img->pix_mem_texture[i][j] != (i * j) % 255)
+			// Lecture et vérification
+			{
+				printf("ERREUR de lecture à [%d][%d]!\n", i, j);
+			}
+		}
+	}
+	printf("✅ Accès mémoire réussi, pas d'erreur d'écriture/lecture !\n");
+	printf("pass in initialization_texture\n");
+}
 // void print_player_info(t_player *player)
 // {
 //     if (!player)

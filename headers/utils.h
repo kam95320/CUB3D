@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/04 13:56:50 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/05 17:28:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void							initialzation_txt(t_minilib_window *data,
 void							mlx_exit(t_minilib_window *data);
 void							all_free(t_minilib_window *data);
 void							get_map_size(t_map *map, char **file);
+void							initialization_texture(t_manip_img *img,
+									t_minilib_window *data);
 
 // void	raycast(t_minilib_window *data);
 // void	setpixel(t_minilib_window *data, int x, int y, int color, t_map *map);
