@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/05 18:53:06 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:33:03 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ void	size_is_valide(t_manip_img *img, t_minilib_window *data)
 	printf("✅ Accès mémoire réussi, pas d'erreur d'écriture/lecture !\n");
 	printf("pass in initialization_texture\n");
 }
+
+
 // void print_player_info(t_player *player)
 // {
 //     if (!player)
@@ -139,3 +141,55 @@ void	size_is_valide(t_manip_img *img, t_minilib_window *data)
 // //     printf("Gesture (X, Y): (%d, %d)\n", player->gesture_x,
 // 	player->gesture_y);
 // // }
+
+void	test_put_img(t_minilib_window *mlx_data)
+{
+	int	i;
+
+	printf("📌 Vérification des pixels chargés :\n");
+	for (i = 0; i < 10; i++)
+		printf("Pixel %d : %X\n", i, mlx_data->img.pixel_img[i]);
+	for (int y = 200; y < 280; y++)
+	{
+		for (int x = 220; x < 300; x++)
+		{
+			mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, x, y,
+				0xFFFFFF);
+		}
+	}
+}
+
+void draw_map(t_minilib_window *mlx_data)
+{
+    int tile_size = 10;
+    for (int y = 0; y < mlx_data->map_data.height; y++)
+    {
+        for (int x = 0; x < mlx_data->map_data.width; x++)
+        {
+            if (mlx_data->map_data.file[y][x] == '1')
+            {
+                for (int i = 0; i < tile_size; i++)
+                {
+                    for (int j = 0; j < tile_size; j++)
+                    {
+                        mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, 
+                                      x * tile_size + j, y * tile_size + i, 0xFFFFFF);
+                    }
+                }
+            }
+        }
+    }
+}
+
+void draw_wall_texture(t_minilib_window *mlx_data, int x)
+{
+    for (int y = 100; y < 300; y++) // Hauteur du mur
+    {
+        int texture_x = x % 64; // On boucle sur la largeur de la texture
+        int texture_y = y % 64; // On boucle sur la hauteur de la texture
+        int color = mlx_data->img.pixel_img[texture_y * 64 + texture_x]; // Pixel de la texture
+
+        mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, x, y, color);
+    }
+}
+

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/03 14:30:56 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:31:32 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,12 @@ bool	color(t_info_texture *txt, char *mp, char ltr)
 		if (ltr == 'C' && !txt->ceiling)
 		{
 			txt->ceiling = rgb(mp + 2);
+			hx_txt(txt,  ltr, txt->ceiling);
 		}
 		if (ltr == 'F' && !txt->floor)
 		{
 			txt->floor = rgb(mp + 2);
+			hx_txt(txt,  ltr, txt->floor);
 		}
 		if (!txt->ceiling && !txt->floor)
 		{

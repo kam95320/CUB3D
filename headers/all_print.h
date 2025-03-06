@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:42:44 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/05 18:53:14 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:33:23 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ void							print_player_info(t_player *player);
 void							print_manip_img_info(t_manip_img *img);
 void							size_is_valide(t_manip_img *img,
 									t_minilib_window *data);
+void							test_put_img(t_minilib_window *mlx_data);
+void							draw_map(t_minilib_window *mlx_data);
+void							draw_wall_texture(t_minilib_window *mlx_data,
+									int x);
 #endif // ALL_PRINT_H
