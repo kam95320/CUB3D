@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/06 16:36:26 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/07 11:01:05 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ void	mlx_ftclt(t_minilib_window mlx_data)
 }
 void	all_print_info(t_minilib_window mlx_data, two_d_t two_d)
 {
+	t_player player;
 	print_minilib_window_info(&mlx_data);
 	print_texture_info(&mlx_data.texture_info);
 	print_map_info(&mlx_data.map_data);
 	print_manip_img_info(&mlx_data.img);
 	print_two_d_info(&two_d);
+	print_player_info(&player);
 	size_is_valide(&mlx_data.img, &mlx_data);
 	// test_put_img(&mlx_data);
-	draw_map(&mlx_data);
+	// draw_map(&mlx_data);
 	draw_wall_texture(&mlx_data, 320);
 }
 int	main(int argc, char *argv[])

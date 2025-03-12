@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 13:37:40 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/04 14:06:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/12 19:06:31 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,4 @@ void	get_map_size(t_map *map, char **file)
 	}
 	map->height = i;
 	map->width = max_widht;
-    printf("\n");
-    printf("----------get_map_size----------\n");
-	printf("widht = %d,  height =  %d\n", map->width, map->height);
-    printf("----------get_map_size----------\n");
 }

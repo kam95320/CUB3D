@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/05 16:23:48 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/11 14:00:20 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_minilib_window
 	t_map			map_data;
 	t_player		player_info;
 	t_raycasting	ray;
+	t_minimap		mn_mp;
 	t_info_texture	texture_info;
 	t_manip_img		img;
 	t_minimap		minimap_info;

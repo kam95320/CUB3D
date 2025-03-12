@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/06 16:33:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/07 11:03:38 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	print_manip_img_info(t_manip_img *img)
 }
 void	size_is_valide(t_manip_img *img, t_minilib_window *data)
 {
+	printf("----------text size validity----------\n");
 	printf("Taille des textures -> Hauteur: %d, Largeur: %d\n",
 		data->size_weight, data->size_width);
 	printf("Test : écriture et lecture de la mémoire allouée...\n");
@@ -121,26 +122,26 @@ void	size_is_valide(t_manip_img *img, t_minilib_window *data)
 }
 
 
-// void print_player_info(t_player *player)
-// {
-//     if (!player)
-//         return ;
+void print_player_info(t_player *player)
+{
+    if (!player)
+        return ;
 
-//     printf("\nPlayer Information:\n");
-//     printf("--------------------\n");
+    printf("\nPlayer Information:\n");
+    printf("--------------------\n");
 
-//     printf("Direction: %c\n", player->direction);
-//     printf("Rotation: %d\n", player->rotation);
-//     printf("Player Move: %d\n\n", player->player_move);
+    printf("Direction: %c\n", player->direction);
+    printf("Rotation: %d\n", player->rotation);
+    printf("Player Move: %d\n\n", player->player_move);
 
-// //     printf("Floating Player Position (X, Y): (%.6f, %.6f)\n",
-// 	player->fl_pl_pos_x, player->fl_pl_pos_y);
-// //     printf("Camera Position (X, Y): (%.6f, %.6f)\n\n", player->cam_pos_x,
-// 	player->cam_pos_y);
+    printf("Floating Player Position (X, Y): (%.6f, %.6f)\n",
+	player->fl_pl_pos_x, player->fl_pl_pos_y);
+    printf("Camera Position (X, Y): (%.6f, %.6f)\n\n", player->cam_pos_x,
+	player->cam_pos_y);
 
-// //     printf("Gesture (X, Y): (%d, %d)\n", player->gesture_x,
-// 	player->gesture_y);
-// // }
+    printf("Gesture (X, Y): (%d, %d)\n\n", player->gesture_x,
+	player->gesture_y);
+}
 
 void	test_put_img(t_minilib_window *mlx_data)
 {
@@ -192,4 +193,45 @@ void draw_wall_texture(t_minilib_window *mlx_data, int x)
         mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, x, y, color);
     }
 }
+
+void draw_wall_texture_a(t_minilib_window *mlx_data, int screen_x, int screen_y)
+{
+    int tile_size = 64;
+
+    for (int y = 0; y < tile_size; y++) // Boucle sur la hauteur du mur
+    {
+        for (int x = 0; x < tile_size; x++) // Boucle sur la largeur
+        {
+            int texture_x = x % 64;
+            int texture_y = y % 64;
+            
+            int color;
+            
+            // Sélectionner la texture en fonction de la direction
+            if (screen_x < mlx_data->size_width / 2) // Exemple : Mur à gauche
+                color = mlx_data->text[0][texture_y * 64 + texture_x]; // `NORTH`
+            else // Exemple : Mur à droite
+                color = mlx_data->text[1][texture_y * 64 + texture_x]; // `SOUTH`
+            
+            mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, screen_x + x, screen_y + y, color);
+        }
+    }
+}
+
+
+void draw_map_with_textures(t_minilib_window *mlx_data)
+{
+    int tile_size = 64; // Taille d'un mur en pixels
+    for (int y = 0; y < mlx_data->map_data.height; y++)
+    {
+        for (int x = 0; x < mlx_data->map_data.width; x++)
+        {
+            if (mlx_data->map_data.file[y][x] == '1') // Si c'est un mur
+            {
+                draw_wall_texture_a(mlx_data, x * tile_size, y * tile_size);
+            }
+        }
+    }
+}
+
 

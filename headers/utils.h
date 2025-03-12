@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/06 15:30:42 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/12 18:24:59 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define PIXEL_SIZE 128
+# define VIEW_DIST 4
+# define COLOR_PLAYER 0xFF0000 // Rouge vif (Joueur)
+# define COLOR_WALL 0x2E2E2E   // Gris foncé (Murs)
+# define COLOR_FLOOR 0xA0D6B4  // Vert pâle (Sol)
+# define COLOR_SPACE 0x1C1C1C  // Noir/gris foncé (Espaces vides)
 
 typedef struct s_minilib_window	t_minilib_window;
 
