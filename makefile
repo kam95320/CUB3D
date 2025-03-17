@@ -53,9 +53,10 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					all_print_variable/all_print.c\
 					utils/map_fclt/get_map_size.c\
 					utils/initialization/initialization_texture.c\
-					utils/player/player_creation.c\
 					utils/map_world/map_create.c\
 					utils/map_world/draw_map.c\
+					utils/player/player.c\
+					utils/player/find_player.c\
 					utils/main.c
 
 

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/17 13:35:10 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:03:42 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int argc, char *argv[])
 {
 	static t_minilib_window	mlx_data = {0};
 	two_d_t					two_d;
+	t_player player;
 
 	player_data_initialization(&mlx_data.player_info);
 	texture_data_initialization(&mlx_data.texture_info);
@@ -54,8 +55,8 @@ int	main(int argc, char *argv[])
 	init_img_txt_textures(&mlx_data);
 	initialization_texture(&mlx_data.img, &mlx_data);
 	all_print_info(mlx_data, two_d);
-	printf("\n");
 	map_create(&mlx_data, mlx_data.map_data.file);
+	init_player(&player, mlx_data.map_data.file);
 	mlx_ftclt(mlx_data);
 	return (0);
 }

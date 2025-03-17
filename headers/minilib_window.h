@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/17 13:47:29 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:59:18 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include "raycasting.h"
 // # define WD_SIZE_WIDTH 640
 // # define WD_SIZE_HEIGHT 480
-// #define WD_SIZE_WIDTH 1280
-// #define WD_SIZE_HEIGHT 720
-#define WD_SIZE_WIDTH 3840
-#define WD_SIZE_HEIGHT 2160
+#define WD_SIZE_WIDTH 1280
+#define WD_SIZE_HEIGHT 720
+// #define WD_SIZE_WIDTH 3840
+// #define WD_SIZE_HEIGHT 2160
 
 #define  TILE_SIZE 34
 

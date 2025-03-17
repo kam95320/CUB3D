@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/13 18:18:10 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:24:47 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	print_minilib_window_info(t_minilib_window *window)
 
 void	print_map_info(t_map *map)
 {
+	char **D_map =  map->file;
 	if (!map)
 		return ;
 	printf("\nMap Information:\n");
@@ -71,6 +72,9 @@ void	print_map_info(t_map *map)
 	printf("Width: %d\n", map->width);
 	printf("Map Ending: %d\n", map->map_ending);
 	printf("Zoom: %d\n", map->zoom);
+	printf("\n🔍 Carte après parsing (sans texture et couleurs) :\n");
+	for (int i = 0; D_map[i]; i++)
+		printf("[%d] %s\n", i, D_map[i]);
 }
 
 void	print_two_d_info(two_d_t *two_d)
@@ -121,26 +125,21 @@ void	size_is_valide(t_manip_img *img, t_minilib_window *data)
 	printf("pass in initialization_texture\n");
 }
 
-
-void print_player_info(t_player *player)
+void	print_player_info(t_player *player)
 {
-    if (!player)
-        return ;
-
-    printf("\nPlayer Information:\n");
-    printf("--------------------\n");
-
-    printf("Direction: %c\n", player->direction);
-    printf("Rotation: %d\n", player->rotation);
-    printf("Player Move: %d\n\n", player->player_move);
-
-    printf("Floating Player Position (X, Y): (%.6f, %.6f)\n",
-	player->fl_pl_pos_x, player->fl_pl_pos_y);
-    printf("Camera Position (X, Y): (%.6f, %.6f)\n\n", player->cam_pos_x,
-	player->cam_pos_y);
-
-    printf("Gesture (X, Y): (%d, %d)\n\n", player->gesture_x,
-	player->gesture_y);
+	if (!player)
+		return ;
+	printf("\nPlayer Information:\n");
+	printf("--------------------\n");
+	printf("Direction: %c\n", player->direction);
+	printf("Rotation: %d\n", player->rotation);
+	printf("Player Move: %d\n\n", player->player_move);
+	printf("Floating Player Position (X, Y): (%.6f, %.6f)\n",
+		player->fl_pl_pos_x, player->fl_pl_pos_y);
+	printf("Camera Position (X, Y): (%.6f, %.6f)\n\n", player->cam_pos_x,
+		player->cam_pos_y);
+	printf("Gesture (X, Y): (%d, %d)\n\n", player->gesture_x,
+		player->gesture_y);
 }
 
 void	test_put_img(t_minilib_window *mlx_data)
@@ -159,8 +158,3 @@ void	test_put_img(t_minilib_window *mlx_data)
 		}
 	}
 }
-
-
-
-
-

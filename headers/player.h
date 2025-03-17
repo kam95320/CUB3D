@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:48:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/13 18:44:02 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:40:19 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ typedef struct s_player
 	double	cam_pos_x;
 	int		gesture_y;
 	int		gesture_x;
+
+	
 }			t_player;
-void player_creation( t_minilib_window *data);
+void init_player(t_player *player, char **map);
+void find_player(t_player *player, char **map);
+char **find_map_start(char **map);
 
 #endif // PLAYER_H

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/13 18:42:38 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:03:03 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define COLOR_SPACE 0x1C1C1C  // Noir/gris foncé (Espaces vides)
 
 typedef struct s_minilib_window	t_minilib_window;
+
 
 void							print_error(char *str);
 void							check_arg_init_mlx(int argc, char *argv[],
