@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/12 18:24:59 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/13 18:42:38 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+#include "draw_world.h"
 # define PIXEL_SIZE 128
 # define VIEW_DIST 4
 # define COLOR_PLAYER 0xFF0000 // Rouge vif (Joueur)
@@ -74,6 +75,8 @@ void							all_free(t_minilib_window *data);
 void							get_map_size(t_map *map, char **file);
 void							initialization_texture(t_manip_img *img,
 									t_minilib_window *data);
+
+void							restart_img(t_manip_img *img);
 
 // void	raycast(t_minilib_window *data);
 // void	setpixel(t_minilib_window *data, int x, int y, int color, t_map *map);

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:49:03 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/27 11:10:53 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/13 17:16:25 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,5 @@ typedef struct s_raycasting
 	float						y;
 
 }								t_raycasting;
-
-void							raycast(t_minilib_window *data);
-void							setpixel(t_minilib_window *data, int x, int y,
-									int color, t_map *map);
-void							aff_map(t_minilib_window *cub);
-void							setblock(t_minilib_window *cub, int x, int y,
-									int color);
-void							aff_cam(t_minilib_window *cub);
 
 #endif //  RAYCASTING_H

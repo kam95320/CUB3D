@@ -50,17 +50,12 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/mlx_initializaton/texture_convert.c\
 					utils/mlx_initializaton/initialzation_txt.c\
 					utils/mlx_initializaton/mlx_exit.c\
-					utils/raycast/racasting.c\
-					utils/raycast/affmap.c\
-					utils/raycast/aff_cam.c\
-					utils/raycast/setblock.c\
-					utils/raycast/setpixel.c\
 					all_print_variable/all_print.c\
 					utils/map_fclt/get_map_size.c\
 					utils/initialization/initialization_texture.c\
-					utils/minimap/gnr_minimap.c\
-					utils/minimap/minimap_gnr.c\
-					utils/minimap/valid_mini_mp.c\
+					utils/player/player_creation.c\
+					utils/map_world/map_create.c\
+					utils/map_world/draw_map.c\
 					utils/main.c
 
 

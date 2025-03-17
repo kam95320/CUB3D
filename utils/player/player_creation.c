@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_initializ.c                                   :+:      :+:    :+:   */
+/*   player_creation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 14:51:17 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/14 13:54:24 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/03/13 18:03:07 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/03/13 18:43:54 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-void	data_initializ(t_minilib_window *mlx_data)
-{
-	mlx_data->mlx_connex = NULL;
-	mlx_data->window = NULL;
-	mlx_data->size_weight = WD_SIZE_HEIGHT;
-	mlx_data->size_width = WD_SIZE_WIDTH;
-	mlx_data->img.pix_mem_texture = NULL;
-	mlx_data->text = NULL;
-}
+
+
+// void player_creation( t_minilib_window *data)
+// {
+//     draw_player(&data);
+    
+// }

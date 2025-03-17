@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/07 11:03:38 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/13 18:18:10 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,78 +160,7 @@ void	test_put_img(t_minilib_window *mlx_data)
 	}
 }
 
-void draw_map(t_minilib_window *mlx_data)
-{
-    int tile_size = 10;
-    for (int y = 0; y < mlx_data->map_data.height; y++)
-    {
-        for (int x = 0; x < mlx_data->map_data.width; x++)
-        {
-            if (mlx_data->map_data.file[y][x] == '1')
-            {
-                for (int i = 0; i < tile_size; i++)
-                {
-                    for (int j = 0; j < tile_size; j++)
-                    {
-                        mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, 
-                                      x * tile_size + j, y * tile_size + i, 0xFFFFFF);
-                    }
-                }
-            }
-        }
-    }
-}
-
-void draw_wall_texture(t_minilib_window *mlx_data, int x)
-{
-    for (int y = 100; y < 300; y++) // Hauteur du mur
-    {
-        int texture_x = x % 64; // On boucle sur la largeur de la texture
-        int texture_y = y % 64; // On boucle sur la hauteur de la texture
-        int color = mlx_data->img.pixel_img[texture_y * 64 + texture_x]; // Pixel de la texture
-
-        mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, x, y, color);
-    }
-}
-
-void draw_wall_texture_a(t_minilib_window *mlx_data, int screen_x, int screen_y)
-{
-    int tile_size = 64;
-
-    for (int y = 0; y < tile_size; y++) // Boucle sur la hauteur du mur
-    {
-        for (int x = 0; x < tile_size; x++) // Boucle sur la largeur
-        {
-            int texture_x = x % 64;
-            int texture_y = y % 64;
-            
-            int color;
-            
-            // Sélectionner la texture en fonction de la direction
-            if (screen_x < mlx_data->size_width / 2) // Exemple : Mur à gauche
-                color = mlx_data->text[0][texture_y * 64 + texture_x]; // `NORTH`
-            else // Exemple : Mur à droite
-                color = mlx_data->text[1][texture_y * 64 + texture_x]; // `SOUTH`
-            
-            mlx_pixel_put(mlx_data->mlx_connex, mlx_data->window, screen_x + x, screen_y + y, color);
-        }
-    }
-}
 
 
-void draw_map_with_textures(t_minilib_window *mlx_data)
-{
-    int tile_size = 64; // Taille d'un mur en pixels
-    for (int y = 0; y < mlx_data->map_data.height; y++)
-    {
-        for (int x = 0; x < mlx_data->map_data.width; x++)
-        {
-            if (mlx_data->map_data.file[y][x] == '1') // Si c'est un mur
-            {
-                draw_wall_texture_a(mlx_data, x * tile_size, y * tile_size);
-            }
-        }
-    }
-}
 
 

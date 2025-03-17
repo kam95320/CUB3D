@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/07 11:01:05 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:35:10 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	all_print_info(t_minilib_window mlx_data, two_d_t two_d)
 	size_is_valide(&mlx_data.img, &mlx_data);
 	// test_put_img(&mlx_data);
 	// draw_map(&mlx_data);
-	draw_wall_texture(&mlx_data, 320);
+	
 }
 int	main(int argc, char *argv[])
 {
@@ -54,7 +54,8 @@ int	main(int argc, char *argv[])
 	init_img_txt_textures(&mlx_data);
 	initialization_texture(&mlx_data.img, &mlx_data);
 	all_print_info(mlx_data, two_d);
-	// raycast(&mlx_data);
+	printf("\n");
+	map_create(&mlx_data, mlx_data.map_data.file);
 	mlx_ftclt(mlx_data);
 	return (0);
 }
