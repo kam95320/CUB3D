@@ -57,6 +57,7 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/map_world/draw_map.c\
 					utils/player/player.c\
 					utils/player/find_player.c\
+					utils/player/key_press.c\
 					utils/main.c
 
 
