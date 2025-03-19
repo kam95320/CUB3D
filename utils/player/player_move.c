@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player.c                                           :+:      :+:    :+:   */
+/*   player_move.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/17 14:52:18 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/19 15:10:18 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/03/19 15:10:34 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/03/19 17:56:02 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-void init_player(t_player *player, char **map)
+void	player_move(t_player *player, t_map *map)
 {
- 
-    char **map_start = find_map_start(map);
-    find_player(player, map_start);
-    key_press(player);
-    player_move(player);
-}
+	int y;
+	int x;
+	x = 0;
+	y = 0;
 
+	while (y < map->height)
+	{
+		x = 0;
+		while (x < map->width)
+		{
+			if (map->file[y][x] == 'N')
+			{
+				player->fl_pl_pos_x = x + 0.5;
+				player->fl_pl_pos_y = y + 0.5;
+                player->radians = PI / 2;
+			}
+		}
+		y++;
+	}
+}
