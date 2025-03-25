@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:48:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/18 14:10:55 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:16:01 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ typedef struct s_player
 	int		key;
 
 }			t_player;
-void		init_player(t_player *player, char **map);
+void		init_player(t_player *player, char **map, t_map *my_map);
 void		find_player(t_player *player, char **map);
 char		**find_map_start(char **map);
-int	key_press(t_player *player)
+int			key_press(t_player *player);
+void		player_move(t_player *player, t_map *map);
 
 #endif // PLAYER_H

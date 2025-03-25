@@ -58,6 +58,7 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/player/player.c\
 					utils/player/find_player.c\
 					utils/player/key_press.c\
+					utils/player/player_move.c\
 					utils/main.c
 
 
@@ -82,7 +83,6 @@ clean:
 	@echo "Cleaning object files..."
 	rm -f $(OBJS)
 	@make clean -C $(LIBFT_PATH)
-	@make clean -C $(MLX_PATH)
 
 fclean: clean
 	@echo "Removing binary..."

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:00:57 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/18 14:16:39 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:14:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ int	key_press(t_player *player)
 		player->radians -= ROT_SPEED;
 	if (player->key == KEY_RIGHT)
 		player->radians -= ROT_SPEED;
+	return(0);
 }

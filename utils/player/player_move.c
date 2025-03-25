@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 15:10:34 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/19 17:56:02 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:11:44 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	player_move(t_player *player, t_map *map)
 			{
 				player->fl_pl_pos_x = x + 0.5;
 				player->fl_pl_pos_y = y + 0.5;
-                player->radians = PI / 2;
+				player->radians = PI / 2;
 			}
 		}
 		y++;

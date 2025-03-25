@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/19 15:11:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:16:57 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int argc, char *argv[])
 	initialization_texture(&mlx_data.img, &mlx_data);
 	all_print_info(mlx_data, two_d);
 	map_create(&mlx_data, mlx_data.map_data.file);
-	init_player(&player, mlx_data.map_data.file);
+	init_player(&player, mlx_data.map_data.file, &mlx_data.map_data);
 	mlx_ftclt(mlx_data);
 	return (0);
 }
