@@ -2,8 +2,8 @@
 NAME			=	cub3D
 
 # Compiler
-CC				=	gcc
-CFLAGS			=	-g3 -Wall -Werror -Wextra -g
+CC				=	cc
+CFLAGS			=	-g3 -Wall -Werror -Wextra -g3 -o3
 LDFLAGS			=	-L $(LIBFT_PATH) -lft
 MLXFLAGS		=	-lX11 -lXext -L $(MLX_PATH) -lmlx -lm -lbsd
 
@@ -58,6 +58,14 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/player/player.c\
 					utils/player/key_press.c\
 					utils/player/player_move.c\
+					utils/bidge_of_strcut.c\
+					utils/renderer/dda.c\
+					utils/renderer/map.c\
+					utils/renderer/move.c\
+					utils/renderer/ratioTextures.c\
+					utils/renderer/rayinit.c\
+					utils/renderer/raycasting.c\
+					utils/strcut_convert/bidge_of_strcut.c\
 					utils/main.c
 
 
@@ -74,6 +82,11 @@ $(NAME): $(OBJS)
 	@make -sC $(MLX_PATH)
 	@echo "Linking $(NAME)..."
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) -o $(NAME) $(LDFLAGS) $(MLXFLAGS)
+	@echo "\033[1m		______     __  __     ______     _____    \n\
+		       /\  ___\   /\ \/\ \   /\  == \   /\  __-.  \n\
+		       \ \ \____  \ \ \_\ \  \ \  __<   \ \ \/\ \ \n\
+			\ \_____\  \ \_____\  \ \_____\  \ \____- \n\
+			 \/_____/   \/_____/   \/_____/   \/____/ \n\n\033[0m"
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEAD)

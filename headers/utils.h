@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/18 13:17:46 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:31:47 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,22 @@
 # include "../include/libft/libft.h"
 # include "../include/minilibx-linux/mlx.h"
 # include "all_print.h"
+# include "draw_world.h"
 # include "free.h"
 # include "image.h"
+#include "structure.h" 
 # include "minilib_window.h"
 # include "player.h"
 # include "raycasting.h"
 # include "two_d.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
+# include <math.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include "draw_world.h"
+
 # define PIXEL_SIZE 128
 # define VIEW_DIST 4
 # define COLOR_PLAYER 0xFF0000 // Rouge vif (Joueur)
@@ -34,7 +39,6 @@
 # define COLOR_SPACE 0x1C1C1C  // Noir/gris foncé (Espaces vides)
 
 typedef struct s_minilib_window	t_minilib_window;
-
 
 void							print_error(char *str);
 void							check_arg_init_mlx(int argc, char *argv[],
@@ -76,8 +80,16 @@ void							all_free(t_minilib_window *data);
 void							get_map_size(t_map *map, char **file);
 void							initialization_texture(t_manip_img *img,
 									t_minilib_window *data);
-
+void							bridge_of_struct(t_ray *r, t_cub *cub);
 void							restart_img(t_manip_img *img);
+void							rayinit(t_ray *ray);
+void							convert_map_data(t_map_data *dest,
+									t_minilib_window *win);
+int								press(int key, t_cub *cub);
+int								release(int key, t_cub *cub);
+int								mousemotion(t_cub *cub);
+void							movement(t_cub *cub);
+int								end_win(t_cub *cub);
 
 // void	raycast(t_minilib_window *data);
 // void	setpixel(t_minilib_window *data, int x, int y, int color, t_map *map);
