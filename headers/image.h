@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:45:08 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 17:44:21 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:43:38 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,7 @@ typedef struct s_manip_img
 	int				oct_indian;
 
 }					t_manip_img;
-typedef struct s_map_data
-{
-	char			**matrix;
-	int				L;
-	int				l;
-	t_rgb			*floor;
-	t_rgb			*ceiling;
-	char			*NO;
-	char			*SO;
-	char			*WE;
-	char			*EA;
-}					t_map_data;
+
 typedef struct s_info_texture
 {
 	char			*direct_north;

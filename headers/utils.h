@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 18:31:47 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/26 19:03:42 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 # include "draw_world.h"
 # include "free.h"
 # include "image.h"
-#include "structure.h" 
 # include "minilib_window.h"
 # include "player.h"
 # include "raycasting.h"
+# include "structure.h"
 # include "two_d.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
@@ -82,6 +82,7 @@ void							initialization_texture(t_manip_img *img,
 									t_minilib_window *data);
 void							bridge_of_struct(t_ray *r, t_cub *cub);
 void							restart_img(t_manip_img *img);
+int								cub3d(struct s_cub *cub);
 void							rayinit(t_ray *ray);
 void							convert_map_data(t_map_data *dest,
 									t_minilib_window *win);
@@ -90,6 +91,7 @@ int								release(int key, t_cub *cub);
 int								mousemotion(t_cub *cub);
 void							movement(t_cub *cub);
 int								end_win(t_cub *cub);
+void							raycast(t_cub *cub);
 
 // void	raycast(t_minilib_window *data);
 // void	setpixel(t_minilib_window *data, int x, int y, int color, t_map *map);

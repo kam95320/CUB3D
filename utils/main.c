@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 18:26:59 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:58:42 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int	main(int argc, char *argv[])
 	// map_create(&mlx_data, mlx_data.map_data.file);
 	all_print_info(mlx_data, two_d, &player, mlx_data.map_data.file);
 	init_player(&player, mlx_data.map_data.file, &mlx_data.map_data);
-	bridge_of_struct(mlx_data.ray, mlx_data.cub);
-	cub3D();
+	bridge_of_struct(mlx_data.ray, &mlx_data.cub);
+	cub3D(&mlx_data.cub);
 	
 	
 	mlx_ftclt(mlx_data);

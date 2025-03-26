@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bidge_of_strcut.c                                  :+:      :+:    :+:   */
+/*   bidge_of_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 17:09:56 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 18:08:54 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:51:02 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/two_d.h"
-#include "../headers/free.h"
-#include "../headers/utils.h"
+#include "../../headers/utils.h"
 
 
 void bridge_of_structure(t_map_data *dest, t_minilib_window *win)
