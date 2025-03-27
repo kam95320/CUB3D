@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:21:46 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/26 19:06:39 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 19:04:39 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,51 +18,7 @@ int	looping(t_cub *cub)
 	raycast(cub);
 	return (0);
 }
-int	end_win(t_cub *cub)
-{
-	mlx_destroy_image(cub->data->mlx, cub->data->img);
-	mlx_destroy_window(cub->data->mlx, cub->data->win);
-	mlx_destroy_display(cub->data->mlx);
-	free(cub->data->mlx);
-	freend(cub);
-	exit(0);
-}
 
-void	free_map(t_cub *cub)
-{
-	if (cub->map)
-	{
-		if (cub->map->NO)
-			free(cub->map->NO);
-		if (cub->map->SO)
-			free(cub->map->SO);
-		if (cub->map->EA)
-			free(cub->map->EA);
-		if (cub->map->WE)
-			free(cub->map->WE);
-		if (cub->map->floor)
-			free(cub->map->floor);
-		if (cub->map->ceiling)
-			free(cub->map->ceiling);
-		if (cub->map->matrix)
-			fsplit(cub->map->matrix);
-	}
-	if (cub->fd > 0)
-		gnl_free(cub->fd);
-	free(cub->map);
-}
-void	freend(t_cub *cub)
-{
-	free_map(cub);
-	if (cub->map_name)
-		free(cub->map_name);
-	if (cub->data)
-		free(cub->data);
-	if (cub->cam)
-		free(cub->cam);
-	if (cub->ray)
-		free(cub->ray);
-}
 int	cub3d(struct s_cub *cub)
 {
 	mlx_hook(cub->data->win, KeyPress, 1L << 0, &press, cub);
@@ -75,6 +31,6 @@ int	cub3d(struct s_cub *cub)
 	mlx_loop_hook(cub->data->mlx, looping, cub);
 	mlx_mouse_hide(cub->data->mlx, cub->data->win);
 	mlx_loop(cub->data->mlx);
-	// freend(cub);
+	freend(cub);
 	return (0);
 }

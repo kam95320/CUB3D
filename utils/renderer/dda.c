@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:46:10 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/26 18:55:48 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 18:43:36 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	verticaline(t_cub *cub, t_ray *ray, int x)
 	y = -1;
 	while (++y < ray->startp)
 		setpixel(cub->data, x, y, MAP_SKY); // setpixel(cub->data, x, y,
-			cub->map->ceiling); // apres avoir bien parse la couleur
+			// cub->map->ceiling); // apres avoir bien parse la couleur
 	while (y < ray->endp)
 	{
 		setpixel(cub->data, x, y, colorwall);

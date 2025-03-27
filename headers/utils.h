@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 19:03:42 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 19:31:50 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,7 @@ void							mlx_exit(t_minilib_window *data);
 void							all_free(t_minilib_window *data);
 void							get_map_size(t_map *map, char **file);
 void							initialization_texture(t_manip_img *img,
-									t_minilib_window *data);
-void							bridge_of_struct(t_ray *r, t_cub *cub);
+									t_minilib_window *data);					
 void							restart_img(t_manip_img *img);
 int								cub3d(struct s_cub *cub);
 void							rayinit(t_ray *ray);
@@ -92,6 +91,39 @@ int								mousemotion(t_cub *cub);
 void							movement(t_cub *cub);
 int								end_win(t_cub *cub);
 void							raycast(t_cub *cub);
+void							next_line(t_cub *cub, char **line);
+void							wgas(t_cub *cub, char *arg, char *str);
+void							wegotasplituation(struct spt x);
+void							free_map(t_cub *cub);
+void							freend(t_cub *cub);
+int								null_line(char *str);
+void							fsplit(char **str);
+void							gnl_free(int fd);
+char							*erase_new_line(char *str);
+int								end_win(t_cub *cub);
+int								press(int key, t_cub *cub);
+int								release(int key, t_cub *cub);
+int								mousemotion(t_cub *cub);
+void							movement(t_cub *cub);
+void							lookmove(t_ray *ray, t_cam *cam, int key);
+int								wallhit(t_cub *cub, double x, double y);
+void							next_line(t_cub *cub, char **line);
+void							wgas(t_cub *cub, char *arg, char *str);
+void							wegotasplituation(struct spt x);
+void							free_map(t_cub *cub);
+void							freend(t_cub *cub);
+int								null_line(char *str);
+void							fsplit(char **str);
+void							gnl_free(int fd);
+char							*erase_new_line(char *str);
+int								end_win(t_cub *cub);
+void							setpixel(t_data *data, int x, int y, int color);
+void							texture_pixel(t_cub *cub, int x, int y);
+void							dda(t_cub *cub, t_ray *ray);
+void							verticaline(t_cub *cub, t_ray *ray, int x);
+void							bridge_of_struct(t_cub *cub,
+									t_minilib_window *win);
+int								cub3d(struct s_cub *cub);
 
 // void	raycast(t_minilib_window *data);
 // void	setpixel(t_minilib_window *data, int x, int y, int color, t_map *map);

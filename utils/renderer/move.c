@@ -6,11 +6,9 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 02:55:32 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/26 18:23:12 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 18:45:26 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../../headers/utils.h"
 
@@ -60,11 +58,12 @@ int	mousemotion(t_cub *cub)
 {
 	int	x;
 	int	y;
-	
-	if(!cub->data->win) {
+
+	if (!cub->data->win)
+	{
 		printf("JE SUIS CORROMPU\n");
 		freend(cub);
-		exit (1);
+		exit(1);
 	}
 	mlx_mouse_get_pos(cub->data->mlx, cub->data->win, &x, &y);
 	if (x < cub->cam->mouse_x - 2 || x > cub->cam->mouse_x + 2)
@@ -73,8 +72,10 @@ int	mousemotion(t_cub *cub)
 			lookmove(cub->ray, cub->cam, XK_Left);
 		else
 			lookmove(cub->ray, cub->cam, XK_Right);
-		mlx_mouse_move(cub->data->mlx, cub->data->win, cub->data->width / 2, cub->data->height / 2);
-		// mlx_mouse_get_pos(cub->data->mlx, cub->data->win, cub->cam->mouse_x, cub->cam->mouse_y);
+		mlx_mouse_move(cub->data->mlx, cub->data->win, cub->data->width / 2,
+			cub->data->height / 2);
+		// mlx_mouse_get_pos(cub->data->mlx, cub->data->win, cub->cam->mouse_x,
+			// cub->cam->mouse_y);
 	}
 	return (0);
 }
@@ -87,19 +88,23 @@ void	movement(t_cub *cub)
 	if (cub->keys.w == 1)
 		if (!wallhit(cub, posplayer.x + (cub->cam->look.x * MOVESPEED),
 				posplayer.y + (cub->cam->look.y * MOVESPEED)))
-			cub->cam->player_pos += (t_mgam2f){cub->cam->look.x * MOVESPEED, cub->cam->look.y * MOVESPEED};
+			cub->cam->player_pos += (t_mgam2f){cub->cam->look.x * MOVESPEED,
+				cub->cam->look.y * MOVESPEED};
 	if (cub->keys.s == 1)
 		if (!wallhit(cub, posplayer.x - (cub->cam->look.x * MOVESPEED),
-					posplayer.y - (cub->cam->look.y * MOVESPEED)))
-			cub->cam->player_pos -= (t_mgam2f){cub->cam->look.x * MOVESPEED, cub->cam->look.y * MOVESPEED};
+				posplayer.y - (cub->cam->look.y * MOVESPEED)))
+			cub->cam->player_pos -= (t_mgam2f){cub->cam->look.x * MOVESPEED,
+				cub->cam->look.y * MOVESPEED};
 	if (cub->keys.a == 1)
 		if (!wallhit(cub, posplayer.x - (cub->ray->plane.x * MOVESPEED),
-					posplayer.y - (cub->ray->plane.y * MOVESPEED)))
-			cub->cam->player_pos -= (t_mgam2f){cub->ray->plane.x * MOVESPEED, cub->ray->plane.y * MOVESPEED};
+				posplayer.y - (cub->ray->plane.y * MOVESPEED)))
+			cub->cam->player_pos -= (t_mgam2f){cub->ray->plane.x * MOVESPEED,
+				cub->ray->plane.y * MOVESPEED};
 	if (cub->keys.d == 1)
 		if (!wallhit(cub, posplayer.x + (cub->ray->plane.x * MOVESPEED),
-			posplayer.y + (cub->ray->plane.y * MOVESPEED)))
-				cub->cam->player_pos += (t_mgam2f){cub->ray->plane.x * MOVESPEED, cub->ray->plane.y * MOVESPEED};
+				posplayer.y + (cub->ray->plane.y * MOVESPEED)))
+			cub->cam->player_pos += (t_mgam2f){cub->ray->plane.x * MOVESPEED,
+				cub->ray->plane.y * MOVESPEED};
 	if (cub->keys.l == 1)
 		lookmove(cub->ray, cub->cam, XK_Left);
 	if (cub->keys.r == 1)

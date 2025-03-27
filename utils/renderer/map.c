@@ -6,10 +6,9 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 05:58:01 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/26 18:10:56 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:53:51 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../../headers/utils.h"
 
@@ -38,14 +37,16 @@ void	minimap(t_cub *cub, t_data *data)
 		row = i / (cub->map->l - 1);
 		col = i % (cub->map->l - 1);
 		while (++j < (SPACE * SPACE))
-			setpixel(data, (col * SPACE + (j / SPACE)) + data->x_off,
-				(row * SPACE + (j % SPACE)) + data->y_off, return_color(cub->map->matrix[row][col]));
+			setpixel(data, (col * SPACE + (j / SPACE)) + data->x_off, (row
+					* SPACE + (j % SPACE)) + data->y_off,
+				return_color(cub->map->matrix[row][col]));
 	}
 	i = -1;
 	while (++i <= RATIO_PLAYER)
 	{
 		j = -1;
 		while (++j <= RATIO_PLAYER)
-			setpixel(cub->data, (cub->cam->player_pos.x * SPACE) + i, (cub->cam->player_pos.y * SPACE) + j, MAP_PLAYER);
+			setpixel(cub->data, (cub->cam->player_pos.x * SPACE) + i,
+				(cub->cam->player_pos.y * SPACE) + j, MAP_PLAYER);
 	}
 }

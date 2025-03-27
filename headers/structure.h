@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/26 16:52:13 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 18:05:29 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ typedef struct s_keys
 
 typedef struct s_cub
 {
-	struct s_map	*map;
+	struct s_map_data	*map;
 	struct s_cam	*cam;
 	struct s_data	*data;
 	struct s_ray	*ray;
+	struct s_info_texture *txt;
+	
 	t_keys			keys;
 	char			*map_name;
 	int				fd;

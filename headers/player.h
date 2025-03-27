@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:48:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/25 20:16:01 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 18:35:47 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 # define PLAYER_H
 # include <math.h>
 
-# define KEY_W 119       // Z = Avancer
-# define KEY_A 97        // Q = Gauche
-# define KEY_S 115       // S = Reculer
-# define KEY_D 100       // D = Droite
-# define KEY_LEFT 65361  // Flèche gauche
-# define KEY_RIGHT 65363 // Flèche droite
-# define MOVE_SPEED 0.1  // Vitesse de déplacement
-# define ROT_SPEED 0.05  // Vitesse de rotation
-# define PI 3.14159265358979323846
+# define M_PI 3.14159265358979323846
+# define SPACE 64
+# define RATIO_PLAYER 8
+# define RATIO_MOVE 4
+
+# define MAP_VOID 0x353831
+// # define MAP_WALL 0x090C08
+# define MAP_WALL 0xFF0000
+# define MAP_PLAYER 0x474056
+
+# define MAP_SKY 0x778BF0
+# define MAP_FLOOR 0x7C7C7C
+
+# define MOVESPEED 0.02
+# define ROTATESPEED 0.02
+
 typedef struct s_player
 {
 	char	direction;
@@ -38,10 +45,5 @@ typedef struct s_player
 	int		key;
 
 }			t_player;
-void		init_player(t_player *player, char **map, t_map *my_map);
-void		find_player(t_player *player, char **map);
-char		**find_map_start(char **map);
-int			key_press(t_player *player);
-void		player_move(t_player *player, t_map *map);
 
 #endif // PLAYER_H

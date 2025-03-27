@@ -55,17 +55,14 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/initialization/initialization_texture.c\
 					utils/map_world/map_create.c\
 					utils/map_world/draw_map.c\
-					utils/player/player.c\
-					utils/player/key_press.c\
-					utils/player/player_move.c\
-					utils/struct_convert/bidge_of_struct.c\
-					utils/renderer/cub3D.c\
+					utils/struct_convert/bridge_of_struct.c\
 					utils/renderer/dda.c\
 					utils/renderer/map.c\
 					utils/renderer/move.c\
 					utils/renderer/ratioTextures.c\
-					utils/renderer/rayinit.c\
 					utils/renderer/raycasting.c\
+					utils/utils.c\
+					utils/renderer/cub3D.c\
 					utils/main.c
 
 

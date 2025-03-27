@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:49:03 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 17:32:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/27 15:41:51 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-
-# define M_PI 3.14159265358979323846
-# define SPACE 64
-# define RATIO_PLAYER 8
-# define RATIO_MOVE 4
-
-# define MAP_VOID 0x353831
-// # define MAP_WALL 0x090C08
-# define MAP_WALL 0xFF0000
-# define MAP_PLAYER 0x474056
-
-# define MAP_SKY 0x778BF0
-# define MAP_FLOOR 0x7C7C7C
-
-# define MOVESPEED 0.02
-# define ROTATESPEED 0.02
 
 typedef double	t_mgam2f __attribute__((ext_vector_type(2)));
 typedef int		t_mgam2i __attribute__((ext_vector_type(2)));
