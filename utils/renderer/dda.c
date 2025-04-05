@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:46:10 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/27 18:43:36 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/04 11:06:09 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ddainit(t_cub *cub, t_ray *ray)
 {
+	printf("\n---ddainit deb----\n");
 	ray->camerax = 2 * ray->x / (double)cub->data->width - 1;
 	cub->ray->ray = (t_mgam2f){cub->cam->look.x + (cub->ray->plane.x
 			* ray->camerax), cub->cam->look.y + (cub->ray->plane.y
@@ -46,6 +47,16 @@ void	ddainit(t_cub *cub, t_ray *ray)
 		cub->ray->sidedist.y = (cub->ray->map.y + 1.0 - cub->cam->player_pos.y)
 			* cub->ray->deltadist.y;
 	}
+	printf(">>> DDA END @ x=%d | side=%d | raylength=%d | step=(%d,%d) | dir=(%.3f,%.3f)\n",
+	ray->x,
+	ray->whichside,
+	ray->raylength,
+	ray->step.x,
+	ray->step.y,
+	ray->ray.x,
+	ray->ray.y);
+
+	printf("\n---ddainit end----\n");
 }
 
 void	dda(t_cub *cub, t_ray *ray)
@@ -79,35 +90,3 @@ void	dda(t_cub *cub, t_ray *ray)
 	ray->raylength = (int)(cub->data->height / ray->perpwalldist);
 }
 
-void	verticaline(t_cub *cub, t_ray *ray, int x)
-{
-	int	y;
-	int	colorwall;
-
-	ray->startp = -ray->raylength / 2 + cub->data->height / 2;
-	ray->endp = ray->raylength / 2 + cub->data->height / 2;
-	if (ray->startp < 0)
-		ray->startp = 0;
-	if (ray->endp > cub->data->height)
-		ray->endp = cub->data->height - 1;
-	colorwall = 0x880000;
-	if (ray->whichside)
-		colorwall = 0xAA0000;
-	y = -1;
-	while (++y < ray->startp)
-		setpixel(cub->data, x, y, MAP_SKY); // setpixel(cub->data, x, y,
-			// cub->map->ceiling); // apres avoir bien parse la couleur
-	while (y < ray->endp)
-	{
-		setpixel(cub->data, x, y, colorwall);
-			// une fonction qui transpose pour le bon pixel en fonction de la texture
-		texture_pixel(cub, x, y);
-		y++;
-	}
-	// y = ray->endp;
-	while (y < cub->data->height)
-	{
-		setpixel(cub->data, x, y, MAP_FLOOR);
-		y++;
-	}
-}

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 01:05:10 by tespandj          #+#    #+#             */
-/*   Updated: 2025/03/27 18:50:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/03/29 18:15:38 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,6 @@ void	free_map(t_cub *cub)
 {
 	if (cub->map)
 	{
-		if (cub->map->NO)
-			free(cub->map->NO);
-		if (cub->map->SO)
-			free(cub->map->SO);
-		if (cub->map->EA)
-			free(cub->map->EA);
-		if (cub->map->WE)
-			free(cub->map->WE);
 		if (cub->map->floor)
 			free(cub->map->floor);
 		if (cub->map->ceiling)

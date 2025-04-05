@@ -6,39 +6,57 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/03 13:47:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:18:43 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-bool	map_is_valid(char **mp, t_minilib_window *data_mlx)
+bool	is_line_empty(char *line)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (mp[i])
+	if (!line)
+		return (true);
+	while (line[i])
 	{
-		j = 0;
-		
-		while (mp[i][j])
-		{
-			skip_space(mp, i, j);
-			if (true != is_good_print(&data_mlx->texture_info, mp, i, j))
-			{
-				break ;
-			}
-			j += 1;
-		}
+		if (line[i] != ' ' && line[i] != '\t' && line[i] != '\n')
+			return (false);
 		i++;
-	}
-	
-	if (vrb_txt_valid(&data_mlx->texture_info) == false)
-	{
-		free_txt(&data_mlx->texture_info);
-		return (false);
 	}
 	return (true);
 }
 
+
+bool	map_is_valid(t_cub *cub)
+{
+	int		j = 0;
+	int		total_line = cub->map->L;
+	char	**mp = cub->map->matrix;
+
+	init_textures(cub);
+	while (j < total_line)
+	{
+		int i = skip_space(mp, j, 0);
+		if (!mp[j][i] || mp[j][i] == '\n')
+		{
+			j++;
+			continue;
+		}
+		if (!is_good_print(cub, mp, i, j))
+		{
+			printf("❌ Ligne invalide à j = %d, i = %d : %s\n", j, i, mp[j]);
+			free_textures(cub->txt);
+			return (false);
+		}
+		j++;
+	}
+	if (!vrb_txt_valid(cub))
+	{
+		free_textures(cub->txt);
+		return (false);
+	}
+	printf("✅ map_is_valid end\n");
+	return (true);
+}

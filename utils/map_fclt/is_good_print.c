@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/06 15:28:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/04 10:11:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,118 @@
 #include <assert.h>
 #include <string.h>
 
-static int	txt_cond(char **mp, int i, int j)
+char	*txt_cond(char **mp, int i, int j)
 {
-	while (mp[i][j] == ' ' || mp[i][j] == '\t')
-		j++;
-	if (!mp[i][j] || !mp[i][j + 1])
-		return (0);
-	if (mp[i][j] == 'N' && mp[i][j + 1] == 'O')
-		return (1);
-	if (mp[i][j] == 'S' && mp[i][j + 1] == 'O')
-		return (2);
-	if (mp[i][j] == 'W' && mp[i][j + 1] == 'E')
-		return (3);
-	if (mp[i][j] == 'E' && mp[i][j + 1] == 'A')
-		return (4);
-	return (0);
+	char	*line;
+	char	*path;
+
+	if (!mp || !mp[j])
+		return (NULL);
+	line = &mp[j][i];
+	while (*line == ' ' || *line == '\t')
+		line++;
+	if ((line[0] == 'N' && line[1] == 'O') || (line[0] == 'S' && line[1] == 'O')
+		|| (line[0] == 'W' && line[1] == 'E') || (line[0] == 'E'
+			&& line[1] == 'A'))
+	{
+		path = ft_strtrim(line, "\n");
+		if (!path)
+			print_error("malloc failed in txt_cond");
+		printf("line path =%s\n", path);
+		return (path);
+	}
+	return (NULL);
+}
+char	*verif_direct(char *line)
+{
+	if (line[0] == 'N' && line[1] == 'O')
+		return ("NO");
+	if (line[0] == 'S' && line[1] == 'O')
+		return ("SO");
+	if (line[0] == 'W' && line[1] == 'E')
+		return ("WE");
+	if (line[0] == 'E' && line[1] == 'A')
+		return ("EA");
+	return (NULL);
 }
 
-static char	*pth_txt(char *mp, int j)
+void	init_textures(t_cub *cub)
 {
-	int		len;
-	char	*str;
+	int	i;
 
-	str = NULL;
-	j = manage_txt_space(mp, j, 1);
-	len = manage_txt_space(mp, j, 2) - j;
-	if (len <= 0)
-		return (NULL);
-	str = malloc(len + 1);
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, mp + j, len + 1);
-	str[len] = '\0';
-	return (str);
+	i = 0;
+	while (i < 4)
+	{
+		cub->txt[i] = malloc(sizeof(t_txt));
+		if (!cub->txt[i])
+			wgas(cub, "Textures", "malloc t_txt failed");
+		cub->txt[i]->name = NULL;
+		cub->txt[i]->img = NULL;
+		i++;
+	}
+}
+bool	textures(t_cub *cub, char *line)
+{
+	char	*verif;
+
+	printf("\n----textures---\n");
+	printf("line in textures =  %s\n", line);
+	verif = verif_direct(line);
+	printf("verif =  %s\n", verif);
+	if (!verif)
+		return (false);
+	if (verif)
+	{
+		while (*line == ' ' || *line == '\t')
+			line++;
+		if ((!cub->txt[NO] || !cub->txt[NO]->name) || (!cub->txt[SO]
+				|| !cub->txt[SO]->name) || (!cub->txt[EA]
+				|| !cub->txt[EA]->name) || (!cub->txt[WE]
+				|| !cub->txt[WE]->name))
+		{
+			if (verif)
+			{
+				printf("line =  %s\n", line);
+				fill_textures(cub, line, verif);
+			}
+		}
+		return (true);
+	}
+	free(line);
+	if (!cub->txt[NO]->name && !cub->txt[SO]->name && !cub->txt[EA]->name
+		&& !cub->txt[WE]->name)
+		return (false);
+	return (false);
 }
 
-static void	vl_direct(t_info_texture *txt, char *mp, int j, int t_c)
+void	fill_textures(t_cub *cub, char *line, char *verif)
 {
-	if (t_c == 1 && !txt->direct_north)
-		txt->direct_north = pth_txt(mp, j + 2);
-	if (t_c == 2 && !txt->direct_south)
-		txt->direct_south = pth_txt(mp, j + 2);
-	if (t_c == 3 && !txt->direct_west)
-		txt->direct_west = pth_txt(mp, j + 2);
-	if (t_c == 4 && !txt->direct_east)
-		txt->direct_east = pth_txt(mp, j + 2);
+	printf("----fill textures deb\n---");
+	line = line + 2;
+	if (!line)
+		wgas(cub, "Textures", "Couldn't split line");
+	while (*line == ' ' || *line == '\t')
+		line++;
+	printf("line =  %s\n", line);
+	if (verif)
+	{
+		if (!ft_strcmp(verif, "NO"))
+		{
+			printf("pass  in  if verif\n");
+			cub->txt[NO]->name = line;
+			printf("cub->txt[NO]->name = %s\n", cub->txt[NO]->name);
+		}
+		if (!ft_strcmp(verif, "SO"))
+		{
+			printf("fill_textures line[S0] = %s\n", cub->txt[SO]->name = line);
+			cub->txt[SO]->name = line;
+		}
+		if (!ft_strcmp(verif, "WE"))
+			cub->txt[WE]->name = line;
+		if (!ft_strcmp(verif, "EA"))
+			cub->txt[EA]->name = line;
+	}
+	printf("----fill textures end\n---");
 }
 
 char	tk_ltr_f_c(char *ltr)
@@ -78,28 +145,39 @@ char	tk_ltr_f_c(char *ltr)
 		}
 		i++;
 	}
-	return (ltr[i]);
+	// return (ltr[i]);
+	return (0);
 }
 
-bool	is_good_print(t_info_texture *txt, char **mp, int i, int j)
+bool	is_good_print(t_cub *cub, char **mp, int i, int j)
 {
 	int		val;
-	int		t_c;
+	char	*t_c;
 	char	ltr;
 
-	ltr = tk_ltr_f_c(&mp[j][0]);
+	ltr = mp[j][i];
+	if (ltr == 'F' || ltr == 'C')
+		ltr = tk_ltr_f_c(&mp[j][i]);
 	t_c = txt_cond(mp, i, j);
 	val = false;
-	if (mp[i][j] == '0' || mp[i][j] == '1' || mp[i][j] == 'N' || mp[i][j] == 'S'
-		|| mp[i][j] == 'W' || mp[i][j] == 'E')
+	if (mp[j][i] == '0' || mp[j][i] == '1' || mp[j][i] == 'N' || mp[j][i] == 'S'
+		|| mp[j][i] == 'W' || mp[j][i] == 'E')
 	{
 		val = true;
 	}
 	if (val && t_c != 0)
-		vl_direct(txt, mp[i], j, t_c);
+	{
+		textures(cub, t_c);
+		printf("\n----in is good print----\n");
+		printf("cub->txt[NO]->name = %s\n", cub->txt[NO]->name);
+		printf("cub->txt[SO]->name = %s\n", cub->txt[SO]->name);
+		printf("cub->txt[EA]-> name = %s\n", cub->txt[EA]->name);
+		printf("cub->txt[WE]-> name = %s\n", cub->txt[WE]->name);
+	}
 	if (ltr == 'F' || ltr == 'C')
 	{
-		val = color(txt, mp[j], ltr);
+		fccolors(cub);
+		val = true;
 	}
 	return (val);
 }

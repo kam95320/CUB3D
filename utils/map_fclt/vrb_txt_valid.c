@@ -6,27 +6,26 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:06:10 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/03 14:43:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/02 10:28:40 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-bool	vrb_txt_valid(t_info_texture *txt)
+bool	vrb_txt_valid(t_cub *cub)
 {
-	if (!txt->ceiling && !txt->floor)
+	if (!cub->map->ceiling || !cub->map->floor)
 	{
-		print_error("txt->ceiling or txt->floor empty\n");
+		print_error("❌ Missing ceiling or floor color\n");
 		return (false);
 	}
-	if (!txt->direct_east && !txt->direct_north && !txt->direct_south)
+	if (!cub->txt[NO] || !cub->txt[SO] || !cub->txt[WE] || !cub->txt[EA])
 	{
-		print_error("txt->direct_east empty\n");
-		print_error("txt->direct_north empty\n");
-		print_error("txt->direct_south empty\n");
+		if (!cub->txt[NO]) print_error("❌ Missing texture: North\n");
+		if (!cub->txt[SO]) print_error("❌ Missing texture: South\n");
+		if (!cub->txt[WE]) print_error("❌ Missing texture: West\n");
+		if (!cub->txt[EA]) print_error("❌ Missing texture: East\n");
 		return (false);
 	}
-	if (!txt->direct_west)
-		return (false);
 	return (true);
 }

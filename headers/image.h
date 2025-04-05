@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 18:45:08 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/26 18:43:38 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/04/02 17:09:38 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/04/02 17:09:39 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef IMAGE_H
 # define IMAGE_H
@@ -27,10 +28,11 @@ typedef struct s_manip_img
 
 typedef struct s_info_texture
 {
-	char			*direct_north;
-	char			*direct_south;
-	char			*direct_west;
-	char			*direct_east;
+	// char			*direct_north;
+	// char			*direct_south;
+	// char			*direct_west;
+	// char			*direct_east;
+	char			*name;
 	unsigned long	hxd_floor;
 	unsigned long	hxd_ceiling;
 	int				*floor;

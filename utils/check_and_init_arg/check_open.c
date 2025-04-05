@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 14:48:46 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/03 14:34:48 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/03 15:33:24 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 bool	check_open(char *file)
 {
 	int	fd;
-
+	
+	printf("file = %s\n", file);
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{

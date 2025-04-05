@@ -6,17 +6,17 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 14:02:33 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/02/11 18:02:09 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:11:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-int	skip_space(char **mp, int i, int len)
+int	skip_space(char **mp, int j, int len)
 {
-	if (!mp || !mp[i])
+	if (!mp || !mp[j])
 		return (len);
-	while (mp[i][len] == ' ' || mp[i][len] == '\t')
+	while (mp[j][len] == ' ' || mp[j][len] == '\t')
 		len++;
 	return (len);
 }

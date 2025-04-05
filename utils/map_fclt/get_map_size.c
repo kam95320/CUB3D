@@ -6,28 +6,29 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 13:37:40 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/12 19:06:31 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/02 10:00:30 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-void	get_map_size(t_map *map, char **file)
+void get_map_size(t_map_data *map, char **file)
 {
 	int i;
-	int max_widht;
-	int l_lenght;
+	int max_width;
+	int l_length;
+
 	i = 0;
-	max_widht = 0;
-	l_lenght = 0;
+	max_width = 0;
+	l_length = 0;
 
 	while (file[i])
 	{
-		l_lenght = ft_strlen(file[i]);
-		if (l_lenght > max_widht)
-			max_widht = l_lenght;
+		l_length = ft_strlen(file[i]);
+		if (l_length > max_width)
+			max_width = l_length;
 		i++;
 	}
-	map->height = i;
-	map->width = max_widht;
+	map->L = i;
+	map->l = max_width;
 }

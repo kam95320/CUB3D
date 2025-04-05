@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/27 19:02:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/01 20:59:15 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_minilib_window
 	t_ray			*ray;
 	t_minimap		mn_mp;
 	t_manip_img		mini_map;
-	t_info_texture	texture_info;
+	t_info_texture	*txt[4];
 	t_cub			cub;
 	t_manip_img		img;
 
