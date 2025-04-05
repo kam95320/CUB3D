@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/04 10:11:07 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:52:40 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ bool	is_good_print(t_cub *cub, char **mp, int i, int j)
 	}
 	if (ltr == 'F' || ltr == 'C')
 	{
-		fccolors(cub);
+		fccolors(cub, mp[j], ltr);
 		val = true;
 	}
 	return (val);
