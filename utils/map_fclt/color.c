@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/05 14:58:07 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:58:43 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,22 +163,24 @@ void	fill_ceiling(t_cub *cub, char *line)
 
 void	fccolors(t_cub *cub, char *line, char ltr)
 {
-	if (line && (!cub->map->floor || !cub->map->ceiling))
+	if (line && ltr)
 	{
-		if (!null_line(line))
+		if (ltr == 'F')
 		{
-			if (ltr  == 'F')
-				fill_floor(cub, line);
-			else if (ltr  == 'C')
-				fill_ceiling(cub, line);
+			fill_floor(cub, line);
+			return ;
+		}
+		else if (ltr == 'C')
+		{
+			fill_ceiling(cub, line);
 			return ;
 		}
 		free(line);
 		if ((cub->map->floor && cub->map->ceiling))
 			return ;
 		line = ft_strtrim(line, "\n");
+		if (!cub->map->floor || !cub->map->ceiling)
+			wgas(cub, "fccolors",
+				"First lines should contain address Floor and ceiling value");
 	}
-	if (!cub->map->floor || !cub->map->ceiling)
-		wgas(cub, "fccolors",
-			"First lines should contain address Floor and ceiling value");
 }

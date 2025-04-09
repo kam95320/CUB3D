@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/05 14:52:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:56:11 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*txt_cond(char **mp, int i, int j)
 		path = ft_strtrim(line, "\n");
 		if (!path)
 			print_error("malloc failed in txt_cond");
-		printf("line path =%s\n", path);
 		return (path);
 	}
 	return (NULL);
@@ -68,10 +67,7 @@ bool	textures(t_cub *cub, char *line)
 {
 	char	*verif;
 
-	printf("\n----textures---\n");
-	printf("line in textures =  %s\n", line);
 	verif = verif_direct(line);
-	printf("verif =  %s\n", verif);
 	if (!verif)
 		return (false);
 	if (verif)
@@ -100,7 +96,6 @@ bool	textures(t_cub *cub, char *line)
 
 void	fill_textures(t_cub *cub, char *line, char *verif)
 {
-	printf("----fill textures deb\n---");
 	line = line + 2;
 	if (!line)
 		wgas(cub, "Textures", "Couldn't split line");
@@ -111,13 +106,10 @@ void	fill_textures(t_cub *cub, char *line, char *verif)
 	{
 		if (!ft_strcmp(verif, "NO"))
 		{
-			printf("pass  in  if verif\n");
 			cub->txt[NO]->name = line;
-			printf("cub->txt[NO]->name = %s\n", cub->txt[NO]->name);
 		}
 		if (!ft_strcmp(verif, "SO"))
 		{
-			printf("fill_textures line[S0] = %s\n", cub->txt[SO]->name = line);
 			cub->txt[SO]->name = line;
 		}
 		if (!ft_strcmp(verif, "WE"))
@@ -125,7 +117,6 @@ void	fill_textures(t_cub *cub, char *line, char *verif)
 		if (!ft_strcmp(verif, "EA"))
 			cub->txt[EA]->name = line;
 	}
-	printf("----fill textures end\n---");
 }
 
 char	tk_ltr_f_c(char *ltr)
@@ -145,10 +136,34 @@ char	tk_ltr_f_c(char *ltr)
 		}
 		i++;
 	}
-	// return (ltr[i]);
 	return (0);
 }
+int	hex_rgb(t_rgb *rgb)
+{
+	int	hx_val;
+	int	r;
+	int	g;
+	int	b;
 
+	r = rgb->r * (256 * 256);
+	g = rgb->g * 256;
+	b = rgb->b;
+	hx_val = r + g + b;
+	return (hx_val);
+}
+void	convert_color(t_cub *cub, char ltr)
+{
+	if (ltr == 'F')
+	{
+		cub->map->floor_cl_hx = hex_rgb(cub->map->floor);
+		return ;
+	}
+	if (ltr == 'C')
+	{
+		cub->map->ceiling_cl_hx = hex_rgb(cub->map->ceiling);
+		return ;
+	}
+}
 bool	is_good_print(t_cub *cub, char **mp, int i, int j)
 {
 	int		val;
@@ -168,15 +183,11 @@ bool	is_good_print(t_cub *cub, char **mp, int i, int j)
 	if (val && t_c != 0)
 	{
 		textures(cub, t_c);
-		printf("\n----in is good print----\n");
-		printf("cub->txt[NO]->name = %s\n", cub->txt[NO]->name);
-		printf("cub->txt[SO]->name = %s\n", cub->txt[SO]->name);
-		printf("cub->txt[EA]-> name = %s\n", cub->txt[EA]->name);
-		printf("cub->txt[WE]-> name = %s\n", cub->txt[WE]->name);
 	}
 	if (ltr == 'F' || ltr == 'C')
 	{
 		fccolors(cub, mp[j], ltr);
+		convert_color(cub, ltr);
 		val = true;
 	}
 	return (val);

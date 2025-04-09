@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/04/01 13:33:26 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:29:20 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ typedef struct s_map_data
 	int					l;
 	t_rgb				*floor;
 	t_rgb				*ceiling;
+	int					floor_cl_hx;
+	int					ceiling_cl_hx;
 }						t_map_data;
 
 typedef struct s_data

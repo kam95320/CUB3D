@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/05 14:53:30 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/09 14:47:58 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void							initialization_texture(t_manip_img *img,
 									t_minilib_window *data);
 void							restart_img(t_manip_img *img);
 
-int								cub3d(t_cub *cub);
 int								looping(t_cub *cub);
 bool							is_line_empty(char *line);
 
@@ -136,4 +135,10 @@ void							init_textures(t_cub *cub);
 void							texture_pixel(t_cub *cub, t_ray *ray);
 void							fsplit(char **str);
 void							free_textures(t_txt **txt);
+void							debug_txt(t_cub *cub);
+void							floor_dg_col(t_cub *cub);
+void							ceiling_debug_col(t_cub *cub);
+void							all_debug(t_cub *cub);
+void							color_init(t_cub *cub);
+
 #endif // UTILS_H

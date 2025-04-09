@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/05 14:18:43 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:38:03 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,26 @@ bool	is_line_empty(char *line)
 	return (true);
 }
 
-
 bool	map_is_valid(t_cub *cub)
 {
-	int		j = 0;
-	int		total_line = cub->map->L;
-	char	**mp = cub->map->matrix;
+	int		j;
+	int		total_line;
+	char	**mp;
+	int		i;
 
+	j = 0;
+	total_line = cub->map->L;
+	mp = cub->map->matrix;
 	init_textures(cub);
 	while (j < total_line)
 	{
-		int i = skip_space(mp, j, 0);
+		i = skip_space(mp, j, 0);
 		if (!mp[j][i] || mp[j][i] == '\n')
 		{
 			j++;
-			continue;
+			continue ;
 		}
+		
 		if (!is_good_print(cub, mp, i, j))
 		{
 			printf("❌ Ligne invalide à j = %d, i = %d : %s\n", j, i, mp[j]);

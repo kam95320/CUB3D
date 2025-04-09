@@ -55,14 +55,10 @@ SRCS_NAMES		=	utils/check_and_init_arg/check_arg_init_mlx.c\
 					utils/initialization/initialization_texture.c\
 					utils/map_world/map_create.c\
 					utils/map_world/draw_map.c\
-					utils/struct_convert/bridge_of_struct.c\
-					utils/renderer/dda.c\
-					utils/renderer/map.c\
-					utils/renderer/move.c\
-					utils/renderer/ratioTextures.c\
-					utils/renderer/raycasting.c\
+					utils/init_variables/init_all_var.c\
+					utils/init_variables/init_all_var_2.c\
 					utils/utils.c\
-					utils/renderer/cub3D.c\
+					all_print_variable/all_debug.c\
 					utils/main.c
 
 
