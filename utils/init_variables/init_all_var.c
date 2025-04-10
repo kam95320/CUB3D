@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:41:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/09 14:54:19 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/10 14:08:13 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	txtinit(t_cub *cub)
 {
-	printf("\n----- txtinit deb -----\n");
-	// debug_ptr(cub);
 	cub->txt[NO]->img = mlx_xpm_file_to_image(cub->data->mlx,
 			cub->txt[NO]->name, &cub->txt[NO]->width, &cub->txt[NO]->height);
 	if (!cub->txt[NO]->img)
@@ -32,7 +30,6 @@ void	txtinit(t_cub *cub)
 			cub->txt[WE]->name, &cub->txt[WE]->width, &cub->txt[WE]->height);
 	if (!cub->txt[WE]->img)
 		wgas(cub, "mlx_xpm_file_to_image", "west texture");
-	printf("\n----- txtinit end -----\n");
 }
 
 void	caminit(t_cub *cub)
@@ -40,7 +37,6 @@ void	caminit(t_cub *cub)
 	int	x;
 	int	y;
 
-	printf("\n----caminit deb----\n");
 	y = -1;
 	while (cub->map->matrix[++y])
 	{
@@ -62,11 +58,9 @@ void	caminit(t_cub *cub)
 		cub->data->height / 2);
 	mlx_mouse_get_pos(cub->data->mlx, cub->data->win, &cub->cam->mouse_x,
 		&cub->cam->mouse_y);
-	printf("\n----caminit end----\n");
 }
 void	everyinit(t_cub *cub)
 {
-	printf("\n---everyinit----\n");
 	if (!cub->cam)
 	{
 		printf("var cam =  not yet\n");
@@ -82,5 +76,4 @@ void	everyinit(t_cub *cub)
 		wgas(cub, "malloc ray failed", NULL);
 	rayinit(cub->ray);
 	txtinit(cub);
-	printf("everyinit whidht =  %d\n", cub->txt[NO]->width);
 }

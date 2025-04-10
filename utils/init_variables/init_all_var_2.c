@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:45:59 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/09 12:49:16 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/10 14:07:42 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	datainit(t_cub *cub)
 {
-	printf("----datainit deb-----\n");
 	cub->data = malloc(sizeof(t_data));
 	if (cub->data == NULL)
 		wgas(cub, "fail malloc cub->data", NULL);
@@ -31,11 +30,9 @@ void	datainit(t_cub *cub)
 	}
 	cub->data->img = mlx_new_image(cub->data->mlx, cub->data->width,
 			cub->data->height);
-	printf("cub->data->img =  %p\n", cub->data->img);
 	cub->data->addr = mlx_get_data_addr(cub->data->img,
 			&cub->data->bits_per_pixel, &cub->data->line_length,
 			&cub->data->endian);
-	printf("----datainit end-----\n");
 }
 
 void	ciminit(t_cub *cub)
@@ -43,7 +40,6 @@ void	ciminit(t_cub *cub)
 	int	x;
 	int	y;
 
-	printf("----ciminit deb-----\n");
 	y = -1;
 	while (cub->map->matrix[++y])
 	{
@@ -65,7 +61,6 @@ void	ciminit(t_cub *cub)
 		cub->data->height / 2);
 	mlx_mouse_get_pos(cub->data->mlx, cub->data->win, &cub->cam->mouse_x,
 		&cub->cam->mouse_y);
-	printf("----ciminit end-----\n");
 }
 void	rayinit(t_ray *ray)
 {
@@ -80,13 +75,3 @@ void	rayinit(t_ray *ray)
 	ray->perpwalldist = 0.0;
 	ray->whichside = 0;
 }
-// void	debug_ptr(t_cub *cub)
-// {
-// 	printf("--------- DEBUG PTRS ---------\n");
-// 	printf("cub->txt = %p\n", cub->txt);
-// 	printf("cub->txt[NO] =%s\n", cub->txt[NO]->name);
-// 	printf("cub->txt[SO] =%s\n", cub->txt[SO]->name);
-// 	printf("cub->txt[EA] =%s\n", cub->txt[EA]->name);
-// 	printf("cub->txt[WE] =%s\n", cub->txt[WE]->name);
-// 	printf("------------------------------\n");
-// }

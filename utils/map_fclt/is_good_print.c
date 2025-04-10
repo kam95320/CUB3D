@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:57:14 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/09 18:56:11 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:07:11 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ bool	textures(t_cub *cub, char *line)
 		{
 			if (verif)
 			{
-				printf("line =  %s\n", line);
 				fill_textures(cub, line, verif);
 			}
 		}
@@ -101,7 +100,6 @@ void	fill_textures(t_cub *cub, char *line, char *verif)
 		wgas(cub, "Textures", "Couldn't split line");
 	while (*line == ' ' || *line == '\t')
 		line++;
-	printf("line =  %s\n", line);
 	if (verif)
 	{
 		if (!ft_strcmp(verif, "NO"))

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/09 14:47:58 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:40:57 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,20 @@
 # define COLOR_WALL 0x2E2E2E
 # define COLOR_FLOOR 0xA0D6B4
 # define COLOR_SPACE 0x1C1C1C
-
+# define RED "\033[31m"
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define BLUE "\033[34m"
+# define LIGHT_BLUE "\033[38;5;117m"
+# define CYAN "\033[36m"
+# define RESET "\033[0m"
+# define PURPLE "\033[35m"
+# define MINT_GREEN "\033[38;5;100m"
+# define LIGHT_PURPLE "\033[95m"
+# define SOFT_GREEN "\033[38;5;108m"
+# define TEAL_GREEN "\033[38;5;37m"
+# define RICH_PURPLE "\033[38;5;135m"
+#define MUTED_PURPLE	"\033[38;5;97m"
 typedef struct s_minilib_window	t_minilib_window;
 typedef struct s_cub			t_cub;
 typedef struct s_ray			t_ray;
@@ -48,6 +61,7 @@ typedef struct s_data			t_data;
 typedef struct s_map_data		t_map_data;
 typedef struct spt				t_split;
 typedef struct s_txt			t_txt;
+typedef struct s_player			t_player;
 
 void							print_error(char *str);
 void							check_arg_init_mlx(int argc, char *argv[],
@@ -138,7 +152,10 @@ void							free_textures(t_txt **txt);
 void							debug_txt(t_cub *cub);
 void							floor_dg_col(t_cub *cub);
 void							ceiling_debug_col(t_cub *cub);
-void							all_debug(t_cub *cub);
+void							all_debug(t_cub *cub, t_txt *txt);
 void							color_init(t_cub *cub);
+void							debug_raycasting(t_ray *ray);
+void							debug_player(t_player *player);
+char							*txt_cond(char **mp, int i, int j);
 
 #endif // UTILS_H
