@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/10 17:39:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:29:02 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ void	map_db_print(t_cub *cub)
 			}
 			else if (map[j][i] == 'F' || map[j][i] == 'C')
 			{
-				printf( "%s", map[j]);
-				break;
+				printf(RED "%c" RESET, map[j][i++]);
+				while (map[j][i] != '\n')
+					printf(CYAN "%c" RESET, map[j][i++]);
+				break ;
 			}
 			else if (map[j][i] == 'N')
 				printf(YELLOW "%c" RESET, map[j][i]);
