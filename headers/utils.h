@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/10 17:40:57 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/12 19:53:46 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,12 @@
 # define YELLOW "\033[33m"
 # define BLUE "\033[34m"
 # define LIGHT_BLUE "\033[38;5;117m"
+# define BG_BLUE "\033[44m"
+#define FADED_BLUE  "\033[38;5;250m"
 # define CYAN "\033[36m"
+# define SOFT_CYAN "\033[38;5;159m"
+# define CYAN_FADE "\033[38;5;250m"
+# define BG_SOFT_CYAN "\033[48;5;159m"
 # define RESET "\033[0m"
 # define PURPLE "\033[35m"
 # define MINT_GREEN "\033[38;5;100m"
@@ -52,7 +57,8 @@
 # define SOFT_GREEN "\033[38;5;108m"
 # define TEAL_GREEN "\033[38;5;37m"
 # define RICH_PURPLE "\033[38;5;135m"
-#define MUTED_PURPLE	"\033[38;5;97m"
+# define MUTED_PURPLE "\033[38;5;97m"
+
 typedef struct s_minilib_window	t_minilib_window;
 typedef struct s_cub			t_cub;
 typedef struct s_ray			t_ray;
@@ -152,10 +158,13 @@ void							free_textures(t_txt **txt);
 void							debug_txt(t_cub *cub);
 void							floor_dg_col(t_cub *cub);
 void							ceiling_debug_col(t_cub *cub);
-void							all_debug(t_cub *cub, t_txt *txt);
+void							all_debug(t_cub *cub);
 void							color_init(t_cub *cub);
 void							debug_raycasting(t_ray *ray);
 void							debug_player(t_player *player);
 char							*txt_cond(char **mp, int i, int j);
-
+void							init_player(t_cub *cub);
+bool							get_player_pos(t_cub *cub);
+bool							dir_is_find(t_cub *cub, char dir);
+void							orig_pl_pos(t_cub *cub);
 #endif // UTILS_H

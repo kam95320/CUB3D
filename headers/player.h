@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:48:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/27 18:35:47 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/12 18:47:01 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_player
 	char	direction;
 	int		rotation;
 	int		player_move;
+	double	fov_deg;
+	
+	double	fov_rad;
+	char	dir;
+	double	player_vw_lenght;
 	double	radians;
 	double	fl_pl_pos_y;
 	double	fl_pl_pos_x;
@@ -42,6 +47,8 @@ typedef struct s_player
 	double	cam_pos_x;
 	int		gesture_y;
 	int		gesture_x;
+	int orig_pl_y;
+	int orig_pl_x;
 	int		key;
 
 }			t_player;

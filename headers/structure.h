@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/04/09 18:29:20 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/12 18:38:00 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,9 @@ typedef struct s_cub
 	struct s_cam		*cam;
 	struct s_data		*data;
 	struct s_ray		*ray;
+	struct s_player		*player;
 	t_txt				*txt[4];
-
+	t_txt				texture;
 	t_keys				keys;
 	char				*map_name;
 	int					fd;

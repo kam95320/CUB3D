@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:33:15 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/11 12:29:02 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/12 19:39:33 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	floor_dg_col(t_cub *cub)
 		printf(RED "🛑 Problème avec les couleurs du sol\n" RESET);
 	r = cub->map->floor->r;
 	g = cub->map->floor->g;
-	b = cub->map->floor->b;
 	printf(SOFT_GREEN "cub->map->floor->r = %d\n" RESET, r);
+	b = cub->map->floor->b;
 	printf(SOFT_GREEN "cub->map->floor->g = %d\n" RESET, g);
 	printf(SOFT_GREEN "cub->map->floor->b = %d\n" RESET, b);
 	printf(SOFT_GREEN "floor_hx = %d\n" RESET, cub->map->floor_cl_hx);
@@ -96,8 +96,32 @@ void	ceiling_debug_col(t_cub *cub)
 		cub->map->ceiling->b);
 	printf(SOFT_GREEN "ceiling_hx = %d\n" RESET, cub->map->ceiling_cl_hx);
 }
-
-void	texture_debug(t_txt *txt)
+void	debug_texture_h_w(t_cub *cub)
+{
+	printf(GREEN"\n-----DEBUG TEXTURE HEIGHT-----\n"RESET);
+	printf(SOFT_GREEN "cub->txt[NO]->height = %d\n" RESET,
+		cub->txt[NO]->height);
+	printf(SOFT_GREEN "cub->txt[SO]->height = %d\n" RESET,
+		cub->txt[SO]->height);
+	printf(SOFT_GREEN "cub->txt[EA]->height = %d\n" RESET,
+		cub->txt[EA]->height);
+	printf(SOFT_GREEN "cub->txt[WE]->height = %d\n" RESET,
+		cub->txt[WE]->height);
+	printf(GREEN"\n-----DEBUG TEXTURE WIDTH------\n"RESET);
+	printf(SOFT_GREEN "cub->txt[NO]->width = %d\n" RESET, cub->txt[NO]->width);
+	printf(SOFT_GREEN "cub->txt[SO]->width = %d\n" RESET, cub->txt[SO]->width);
+	printf(SOFT_GREEN "cub->txt[EA]->width = %d\n" RESET, cub->txt[EA]->width);
+	printf(SOFT_GREEN "cub->txt[WE]->width = %d\n" RESET, cub->txt[WE]->width);
+}
+void	debug_addr_img(t_cub *cub)
+{
+	printf(GREEN"\n-----DEBUG TEXTURE IMAGE-----\n"RESET);
+	printf(SOFT_GREEN "cub->txt[NO]->img = %p\n" RESET, cub->txt[NO]->img);
+	printf(SOFT_GREEN "cub->txt[SO]->img = %p\n" RESET, cub->txt[SO]->img);
+	printf(SOFT_GREEN "cub->txt[EA]->img = %p\n" RESET, cub->txt[EA]->img);
+	printf(SOFT_GREEN "cub->txt[WE]->img = %p\n" RESET, cub->txt[WE]->img);
+}
+void	texture_debug(t_txt *txt, t_cub *cub)
 {
 	printf(GREEN "\n----- TEXTURE DEBUG -----\n" RESET);
 	if (!txt)
@@ -105,20 +129,22 @@ void	texture_debug(t_txt *txt)
 		printf(RED "🛑 Problème de texture (txt NULL)\n" RESET);
 		return ;
 	}
-	printf(SOFT_GREEN "txt->addr = %p\n" RESET, txt->addr);
+	printf(SOFT_GREEN "txt->addr = %p\n" RESET, cub->data->addr);
 	printf(SOFT_GREEN "txt->bits_per_pixel = %d\n" RESET, txt->bits_per_pixel);
 	printf(SOFT_GREEN "txt->endian = %d\n" RESET, txt->endian);
 	printf(SOFT_GREEN "txt->height = %d\n" RESET, txt->height);
-	printf(SOFT_GREEN "txt->img = %p\n" RESET, txt->img);
+	debug_addr_img(cub);
+	debug_texture_h_w(cub);
 	printf(SOFT_GREEN "txt->size_line = %d\n" RESET, txt->size_line);
-	printf(SOFT_GREEN "txt->width = %d\n" RESET, txt->width);
 }
 
-void	all_debug(t_cub *cub, t_txt *txt)
+void	all_debug(t_cub *cub)
 {
 	map_db_print(cub);
 	floor_dg_col(cub);
 	ceiling_debug_col(cub);
-	texture_debug(txt);
+	texture_debug(&cub->texture, cub);
 	debug_txt(cub);
+	debug_player(cub->player);
+	debug_raycasting(cub->ray);
 }
