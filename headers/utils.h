@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/12 19:53:46 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:50:32 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define BLUE "\033[34m"
 # define LIGHT_BLUE "\033[38;5;117m"
 # define BG_BLUE "\033[44m"
-#define FADED_BLUE  "\033[38;5;250m"
+# define FADED_BLUE "\033[38;5;250m"
 # define CYAN "\033[36m"
 # define SOFT_CYAN "\033[38;5;159m"
 # define CYAN_FADE "\033[38;5;250m"
@@ -167,4 +167,8 @@ void							init_player(t_cub *cub);
 bool							get_player_pos(t_cub *cub);
 bool							dir_is_find(t_cub *cub, char dir);
 void							orig_pl_pos(t_cub *cub);
+void							cast_single_ray(t_cub *cub, int x);
+int								get_texture_pixel(void *img, int x, int y);
+void							draw_vertical_line(t_cub *cub, int x);
+
 #endif // UTILS_H

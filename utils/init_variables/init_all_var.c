@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:41:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/12 18:03:45 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:58:24 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	everyinit(t_cub *cub)
 		printf("var cam =  not yet\n");
 	}
 	cub->fd = -1;
-	printf("pass\n");
 	cub->player = malloc(sizeof(t_player));
 	if (!cub->player)
 		wgas(cub, "error player struct\n", NULL);

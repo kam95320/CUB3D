@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/12 18:35:30 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:09:27 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(int argc, char *argv[])
 	{
 		everyinit(&cub);
 		all_debug(&cub);
+		raycast(&ub);
 		
 
 	}
