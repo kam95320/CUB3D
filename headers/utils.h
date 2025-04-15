@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/14 16:50:32 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/15 11:35:20 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,6 @@ void							dda(t_cub *cub, t_ray *ray);
 void							verticaline(t_cub *cub, t_ray *ray, int x);
 void							bridge_of_struct(t_cub *cub,
 									t_minilib_window *win);
-void							raycast(t_cub *cub, t_ray *ray);
 void							caminit(t_cub *cub);
 void							datainit(t_cub *cub);
 void							fill_textures(t_cub *cub, char *line,
@@ -170,5 +169,8 @@ void							orig_pl_pos(t_cub *cub);
 void							cast_single_ray(t_cub *cub, int x);
 int								get_texture_pixel(void *img, int x, int y);
 void							draw_vertical_line(t_cub *cub, int x);
+void							raycast(t_cub *cub);
+void							key_init(t_cub *cub);
+int								key_press(int code, t_cub *cub);
 
 #endif // UTILS_H

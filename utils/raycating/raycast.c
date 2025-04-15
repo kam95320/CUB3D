@@ -6,13 +6,17 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:10:51 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/14 17:11:23 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/15 11:34:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
+
+
+
 void raycast(t_cub *cub)
 {
+    key_init(cub);
     
 }

@@ -290,6 +290,7 @@ SRCS_NAMES		= utils/check_and_init_arg/check_arg_init_mlx.c\
 				all_debug_files/player_debug.c\
 				utils/raycating/cast_single_ray.c\
 				utils/raycating/draw_vertical_line.c\
+				utils/raycating/raycast.c\
 				utils/main.c
 
 SRCS			= $(SRCS_NAMES)
