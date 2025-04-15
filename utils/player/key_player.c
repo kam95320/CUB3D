@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:06:56 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/15 11:33:08 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:18:24 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,32 @@ int	key_press(int code, t_cub *cub)
 	return (0);
 }
 
+int	key_realease(int code, t_cub *cub)
+{
+	if (code == CAMERA_LEFT)
+		cub->keys.cam_left = false;
+	else if (code == CAMERA_RIGHT)
+		cub->keys.cam_right = false;
+	else if (code == KEY_UP)
+		cub->keys.key_up = false;
+	else if (code == KEY_LEFT)
+		cub->keys.key_left = false;
+	else if (code == KEY_DOWN)
+		cub->keys.key_down = false;
+	else if (code == KEY_RIGHT)
+		cub->keys.key_right = false;
+	return (0);
+}
+int	close_window(t_cub *cub)
+{
+	printf("window is close\n");
+	mlx_loop_end(cub->data->mlx);
+	return (0);
+}
+
 void	key_init(t_cub *cub)
 {
 	mlx_hook(cub->data->addr, 2, KEY_PRESS, &key_press, &cub->keys);
-	mlx_hook(cub->data->addr, 2, KEY_PRESS, &key_press, &cub->keys);
+	mlx_hook(cub->data->addr, 3, KEYRELEASE_MASK, &key_realease, &cub->keys);
+	mlx_hook(cub->data->addr, 17, KEY_DESTROY, &close_window, &cub->keys);
 }

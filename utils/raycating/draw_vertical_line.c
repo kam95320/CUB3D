@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:42:53 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/14 16:49:42 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:09:54 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@ int	get_texture_pixel(void *img, int x, int y)
 	color = *(int *)(texture_data + (y * size_line + x * (bpp / 8)));
 	return (color);
 }
+void	put_pixel(t_data *img, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
+}
 
 void	draw_vertical_line(t_cub *cub, int x)
 {
 	t_ray	*ray;
 	int		y;
-	int		color;
 	int		lineheight;
 	int		texture_x;
 	int		texture_y;
@@ -37,8 +43,8 @@ void	draw_vertical_line(t_cub *cub, int x)
 	int		texture_color;
 
 	ray = cub->ray;
-	lineheight = ray->raylength;
 	y = ray->startp;
+	lineheight = ray->raylength;
 	texture_x = (int)(ray->perpwalldist * 64) % 64;
 	if (ray->whichside == 0)
 	{
@@ -46,28 +52,37 @@ void	draw_vertical_line(t_cub *cub, int x)
 			texture_img = cub->txt[WE]->img;
 		else
 			texture_img = cub->txt[EA]->img;
-		color = 0xFF0000;
 	}
-	else if (ray->whichside == 1)
+	else
 	{
 		if (ray->ray.y < 0)
 			texture_img = cub->txt[NO]->img;
 		else
 			texture_img = cub->txt[SO]->img;
-		color = 0x00FF00;
 	}
-	if (texture_img != NULL)
+	while (y < ray->endp)
 	{
 		texture_y = (int)((y - ray->startp) * 64 / lineheight);
 		texture_color = get_texture_pixel(texture_img, texture_x, texture_y);
-		mlx_pixel_put(cub->mlx, cub->win, x, y, texture_color);
+		put_pixel(cub->data, x, y, texture_color);
+		y++;
 	}
-	else
+}
+
+void	draw_cl_and_fl(t_cub *cub, int x)
+{
+	t_ray	*ray;
+	int		y;
+
+	y = 0;
+	while (y < ray->startp)
 	{
-		while (y < ray->endp)
-		{
-			mlx_pixel_put(cub->mlx, cub->win, x, y, color);
-			y++;
-		}
+		put_pixel(cub->data, x, y, cub->map->ceiling_cl_hx);
+		y++;
+	}
+	while (y < cub->data->height)
+	{
+		put_pixel(cub->data, x, y, cub->map->floor_cl_hx);
+		y++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:27 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:18:46 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char *argv[])
 {
 	static t_cub	cub = {0};
 	two_d_t			two_d;
-	
 
 	check_arg_init_mlx(argc, argv, &cub);
 	if (take_mem_map(&cub, &two_d, argv[1]))
@@ -39,8 +38,6 @@ int	main(int argc, char *argv[])
 	{
 		everyinit(&cub);
 		all_debug(&cub);
-		raycast(&ub);
-		
-
+		raycast(&cub);
 	}
 }

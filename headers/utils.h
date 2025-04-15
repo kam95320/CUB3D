@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/15 11:35:20 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:12:14 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,14 @@ void							cast_single_ray(t_cub *cub, int x);
 int								get_texture_pixel(void *img, int x, int y);
 void							draw_vertical_line(t_cub *cub, int x);
 void							raycast(t_cub *cub);
+void							ray_loop(t_cub *cub);
 void							key_init(t_cub *cub);
 int								key_press(int code, t_cub *cub);
+void							w_key(t_cub *cub);
+void							s_key(t_cub *cub);
+void							a_key(t_cub *cub);
+void							d_key(t_cub *cub);
+void							action_key(t_cub *cub);
+void							draw_cl_and_fl(t_cub *cub, int x);
 
 #endif // UTILS_H
