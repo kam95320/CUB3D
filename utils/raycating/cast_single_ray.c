@@ -6,13 +6,16 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:23:46 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/14 16:24:15 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:49:53 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 
 #include "../../headers/utils.h"
+
+
+
 
 void	cast_single_ray(t_cub *cub, int x)
 {
@@ -23,7 +26,7 @@ void	cast_single_ray(t_cub *cub, int x)
 
 	ray = cub->ray;
 	pl = cub->player;
-	camera_x = 2.0 * x / (double)cub->win_width - 1.0;
+	camera_x = 2.0 * x / (double)cub->data->width - 1.0;
 
 	// Direction du rayon
 	ray->ray.x = pl->cam_pos_x + ray->plane.x * camera_x;
@@ -92,13 +95,13 @@ void	cast_single_ray(t_cub *cub, int x)
 		ray->perpwalldist = (ray->map.y - pl->fl_pl_pos_y + (1 - ray->step.y) / 2.0) / ray->ray.y;
 
 	// Calcul de la hauteur de la ligne à dessiner
-	ray->raylength = (int)(cub->win_height / ray->perpwalldist);
+	ray->raylength = (int)(cub->data->height / ray->perpwalldist);
 
 	// Calcul des positions de début et de fin de la ligne
-	ray->startp = -ray->raylength / 2 + cub->win_height / 2;
+	ray->startp = -ray->raylength / 2 + cub->data->height / 2;
 	if (ray->startp < 0)
 		ray->startp = 0;
-	ray->endp = ray->raylength / 2 + cub->win_height / 2;
-	if (ray->endp >= cub->win_height)
-		ray->endp = cub->win_height - 1;
+	ray->endp = ray->raylength / 2 + cub->data->height / 2;
+	if (ray->endp >= cub->data->height)
+		ray->endp = cub->data->height - 1;
 }

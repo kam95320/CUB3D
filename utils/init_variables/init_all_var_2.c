@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:45:59 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/10 14:07:42 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:46:03 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	datainit(t_cub *cub)
 {
-	cub->data = malloc(sizeof(t_data));
-	if (cub->data == NULL)
-		wgas(cub, "fail malloc cub->data", NULL);
 	cub->data->width = 960;
 	cub->data->height = 600;
 	cub->data->mlx = mlx_init();

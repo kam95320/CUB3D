@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:42:53 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/15 17:09:54 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:27:14 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,8 @@ void	draw_vertical_line(t_cub *cub, int x)
 	}
 }
 
-void	draw_cl_and_fl(t_cub *cub, int x)
+void	draw_cl_and_fl(t_cub *cub, t_ray *ray, int x)
 {
-	t_ray	*ray;
 	int		y;
 
 	y = 0;
@@ -86,3 +85,5 @@ void	draw_cl_and_fl(t_cub *cub, int x)
 		y++;
 	}
 }
+
+
