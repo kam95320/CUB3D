@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/04/15 15:11:49 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/17 16:45:52 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "raycasting.h" // pour que t_txt soit connu
 # include <stdlib.h>
-# define KEY_PRESS (1L << 0)
-# define KEYRELEASE_MASK (1L << 1)
-# define KEY_DESTROY (1L << 19)
+# define KEY_PRESS 1L << 0
+# define KEY_RELEASE_MASK 1L << 1
+# define KEY_DESTROY 1L << 19
 # define ESC_KEY 65307
 # define CAMERA_LEFT 65361
 # define CAMERA_RIGHT 65363
@@ -27,7 +27,8 @@
 # define KEY_RIGHT 100
 # define KEY_P 112
 # define KEY_M 109
-
+# define WD_SIZE_WIDTH 1170
+# define WD_SIZE_HEIGHT 720
 typedef struct s_txt	t_txt;
 
 typedef struct s_keys

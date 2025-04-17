@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/16 17:30:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/17 14:38:27 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ int	main(int argc, char *argv[])
 	else
 	{
 		everyinit(&cub);
-		// all_debug(&cub);
 		raycast(&cub);
-		printf("mlx_loop adresse =  %p\n", cub.data->mlx);
 		mlx_loop(cub.data->mlx);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:46:24 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/01 20:59:15 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:36:21 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 # include "structure.h"
 // # define WD_SIZE_WIDTH 640
 // # define WD_SIZE_HEIGHT 480
-# define WD_SIZE_WIDTH 1280
-# define WD_SIZE_HEIGHT 720
 // #define WD_SIZE_WIDTH 3840
 // #define WD_SIZE_HEIGHT 2160
 

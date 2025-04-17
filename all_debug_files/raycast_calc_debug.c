@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:55:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/16 17:28:12 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/17 16:58:33 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	single_ray_debug(t_cub *cub, int x)
 	printf(LIGHT_PURPLE"📍 Player position (fl_pl_pos): %.2f, %.2f\n" RESET, pl->fl_pl_pos_x,
 		pl->fl_pl_pos_y);
 	printf(LIGHT_PURPLE"🎯 Camera X: %.6f\n"RESET, ray->camerax);
-	printf("➡️  Ray direction: ray.x = %.6f | ray.y = %.6f\n", ray->ray.x,
+	printf(LIGHT_PURPLE"➡️  Ray direction: ray.x = %.6f | ray.y = %.6f\n", ray->ray.x,
 		ray->ray.y);
 	printf(LIGHT_PURPLE"📌 Map cell: map.x = %d | map.y = %d\n"RESET, ray->map.x, ray->map.y);
 	printf(LIGHT_PURPLE"📏 Delta dist: deltadist.x = %.6f | deltadist.y = %.6f\n"RESET,
@@ -39,7 +39,6 @@ void	single_ray_debug(t_cub *cub, int x)
 	printf(MUTED_PURPLE"🧪 --------------------------\n"RESET);
 }
 
-#include <stdio.h>
 
 void	debug_draw_vertical_line(t_cub *cub, int x)
 {
@@ -76,11 +75,10 @@ void	debug_draw_cl_and_fl(t_cub *cub, t_ray *ray, int x)
 
 void debg_ray_calc(t_cub  *cub, int x)
 {
-    printf(CYAN"\n debug  raycasting calculi\n"RESET);
+    printf(CYAN"\n|----------DEBUG RAYCASTING CALCULI----------|\n"RESET);
     single_ray_debug(cub, x);
     debug_draw_vertical_line(cub, x); 
     debug_draw_cl_and_fl(cub, cub->ray,  x); 
-    printf(CYAN"\n ---------------------------\n"RESET);
 }
 
 

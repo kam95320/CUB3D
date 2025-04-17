@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:45:59 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/16 16:46:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:02:43 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 void	datainit(t_cub *cub)
 {
-	cub->data->width = 960;
+	printf("\n----datainit deb----\n");
+	cub->data->width = 660;
 	cub->data->height = 600;
 	cub->data->mlx = mlx_init();
+	printf("before  get  screen cub->data->width = %d\n", cub->data->width);
+	printf("before  get  screen cub->data->height = %d\n", cub->data->height);
 	mlx_get_screen_size(cub->data->mlx, &cub->data->width, &cub->data->height);
+	printf("after  get  screen cub->data->width = %d\n", cub->data->width);
+	printf("after  get  screen cub->data->height = %d\n", cub->data->height);
 	cub->data->win = mlx_new_window(cub->data->mlx, cub->data->width,
-			cub->data->height, "CUB bcp de D");
+			cub->data->height, "CUB3D");
+	
 	if (!cub->data->win)
 	{
 		free(cub->data->mlx);
@@ -30,6 +36,7 @@ void	datainit(t_cub *cub)
 	cub->data->addr = mlx_get_data_addr(cub->data->img,
 			&cub->data->bits_per_pixel, &cub->data->line_length,
 			&cub->data->endian);
+	printf("\n----datainit end----\n");
 }
 
 void	ciminit(t_cub *cub)

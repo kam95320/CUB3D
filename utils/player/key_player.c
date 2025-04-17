@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:06:56 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/15 15:18:24 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/17 16:47:17 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ int	close_window(t_cub *cub)
 
 void	key_init(t_cub *cub)
 {
-	mlx_hook(cub->data->addr, 2, KEY_PRESS, &key_press, &cub->keys);
-	mlx_hook(cub->data->addr, 3, KEYRELEASE_MASK, &key_realease, &cub->keys);
-	mlx_hook(cub->data->addr, 17, KEY_DESTROY, &close_window, &cub->keys);
+	printf("\n-----key_init pass deb-----\n");
+	mlx_hook(cub->data->win, KeyPress, KEY_PRESS, &key_press, cub);
+	mlx_hook(cub->data->win, KeyRelease, KEY_RELEASE_MASK, &key_realease, cub);
+	mlx_hook(cub->data->win, DestroyNotify, KEY_DESTROY, &close_window, cub);
+	printf("\n-----key_init pass end-----\n");
 }
