@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/04/17 16:45:52 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:54:44 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # define ESC_KEY 65307
 # define CAMERA_LEFT 65361
 # define CAMERA_RIGHT 65363
-# define KEY_UP 119
+# define KEY_STRAIGHT 119
 # define KEY_LEFT 97
-# define KEY_DOWN 115
+# define KEY_BACK 115
 # define KEY_RIGHT 100
 # define KEY_P 112
 # define KEY_M 109
@@ -44,8 +44,8 @@ typedef struct s_keys
 	bool				cam_right;
 	bool  				key_left;
 	bool 				key_right;
-	bool				key_up;
-	bool 				key_down;
+	bool				key_straight;
+	bool 				key_back;
 	bool				key_map;
 }						t_keys;
 

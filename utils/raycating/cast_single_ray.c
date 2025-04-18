@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:23:46 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/17 16:04:19 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:29:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	cast_single_ray(t_cub *cub, int x)
 		if (ray->map.x < 0 || ray->map.x >= cub->data->line_length || ray->map.y < 0
 			|| ray->map.y >= cub->data->height)
 		{
-			printf("❌ ray->map out of bounds: x = %d, y = %d\n", ray->map.x,
-				ray->map.y);
+			// printf("❌ ray->map out of bounds: x = %d, y = %d\n", ray->map.x,
+				// ray->map.y);
 			break ; // évite le crash
 		}
 		if (cub->map->matrix[ray->map.y][ray->map.x] == '1')

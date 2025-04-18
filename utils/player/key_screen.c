@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_player.c                                       :+:      :+:    :+:   */
+/*   key_screen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:06:56 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/17 16:47:17 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:58:52 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	key_press(int code, t_cub *cub)
 		cub->keys.cam_left = true;
 	else if (code == CAMERA_RIGHT)
 		cub->keys.cam_right = true;
-	else if (code == KEY_UP)
-		cub->keys.key_up = true;
+	else if (code == KEY_STRAIGHT)
+		cub->keys.key_straight = true;
 	else if (code == KEY_LEFT)
 		cub->keys.key_left = true;
-	else if (code == KEY_DOWN)
-		cub->keys.key_down = true;
+	else if (code == KEY_BACK)
+		cub->keys.key_back = true;
 	else if (code == KEY_RIGHT)
 		cub->keys.key_right = true;
 	else if (code == KEY_M && cub->keys.key_map == true)
@@ -41,12 +41,12 @@ int	key_realease(int code, t_cub *cub)
 		cub->keys.cam_left = false;
 	else if (code == CAMERA_RIGHT)
 		cub->keys.cam_right = false;
-	else if (code == KEY_UP)
-		cub->keys.key_up = false;
+	else if (code == KEY_STRAIGHT)
+		cub->keys.key_straight = false;
 	else if (code == KEY_LEFT)
 		cub->keys.key_left = false;
-	else if (code == KEY_DOWN)
-		cub->keys.key_down = false;
+	else if (code == KEY_BACK)
+		cub->keys.key_back = false;
 	else if (code == KEY_RIGHT)
 		cub->keys.key_right = false;
 	return (0);

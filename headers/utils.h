@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/18 10:06:19 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:17:52 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,5 +189,7 @@ void							debug_draw_cl_and_fl(t_cub *cub, t_ray *ray,
 void							debug_draw_cl_and_fl(t_cub *cub, t_ray *ray,
 									int x);
 void							debg_ray_calc(t_cub *cub, int x);
+void							key_player(t_cub *cub);
+void							move_straight(t_cub *cub);
 
 #endif // UTILS_H

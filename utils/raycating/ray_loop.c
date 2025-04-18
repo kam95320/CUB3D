@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:28:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/18 10:30:13 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:27:46 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ int	ray_loop(t_cub *cub)
 		draw_vertical_line(cub, x);
 		// printf(GREEN "pass draw_vertical_line\n"RESET);
 		// printf(GREEN "pass draw_cl_and_fl\n" RESET);
-		 debg_ray_calc(cub, x);
+		//  debg_ray_calc(cub, x);
 	}
 	mlx_put_image_to_window(cub->data->mlx, cub->data->win, cub->data->img, 0,
 		0);
-	action_key(cub);
+	// action_key(cub);
+	key_player(cub);
 	mlx_destroy_image(cub->data->mlx, cub->data->img);
 	// printf("\n-----ray_loop end-----\n");
 	return (0);
