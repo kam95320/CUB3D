@@ -285,9 +285,10 @@ SRCS_NAMES		= utils/check_and_init_arg/check_arg_init_mlx.c\
 				utils/init_variables/init_all_var_2.c\
 				utils/utils.c\
 				utils/player/init_player.c\
-				utils/player/key_player.c\
+				utils/player/key_screen.c\
 				utils/player/move_player.c\
 				utils/player/rotate_player.c\
+				utils/player/player_base.c\
 				all_debug_files/parse_debug.c\
 				all_debug_files/raycast_debug.c\
 				all_debug_files/player_debug.c\

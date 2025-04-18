@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/17 14:37:16 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 10:06:19 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,13 +164,14 @@ void							debug_player(t_player *player);
 char							*txt_cond(char **mp, int i, int j);
 void							init_player(t_cub *cub);
 bool							get_player_pos(t_cub *cub);
+void							player_base(t_cub *cub);
 bool							dir_is_find(t_cub *cub, char dir);
 void							orig_pl_pos(t_cub *cub);
 void							cast_single_ray(t_cub *cub, int x);
 int								get_texture_pixel(void *img, int x, int y);
 void							draw_vertical_line(t_cub *cub, int x);
 void							raycast(t_cub *cub);
-int 							ray_loop(t_cub *cub);
+int								ray_loop(t_cub *cub);
 void							key_init(t_cub *cub);
 int								key_press(int code, t_cub *cub);
 void							w_key(t_cub *cub);

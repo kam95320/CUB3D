@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycast.c                                          :+:      :+:    :+:   */
+/*   player_base.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 17:10:51 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/18 10:29:22 by kahoumou         ###   ########.fr       */
+/*   Created: 2025/04/18 09:55:12 by kahoumou          #+#    #+#             */
+/*   Updated: 2025/04/18 10:29:51 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-void	raycast(t_cub *cub)
-{
-	key_init(cub);
-	init_player(cub);
-	mlx_loop_hook(cub->data->mlx, ray_loop, cub);
-}
+
+// void player_base(t_cub *cub)
+// {
+//     init_player(cub);
+//     action_key(cub);
+// }

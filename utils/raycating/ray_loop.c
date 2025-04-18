@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:28:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/17 17:11:22 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/18 10:30:13 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	ray_loop(t_cub *cub)
 	}
 	mlx_put_image_to_window(cub->data->mlx, cub->data->win, cub->data->img, 0,
 		0);
+	action_key(cub);
 	mlx_destroy_image(cub->data->mlx, cub->data->img);
 	// printf("\n-----ray_loop end-----\n");
 	return (0);
