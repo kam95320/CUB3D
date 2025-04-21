@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/18 16:17:52 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:20:29 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,6 @@ int								null_line(char *str);
 void							fsplit(char **str);
 void							gnl_free(int fd);
 char							*erase_new_line(char *str);
-
 void							lookmove(t_ray *ray, t_cam *cam, int key);
 int								wallhit(t_cub *cub, double x, double y);
 void							setpixel(t_data *data, int x, int y, int color);
@@ -141,7 +140,11 @@ void							caminit(t_cub *cub);
 void							datainit(t_cub *cub);
 void							fill_textures(t_cub *cub, char *line,
 									char *verif);
+void							fill_ceiling(t_cub *cub, char *line);
 // void							fill_textures(t_cub *cub, char *line);
+char							*verif_direct(char *line);
+bool							textures(t_cub *cub, char *line);
+void							fill_floor(t_cub *cub, char *line);
 void							everyinit(t_cub *cub);
 void							datainit(t_cub *cub);
 void							ciminit(t_cub *cub);
@@ -191,5 +194,10 @@ void							debug_draw_cl_and_fl(t_cub *cub, t_ray *ray,
 void							debg_ray_calc(t_cub *cub, int x);
 void							key_player(t_cub *cub);
 void							move_straight(t_cub *cub);
+void							init_player_dir_cam(t_cub *cub);
+void							init_n_s(t_cub *cub, double pl_lenght);
+void							init_e_w(t_cub *cub, double pl_lenght);
+void							init_player_dir_cam(t_cub *cub);
+void							print_ray_loop(t_cub *cub);
 
 #endif // UTILS_H

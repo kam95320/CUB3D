@@ -253,18 +253,20 @@ SRCS_NAMES		= utils/check_and_init_arg/check_arg_init_mlx.c\
 				utils/initialization/data_initializ.c\
 				utils/initialization/mlx_initializ.c\
 				utils/initialization/player_data_initialization.c\
-				utils/initialization/texture_data_initialization.c\
 				utils/error_msg/print_error.c\
 				utils/check_and_init_arg/check_is_valid.c\
 				utils/check_and_init_arg/check_open.c\
 				utils/check_and_init_arg/check_is_cub_file.c\
 				utils/check_and_init_arg/check_is_xpm_file.c\
+				utils/map_fclt/textures.c\
 				utils/map_fclt/map_is_valid.c\
 				utils/map_fclt/take_mem_map.c\
 				utils/map_fclt/completed_2d.c\
 				utils/map_fclt/nb_line.c\
 				utils/map_fclt/manage_space.c\
 				utils/map_fclt/is_good_print.c\
+				utils/map_fclt/ceil_floor.c\
+				utils/map_fclt/tstrcmp.c\
 				utils/map_fclt/color.c\
 				utils/map_fclt/hx_txt.c\
 				utils/map_fclt/vrb_txt_valid.c\
@@ -278,7 +280,6 @@ SRCS_NAMES		= utils/check_and_init_arg/check_arg_init_mlx.c\
 				utils/mlx_initializaton/initialzation_txt.c\
 				utils/mlx_initializaton/mlx_exit.c\
 				utils/map_fclt/get_map_size.c\
-				utils/initialization/initialization_texture.c\
 				utils/map_world/map_create.c\
 				utils/map_world/draw_map.c\
 				utils/init_variables/init_all_var.c\
@@ -288,7 +289,7 @@ SRCS_NAMES		= utils/check_and_init_arg/check_arg_init_mlx.c\
 				utils/player/key_screen.c\
 				utils/player/move_player.c\
 				utils/player/rotate_player.c\
-				utils/player/player_base.c\
+				utils/player/init_direct_player.c\
 				all_debug_files/parse_debug.c\
 				all_debug_files/raycast_debug.c\
 				all_debug_files/player_debug.c\

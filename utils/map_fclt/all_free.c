@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:49:22 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/05 14:21:07 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:26:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@
 // 	}
 // }
 
-
 // void	free_mp(t_map *map_data)
 // {
 // 	if (map_data)
@@ -96,7 +95,6 @@
 // 	free_txt(&data->texture_info);
 // 	free_mp(&data->map_data);
 // }
-
 
 void	free_textures(t_txt **txt)
 {

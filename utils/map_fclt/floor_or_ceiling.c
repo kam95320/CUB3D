@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:04:53 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/12 19:11:03 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:40:13 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int	floor_or_ceiling(char lt, t_info_texture *txt)
 {
-	printf("ceiling = %ls\n", txt->ceiling);
-	printf("floor = %ls\n", txt->floor);
+	(void)txt;
 	if (lt == 'C')
 	{
 		return (1);

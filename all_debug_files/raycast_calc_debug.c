@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:55:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/17 16:58:33 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:41:23 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ void debg_ray_calc(t_cub  *cub, int x)
     single_ray_debug(cub, x);
     debug_draw_vertical_line(cub, x); 
     debug_draw_cl_and_fl(cub, cub->ray,  x); 
+	print_ray_loop(cub);
+}
+
+void	print_ray_loop(t_cub *cub)
+{
+	printf(" ray_loop -> cub->data->mlx =  %p\n", cub->data->mlx);
+	printf(" ray_loop -> cub->data->width =  %d\n", cub->data->width);
+	printf("ray_loop -> cub->data->height=  %d\n", cub->data->height);
 }
 
 
