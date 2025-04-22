@@ -6,19 +6,13 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/17 14:38:27 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:27:50 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/two_d.h"
 #include "../headers/free.h"
 #include "../headers/utils.h"
-
-void	mlx_ftclt(t_minilib_window mlx_data)
-{
-	mlx_loop(mlx_data.mlx_connex);
-	// mlx_loop_hook(mlx_data.mlx_connex, , &mlx_data);
-}
 
 int	main(int argc, char *argv[])
 {

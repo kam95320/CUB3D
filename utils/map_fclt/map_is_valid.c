@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 18:39:06 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:43:02 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ bool	is_line_empty(char *line)
 	}
 	return (true);
 }
+
 bool	good_print_verif(t_cub *cub, char **mp, int i, int j)
 {
 	if (!is_good_print(cub, mp, i, j))
@@ -37,6 +38,7 @@ bool	good_print_verif(t_cub *cub, char **mp, int i, int j)
 	}
 	return (true);
 }
+
 bool	verif_valid_txt(t_cub *cub)
 {
 	if (!vrb_txt_valid(cub))
@@ -46,6 +48,7 @@ bool	verif_valid_txt(t_cub *cub)
 	}
 	return (true);
 }
+
 bool	map_is_valid(t_cub *cub)
 {
 	int		j;

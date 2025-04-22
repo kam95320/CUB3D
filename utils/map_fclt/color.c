@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:56:26 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 17:33:54 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:55:59 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@
 // 	free_tab((void **)s1);
 // 	return (s2);
 // }
-
 
 void	fccolors(t_cub *cub, char *line, char ltr)
 {

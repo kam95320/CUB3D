@@ -275,16 +275,15 @@ SRCS_NAMES		= utils/check_and_init_arg/check_arg_init_mlx.c\
 				utils/map_fclt/init_var_pl_e_w.c\
 				utils/map_fclt/init_var_pl_n_s.c\
 				utils/mlx_initializaton/initialize_mlx.c\
-				utils/mlx_initializaton/init_img_textures.c\
-				utils/mlx_initializaton/texture_convert.c\
-				utils/mlx_initializaton/initialzation_txt.c\
 				utils/mlx_initializaton/mlx_exit.c\
 				utils/map_fclt/get_map_size.c\
-				utils/map_world/map_create.c\
-				utils/map_world/draw_map.c\
+				utils/map_fclt/rgb_nb_convert.c\
 				utils/init_variables/init_all_var.c\
 				utils/init_variables/init_all_var_2.c\
 				utils/utils.c\
+				utils/utils_2.c\
+				utils/raycating/ray_utils_1.c\
+				utils/raycating/ray_utils_2.c\
 				utils/player/init_player.c\
 				utils/player/key_screen.c\
 				utils/player/move_player.c\

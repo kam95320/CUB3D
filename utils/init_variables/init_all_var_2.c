@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:45:59 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 17:17:08 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:30:15 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ciminit(t_cub *cub)
 	mlx_mouse_get_pos(cub->data->mlx, cub->data->win, &cub->cam->mouse_x,
 		&cub->cam->mouse_y);
 }
+
 void	txtinit(t_cub *cub)
 {
 	cub->txt[NO]->img = mlx_xpm_file_to_image(cub->data->mlx,
@@ -106,6 +107,7 @@ void	caminit(t_cub *cub)
 	mlx_mouse_get_pos(cub->data->mlx, cub->data->win, &cub->cam->mouse_x,
 		&cub->cam->mouse_y);
 }
+
 void	rayinit(t_ray *ray)
 {
 	ray->x = 0;

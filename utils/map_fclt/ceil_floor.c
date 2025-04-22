@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:32:43 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 17:33:34 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:55:11 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,7 @@ void	fill_floor(t_cub *cub, char *line)
 	cub->map->floor = malloc(sizeof(t_rgb));
 	if (!cub->map->floor)
 		return (freend(cub));
-	cub->map->floor->r = ft_atoi(rgb[0]);
-	cub->map->floor->g = ft_atoi(rgb[1]);
-	cub->map->floor->b = ft_atoi(rgb[2]);
+	rgb_nb_convert(cub, rgb, 'f');
 	fsplit(rgb);
 }
 
@@ -124,8 +122,6 @@ void	fill_ceiling(t_cub *cub, char *line)
 	cub->map->ceiling = malloc(sizeof(t_rgb));
 	if (!cub->map->ceiling)
 		return (freend(cub));
-	cub->map->ceiling->r = ft_atoi(rgb[0]);
-	cub->map->ceiling->g = ft_atoi(rgb[1]);
-	cub->map->ceiling->b = ft_atoi(rgb[2]);
+	rgb_nb_convert(cub, rgb, 'c');
 	fsplit(rgb);
 }

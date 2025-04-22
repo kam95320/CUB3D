@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:02:47 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 18:13:17 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:23:15 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	fill_textures(t_cub *cub, char *line, char *verif)
 			cub->txt[EA]->name = line;
 	}
 }
+
 void	init_textures(t_cub *cub)
 {
 	int	i;
@@ -53,7 +54,7 @@ void	init_textures(t_cub *cub)
 
 bool	textures(t_cub *cub, char *line)
 {
-	char *verif;
+	char	*verif;
 
 	verif = verif_direct(line);
 	if (!verif)

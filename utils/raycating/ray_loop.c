@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:28:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 16:42:18 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:24:39 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int	ray_loop(t_cub *cub)
 {
-	
-	int x;
+	int	x;
+
 	x = -1;
-	// print_ray_loop(cub);
 	cub->data->img = mlx_new_image(cub->data->mlx, cub->data->width,
 			cub->data->height);
-	
 	cub->data->addr = mlx_get_data_addr(cub->data->img,
 			&cub->data->bits_per_pixel, &cub->data->line_length,
 			&cub->data->endian);
@@ -28,8 +26,7 @@ int	ray_loop(t_cub *cub)
 	{
 		cast_single_ray(cub, x);
 		draw_cl_and_fl(cub, cub->ray, x);
-		draw_vertical_line(cub, x);
-		//  debg_ray_calc(cub, x);
+		draw_vertical_line(cub, x, cub->ray, cub->player);
 	}
 	mlx_put_image_to_window(cub->data->mlx, cub->data->win, cub->data->img, 0,
 		0);

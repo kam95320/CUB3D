@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:49:03 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/03/29 17:51:18 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:18:55 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef struct s_ray
 	t_mgam2i					step;
 	double						camerax;
 	double						perpwalldist;
+	double						wall_x;
 	int							x;
 	int							raylength;
 	int							whichside;

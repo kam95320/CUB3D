@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:21:54 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 17:57:11 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:56:58 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	init_var(two_d_t *two_d)
 	two_d->line = NULL;
 	return (0);
 }
+
 void	while_bcl_2d(two_d_t *two_d, t_cub *cub, char *tmp_line)
 {
 	while (1)
@@ -48,9 +49,11 @@ void	while_bcl_2d(two_d_t *two_d, t_cub *cub, char *tmp_line)
 		two_d->row++;
 	}
 }
+
 void	completed_2d(two_d_t *two_d, t_cub *cub)
 {
 	char	*tmp_line;
+
 	tmp_line = NULL;
 	if (-1 == init_var(two_d))
 	{

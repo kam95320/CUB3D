@@ -6,13 +6,13 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 14:40:02 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/16 15:40:36 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:25:00 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
 
-bool		check_is_valid(char *arg)
+bool	check_is_valid(char *arg)
 {
 	if (false == check_is_cub_file(arg))
 	{

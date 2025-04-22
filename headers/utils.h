@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 18:20:29 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:20:21 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,8 @@ void							ciminit(t_cub *cub);
 void							rayinit(t_ray *ray);
 void							txtinit(t_cub *cub);
 int								tstrcmp(char *str, char *cmp);
+void							rgb_nb_convert(t_cub *cub, char **rgb,
+									char f_c);
 char							*erase_new_line(char *str);
 void							caminit(t_cub *cub);
 void							init_textures(t_cub *cub);
@@ -172,7 +174,9 @@ bool							dir_is_find(t_cub *cub, char dir);
 void							orig_pl_pos(t_cub *cub);
 void							cast_single_ray(t_cub *cub, int x);
 int								get_texture_pixel(void *img, int x, int y);
-void							draw_vertical_line(t_cub *cub, int x);
+// void							draw_vertical_line(t_cub *cub, int x);
+void							draw_vertical_line(t_cub *cub, int x,
+									t_ray *ray, t_player *pl);
 void							raycast(t_cub *cub);
 int								ray_loop(t_cub *cub);
 void							key_init(t_cub *cub);
@@ -199,5 +203,17 @@ void							init_n_s(t_cub *cub, double pl_lenght);
 void							init_e_w(t_cub *cub, double pl_lenght);
 void							init_player_dir_cam(t_cub *cub);
 void							print_ray_loop(t_cub *cub);
+void							step_ray(t_cub *cub);
+int								ray_out_of_bounds(t_cub *cub);
+void							perform_dda(t_cub *cub);
+void							compute_perp_distance(t_cub *cub);
+void							compute_ray_line(t_cub *cub);
+void							init_ray_steps(t_cub *cub, t_ray *ray);
+void							init_ray_values(t_cub *cub, int x);
+int								get_texture_pixel(void *img, int x, int y);
+void							put_pixel(t_data *img, int x, int y, int color);
+double							calc_wall_hit(t_ray *ray, t_player *pl);
+void							*get_texture(t_cub *cub);
+// void							draw_vertical_line(t_cub *cub, int x);
 
 #endif // UTILS_H
