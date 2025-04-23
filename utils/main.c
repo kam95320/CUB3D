@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 17:27:50 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:14:11 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char *argv[])
 	{
 		everyinit(&cub);
 		raycast(&cub);
+		// all_debug(&cub);
 		mlx_loop(cub.data->mlx);
 	}
 }

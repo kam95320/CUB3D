@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:28:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 17:24:39 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:14:35 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ray_loop(t_cub *cub)
 		draw_cl_and_fl(cub, cub->ray, x);
 		draw_vertical_line(cub, x, cub->ray, cub->player);
 	}
+	// debg_ray_calc(cub,  x);
 	mlx_put_image_to_window(cub->data->mlx, cub->data->win, cub->data->img, 0,
 		0);
 	key_player(cub);
