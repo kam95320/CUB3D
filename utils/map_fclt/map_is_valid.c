@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 14:16:58 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 14:43:02 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:51:26 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,13 @@ bool	map_is_valid(t_cub *cub)
 		if (true == good_print_verif(cub, mp, i, j))
 			j++;
 	}
+	if(false == player_outside_map(mp))
+	{
+		return(false);
+	}
 	if (false == verif_valid_txt(cub))
 		return (false);
+	if(false == check_close_map(mp))
+		return(false);
 	return (true);
 }

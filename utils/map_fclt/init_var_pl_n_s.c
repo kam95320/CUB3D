@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:07:39 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 13:58:13 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:48:27 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ void	init_var_pl_n_s(t_player *player)
 	else
 		return ;
 }
+

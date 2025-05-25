@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:49:03 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 17:18:55 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/24 18:25:14 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,17 @@
 # define MOVESPEED 0.02
 # define ROTATESPEED 0.02
 
-typedef double t_mgam2f			__attribute__((ext_vector_type(2)));
-typedef int t_mgam2i			__attribute__((ext_vector_type(2)));
+typedef struct s_mgam2f
+{
+	double						x;
+	double						y;
+}								t_mgam2f;
+
+typedef struct s_mgam2i
+{
+	int							x;
+	int							y;
+}								t_mgam2i;
 
 // struct t_minilib_window;
 typedef struct s_minilib_window	t_minilib_window;
@@ -84,6 +93,7 @@ typedef struct s_ray
 	int							whichside;
 	int							startp;
 	int							endp;
+	int							hit;
 }								t_ray;
 
 #endif //  RAYCASTING_H

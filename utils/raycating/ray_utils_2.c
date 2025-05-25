@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:34:42 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 17:26:55 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:05:11 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,23 @@ void	*get_texture(t_cub *cub)
 		else
 			return (cub->txt[SO]->img);
 	}
+}
+
+int	is_walkable_cell(t_cub *cub, double x, double y)
+{
+	int map_x;
+	int map_y;
+
+	map_x = (int)x;
+	map_y = (int)y;
+
+	if (map_x < 0 || map_y < 0)
+		return (0);
+	if (map_y >= cub->data->height)
+		return (0);
+	if (map_x >= (int)ft_strlen(cub->map->matrix[map_y]))
+		return (0);
+	if (cub->map->matrix[map_y][map_x] != '0')
+		return (0);
+	return (1);
 }

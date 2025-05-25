@@ -6,11 +6,12 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:42:53 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 17:20:59 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/24 20:01:45 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/utils.h"
+
 
 void	draw_vertical_line(t_cub *cub, int x, t_ray *ray, t_player *pl)
 {

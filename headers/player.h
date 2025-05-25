@@ -6,13 +6,17 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:48:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/15 16:08:11 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/24 14:55:43 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PLAYER_H
 # define PLAYER_H
 # include <math.h>
+
+#define FOV 60.0f
+#define RAYS 60
+#define DEG_TO_RAD(angle) ((angle) * M_PI / 180.0)
 
 # define M_PI 3.14159265358979323846
 # define SPACE 64
@@ -27,10 +31,8 @@
 # define MAP_SKY 0x778BF0
 # define MAP_FLOOR 0x7C7C7C
 
-# define MOVESPEED 0.02
-# define ROTATESPEED 0.02
-# define MOVE_SPEED 0.1
-#define ROTATE_SPEED 0.02
+# define MOVE_SPEED 0.2
+# define ROTATE_SPEED 0.1
 
 typedef struct s_player
 {

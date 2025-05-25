@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 17:20:21 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:42:22 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # include <limits.h>
 # include <math.h>
 # include <stdbool.h>
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -58,6 +59,7 @@
 # define TEAL_GREEN "\033[38;5;37m"
 # define RICH_PURPLE "\033[38;5;135m"
 # define MUTED_PURPLE "\033[38;5;97m"
+# define ORANGE "\033[33m"
 
 typedef struct s_minilib_window	t_minilib_window;
 typedef struct s_cub			t_cub;
@@ -76,7 +78,10 @@ void							data_initializ(t_minilib_window *mlx_data);
 void							mlx_initializ(t_minilib_window *mlx_data);
 void							player_data_initialization(t_player *data_player);
 void							texture_data_initialization(t_info_texture *data_texture);
+bool							check_close_map(char **map);
 bool							check_is_valid(char *file);
+bool							check_dir(char dir);
+bool							player_outside_map(char **map);
 bool							check_open(char *file);
 bool							check_is_cub_file(char *file);
 bool							check_is_xpm_file(char *file);
@@ -198,22 +203,27 @@ void							debug_draw_cl_and_fl(t_cub *cub, t_ray *ray,
 void							debg_ray_calc(t_cub *cub, int x);
 void							key_player(t_cub *cub);
 void							move_straight(t_cub *cub);
-void							init_player_dir_cam(t_cub *cub);
 void							init_n_s(t_cub *cub, double pl_lenght);
 void							init_e_w(t_cub *cub, double pl_lenght);
-void							init_player_dir_cam(t_cub *cub);
+void							init_player_dir_cam(t_cub *cub, char direction);
 void							print_ray_loop(t_cub *cub);
 void							step_ray(t_cub *cub);
+// int								ray_out_of_bounds(t_cub *cub, int hit);
 int								ray_out_of_bounds(t_cub *cub);
+
 void							perform_dda(t_cub *cub);
+// void							perform_dda(t_cub *cub, t_player *pl);
 void							compute_perp_distance(t_cub *cub);
 void							compute_ray_line(t_cub *cub);
+// void							init_ray_steps(t_cub *cub);
 void							init_ray_steps(t_cub *cub, t_ray *ray);
 void							init_ray_values(t_cub *cub, int x);
 int								get_texture_pixel(void *img, int x, int y);
 void							put_pixel(t_data *img, int x, int y, int color);
 double							calc_wall_hit(t_ray *ray, t_player *pl);
 void							*get_texture(t_cub *cub);
+int								is_walkable_cell(t_cub *cub, double x,
+									double y);
 // void							draw_vertical_line(t_cub *cub, int x);
 
 #endif // UTILS_H

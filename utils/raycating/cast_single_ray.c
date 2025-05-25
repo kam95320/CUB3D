@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:23:46 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/22 16:49:51 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:36:49 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	init_ray_values(t_cub *cub, int x)
 	else
 		ray->deltadist.y = fabs(1.0 / ray->ray.y);
 }
+
 
 void	cast_single_ray(t_cub *cub, int x)
 {

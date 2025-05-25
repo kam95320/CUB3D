@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast_debug.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfranke <pfranke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:20:57 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/16 16:55:06 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/17 22:46:56 by pfranke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 void	vec2i_debug(char *param_x, char *param_y, t_mgam2i veci)
 {
-	printf(LIGHT_PURPLE "%s = %d | %s = %d\n" RESET, param_x, veci[0], param_y, veci[1]);
+	printf(LIGHT_PURPLE "%s = %d | %s = %d\n" RESET, param_x, veci.x, param_y, veci.y);
 }
 
 void	vec2f_debug(char *param_x, char *param_y, t_mgam2f vecf)
 {
-	printf(LIGHT_PURPLE "%s = %.4f | %s = %.4f\n" RESET, param_x, vecf[0], param_y, vecf[1]);
+	printf(LIGHT_PURPLE "%s = %.4f | %s = %.4f\n" RESET, param_x, vecf.x, param_y, vecf.y);
 }
 
 void	debug_raycasting(t_ray *ray)

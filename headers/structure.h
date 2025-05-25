@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/04/18 16:54:44 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/24 18:26:16 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,9 @@ typedef struct s_cub
 	t_txt				texture;
 	t_keys				keys;
 	char				*map_name;
-	int					fd;
+	int					fd; 
+	int  				hit;
+	int 				crash_wall;
 }						t_cub;
 
 #endif

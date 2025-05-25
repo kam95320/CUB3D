@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:58:07 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/23 16:14:11 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:50:56 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 		close(cub.fd);
 	if (false == map_is_valid(&cub))
 	{
-		print_error("map error validity\n");
+		print_error(RED "MAP ERROR VALIDITY\n"RESET);
 		free_mlx(&cub);
 		return (0);
 	}
@@ -34,5 +34,7 @@ int	main(int argc, char *argv[])
 		raycast(&cub);
 		// all_debug(&cub);
 		mlx_loop(cub.data->mlx);
+		mlx_destroy_display(cub.data->mlx);
+		free(cub.data->mlx);
 	}
 }

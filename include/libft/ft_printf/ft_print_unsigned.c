@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfranke <pfranke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:10:53 by kahoumou          #+#    #+#             */
-/*   Updated: 2024/05/30 13:48:50 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/17 22:46:03 by pfranke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_unsigned(unsigned int nb, int *lenght)
 	int	c;
 
 	c = 0;
-	if (nb < 0)
+	if (nb <= 9)
 	{
 		c = '0' + nb;
 		ft_putchar_lenght(c, lenght);

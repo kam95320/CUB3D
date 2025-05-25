@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 14:10:02 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/04/21 16:27:40 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:53:55 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	orig_pl_pos(t_cub *cub)
 		i = 0;
 		while (map[j][i])
 		{
-			if (map[j][i] == 'N')
+			if ((map[j][i] == 'N' || map[j][i] == 'S' || map[j][i] == 'W'
+					|| map[j][i] == 'E') && (map[j][i + 1] == '0' || map[j][i
+					+ 1] == '1'))
 			{
 				cub->player->orig_pl_y = j;
 				cub->player->orig_pl_x = i;
@@ -76,7 +78,8 @@ bool	get_player_pos(t_cub *cub)
 		i = 0;
 		while (map[j][i])
 		{
-			if (dir_is_find(cub, map[j][i]) == true)
+			if ((map[j][i] == '0' || map[j][i] == '1') && dir_is_find(cub,
+					map[j][i + 1]) == true)
 			{
 				orig_pl_pos(cub);
 				return (true);
@@ -92,23 +95,22 @@ void	init_player_calc(t_cub *cub)
 {
 	double	deg;
 	double	fov_rad;
-	int		x;
-	int		y;
 
-	x = cub->player->orig_pl_x;
-	y = cub->player->orig_pl_y;
-	cub->player->fov_deg = 66.0;
+	cub->player->fov_deg = 90;
 	deg = cub->player->fov_deg;
-	cub->player->fov_rad = deg * M_PI / 180.0;
+	cub->player->fov_rad = deg * M_PI / 190.0;
 	fov_rad = cub->player->fov_rad;
 	cub->player->player_vw_lenght = tan(fov_rad / 2.0);
-	cub->player->fl_pl_pos_y = x + 0.5;
-	cub->player->fl_pl_pos_x = x + 0.5;
+	cub->player->fl_pl_pos_x = cub->player->orig_pl_x + 0.5;
+	cub->player->fl_pl_pos_y = cub->player->orig_pl_y + 0.5;
 }
 
 void	init_player(t_cub *cub)
 {
+	if (!get_player_pos(cub))
+		wgas(cub, RED "Player direction not found" RESET, NULL);
 	get_player_pos(cub);
 	init_player_calc(cub);
-	init_player_dir_cam(cub);
+	// init_e_w()
+	init_player_dir_cam(cub, cub->player->dir);
 }
