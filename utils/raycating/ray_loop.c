@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:28:37 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/05/24 18:26:36 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/30 19:02:15 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,20 @@ int	ray_loop(t_cub *cub)
 			&cub->data->endian);
 	while (++x < cub->data->width)
 	{
+		// printf("x = %d || widht = %d\n", x,cub->data->width);
+		// cast_single_ray(cub, x);
+		// draw_cl_and_fl(cub, cub->ray, x);
+		// draw_vertical_line(cub, x, cub->ray, cub->player);
+		printf("[RAY %d/%d]\n", x, cub->data->width);
 		cast_single_ray(cub, x);
+		printf("cast_single_ray ok x=%d\n", x);
 		draw_cl_and_fl(cub, cub->ray, x);
+		printf("draw_cl_and_fl ok x=%d\n", x);
 		draw_vertical_line(cub, x, cub->ray, cub->player);
+		printf("draw_vertical_line ok x=%d\n", x);
 	}
-	// debg_ray_calc(cub, x);
+	printf("FIN RAY LOOP\n");
+	debg_ray_calc(cub, x);
 	mlx_put_image_to_window(cub->data->mlx, cub->data->win, cub->data->img, 0,
 		0);
 	key_player(cub);

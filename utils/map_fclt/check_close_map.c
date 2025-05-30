@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 12:13:18 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/05/25 16:47:42 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:09:56 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,20 @@ bool	player_outside_map(char **map)
 	}
 	return (true);
 }
+static bool	found_mystake(char **map, int y, int i)
+{
+	while (map[y][i] != '\n')
+	{
+		if (map[y][i] == '0' && map[y][i + 1] == '\n')
+			return (false);
+		// if (map[y][1] == '0')
+		// 	return (false);
+		// if (map[y + 1] ==  NULL && map[y][i] == '0')
+		// 	return (false);
+		i ++;
+	}
+	return(true);
+}
 bool	check_close_map(char **map)
 {
 	int	i;
@@ -106,7 +120,7 @@ bool	check_close_map(char **map)
 		while (((map[y][i]) && (map[y][i] == '0' || map[y][i] == '1'))
 			|| (check_dir(map[y][i])))
 		{
-			if (map[y][i] == '0' && map[y][i + 1] == '\n')
+			if (found_mystake(map, y, i)  == false)
 			{
 				printf(LIGHT_BLUE "->BINARY LINE  WITH  ERROR <-\n" RESET);
 				printf(CYAN " line  = [%d] | case = [%d]\n" RESET, y, i);

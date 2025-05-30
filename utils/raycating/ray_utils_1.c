@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:27:45 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/05/24 19:07:29 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/30 17:14:04 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,22 +95,39 @@ void	perform_dda(t_cub *cub)
 	}
 }
 
-void	compute_ray_line(t_cub *cub)
-{
-	t_ray	*ray;
+// void	compute_ray_line(t_cub *cub)
+// {
+// 	t_ray	*ray;
 
-	ray = cub->ray;
-	ray->raylength = cub->data->height / ray->perpwalldist;
+// 	ray = cub->ray;
+// 	ray->raylength = (int)(cub->data->height / ray->perpwalldist);
+// 	ray->startp = -ray->raylength / 2 + cub->data->height / 2;
+// 	if (ray->startp < 0)
+// 	{
+// 		ray->startp = 0;
+// 	}
+// 	ray->endp = ray->raylength / 2 + cub->data->height / 2;
+// 	if (ray->endp >= cub->data->height)
+// 	{
+// 		ray->endp = cub->data->height - 1;
+// 	}
+// }
+
+void compute_ray_line(t_cub *cub)
+{
+	t_ray *ray = cub->ray;
+
+	
+	ray->raylength = (int)(cub->data->height / ray->perpwalldist);
+
+	
 	ray->startp = -ray->raylength / 2 + cub->data->height / 2;
 	if (ray->startp < 0)
-	{
 		ray->startp = 0;
-	}
+
 	ray->endp = ray->raylength / 2 + cub->data->height / 2;
 	if (ray->endp >= cub->data->height)
-	{
 		ray->endp = cub->data->height - 1;
-	}
 }
 
 void	compute_perp_distance(t_cub *cub)

@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 14:10:02 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/05/25 16:53:55 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/30 17:13:07 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,13 @@ void	init_player_calc(t_cub *cub)
 	cub->player->fl_pl_pos_y = cub->player->orig_pl_y + 0.5;
 }
 
-void	init_player(t_cub *cub)
+bool	init_player(t_cub *cub)
 {
 	if (!get_player_pos(cub))
-		wgas(cub, RED "Player direction not found" RESET, NULL);
-	get_player_pos(cub);
+			return(false);
+		// wgas(cub, RED "Player direction not found" RESET, NULL);
 	init_player_calc(cub);
-	// init_e_w()
 	init_player_dir_cam(cub, cub->player->dir);
+	return(true);
 }
+   

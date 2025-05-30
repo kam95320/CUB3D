@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:42:20 by tespandj          #+#    #+#             */
-/*   Updated: 2025/05/24 18:26:16 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:21:17 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # define KEY_RIGHT 100
 # define KEY_P 112
 # define KEY_M 109
-# define WD_SIZE_WIDTH 1170
-# define WD_SIZE_HEIGHT 720
+# define WD_SIZE_WIDTH 2560
+# define WD_SIZE_HEIGHT 1440
 typedef struct s_txt	t_txt;
 
 typedef struct s_keys
@@ -87,11 +87,13 @@ typedef struct s_data
 	char				*addr;
 	int					width;
 	int					height;
+	int 				index;
 	int					endian;
 	int					bits_per_pixel;
 	int					line_length;
 	int					x_off;
 	int					y_off;
+
 }						t_data;
 
 typedef struct s_cub

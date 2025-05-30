@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:48:16 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/05/24 14:55:43 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/30 19:16:28 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 
 # define MOVE_SPEED 0.2
 # define ROTATE_SPEED 0.1
+#define PLAYER_RADIUS 0.25
 
 typedef struct s_player
 {

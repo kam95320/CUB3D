@@ -6,7 +6,7 @@
 /*   By: kahoumou <kahoumou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:24:00 by kahoumou          #+#    #+#             */
-/*   Updated: 2025/05/25 16:42:22 by kahoumou         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:01:10 by kahoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define PIXEL_SIZE 128
+# define PIXEL_SIZE 512
 # define VIEW_DIST 4
 # define COLOR_PLAYER 0xFF0000
 # define COLOR_WALL 0x2E2E2E
@@ -89,6 +89,7 @@ bool							take_mem_map(t_cub *cub, two_d_t *two_d,
 									char *mp);
 void							completed_2d(two_d_t *two_d, t_cub *cub);
 bool							map_is_valid(t_cub *cub);
+void							write_map(char **map);
 int								nb_line(char *map);
 int								skip_space(char **mp, int i, int len);
 bool							is_good_print(t_cub *cub, char **mp, int i,
@@ -124,6 +125,7 @@ int								press(int key, t_cub *cub);
 int								release(int key, t_cub *cub);
 int								mousemotion(t_cub *cub);
 void							movement(t_cub *cub);
+int								is_valid_pos(t_cub *cub, double x, double y);
 int								end_win(t_cub *cub);
 void							next_line(t_cub *cub, char **line);
 void							wgas(t_cub *cub, char *arg, char *str);
@@ -172,7 +174,7 @@ void							color_init(t_cub *cub);
 void							debug_raycasting(t_ray *ray);
 void							debug_player(t_player *player);
 char							*txt_cond(char **mp, int i, int j);
-void							init_player(t_cub *cub);
+bool							init_player(t_cub *cub);
 bool							get_player_pos(t_cub *cub);
 void							player_base(t_cub *cub);
 bool							dir_is_find(t_cub *cub, char dir);
@@ -182,7 +184,7 @@ int								get_texture_pixel(void *img, int x, int y);
 // void							draw_vertical_line(t_cub *cub, int x);
 void							draw_vertical_line(t_cub *cub, int x,
 									t_ray *ray, t_player *pl);
-void							raycast(t_cub *cub);
+bool							raycast(t_cub *cub);
 int								ray_loop(t_cub *cub);
 void							key_init(t_cub *cub);
 int								key_press(int code, t_cub *cub);
@@ -203,6 +205,10 @@ void							debug_draw_cl_and_fl(t_cub *cub, t_ray *ray,
 void							debg_ray_calc(t_cub *cub, int x);
 void							key_player(t_cub *cub);
 void							move_straight(t_cub *cub);
+void							move_player(t_cub *cub, double dx, double dy);
+int								is_walkable_cell(t_cub *cub, double x,
+									double y);
+int								is_valid_coord(t_cub *cub, double x, double y);
 void							init_n_s(t_cub *cub, double pl_lenght);
 void							init_e_w(t_cub *cub, double pl_lenght);
 void							init_player_dir_cam(t_cub *cub, char direction);
@@ -224,6 +230,8 @@ double							calc_wall_hit(t_ray *ray, t_player *pl);
 void							*get_texture(t_cub *cub);
 int								is_walkable_cell(t_cub *cub, double x,
 									double y);
+bool							check_hole_map(char **map);
+bool							check_close_map(char **map);
 // void							draw_vertical_line(t_cub *cub, int x);
 
 #endif // UTILS_H
